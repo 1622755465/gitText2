@@ -1,0 +1,228 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控web平台</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/dianli.css">
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body>
+<div class="dt-title-container">
+    <div class="dt-nav-title">温州医科大学智能监控web平台</div>
+    <div onclick="javascript:window.location.href='#';" class="dt-nav-logo">
+        <img src="../assets/img/close.png" class="dt-nav-quit">
+    </div>
+</div>
+<div class="dt-nav-container" id="dt-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active">
+        <span class="dt-nav-img dt-nav-general"></span>
+        <span style="cursor:default;">概况</span>
+    </div>
+    <div class="dt-nav-btn" @click="monitorLoad($event)">
+        <span class="dt-nav-img dt-nav-monitor"></span>
+        <span style="cursor:default;">电力监测</span>
+    </div>
+    <div class="dt-nav-btn" @click="harmonicLoad($event)">
+        <span class="dt-nav-img dt-nav-quality"></span>
+        电能参数
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-analysis"></span>
+        用电分析
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-security"></span>
+        安全分析
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-record"></span>
+        事件记录
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-environment"></span>
+        运行环境
+    </div>
+    <div class="dt-nav-btn ">
+        <span class="dt-nav-img dt-nav-administration"></span>
+        维护管理
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-option"></span>
+        系统设置
+    </div>
+</div>
+<div class="dt-left-nav-container" id="dt-left-nav-container">
+    <!--<div class="dt-left-nav-box dt-left-nav-first-box dt-left-nav-box-active">变电所状态</div>-->
+    <!--<div class="dt-left-nav-box">运维中心</div>-->
+    <!--<div class="dt-left-nav-box" onclick="javascript:window.location.href='powerCheck'">用能月报</div>-->
+</div>
+<div class="dt-footer">登录用户：admin</div>
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script src="../assetsmain.jsx.js"></script>-->
+<script>
+    var nav = new Vue({
+        el: '#dt-nav-container',
+        delimiters: ['${', '}'],
+        data: {},
+        methods: {
+            monitorLoad: function (e) {
+                $(".dt-nav-btn").removeClass("dt-nav-option-active");
+                $(e.target).addClass("dt-nav-option-active");
+                console.log('run!');
+                var url = 'mainLeft';
+                htmlobj = $.ajax({url: url, async: false});
+                $('#dt-left-nav-container').html(htmlobj.responseText);
+//                location.href = 'eleMonitor';
+            },
+            harmonicLoad: function () {
+                location.href = 'harmonic';
+            }
+        }
+    });
+</script>
+</body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控web平台</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/dianli.css">
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body>
+<div class="dt-title-container">
+    <div class="dt-nav-title">温州医科大学智能监控web平台</div>
+    <div onclick="javascript:window.location.href='#';" class="dt-nav-logo">
+        <img src="../assets/img/close.png" class="dt-nav-quit">
+    </div>
+</div>
+<div class="dt-nav-container" id="dt-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active">
+        <span class="dt-nav-img dt-nav-general"></span>
+        <span style="cursor:default;">概况</span>
+    </div>
+    <div class="dt-nav-btn" @click="monitorLoad($event)">
+        <span class="dt-nav-img dt-nav-monitor"></span>
+        <span style="cursor:default;">电力监测</span>
+    </div>
+    <div class="dt-nav-btn" @click="harmonicLoad($event)">
+        <span class="dt-nav-img dt-nav-quality"></span>
+        电能参数
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-analysis"></span>
+        用电分析
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-security"></span>
+        安全分析
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-record"></span>
+        事件记录
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-environment"></span>
+        运行环境
+    </div>
+    <div class="dt-nav-btn ">
+        <span class="dt-nav-img dt-nav-administration"></span>
+        维护管理
+    </div>
+    <div class="dt-nav-btn">
+        <span class="dt-nav-img dt-nav-option"></span>
+        系统设置
+    </div>
+</div>
+<div class="dt-left-nav-container" id="dt-left-nav-container">
+    <!--<div class="dt-left-nav-box dt-left-nav-first-box dt-left-nav-box-active">变电所状态</div>-->
+    <!--<div class="dt-left-nav-box">运维中心</div>-->
+    <!--<div class="dt-left-nav-box" onclick="javascript:window.location.href='powerCheck'">用能月报</div>-->
+</div>
+<div class="dt-footer">登录用户：admin</div>
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script src="../assetsmain.jsx.js"></script>-->
+<script>
+    var nav = new Vue({
+        el: '#dt-nav-container',
+        delimiters: ['${', '}'],
+        data: {},
+        methods: {
+            monitorLoad: function (e) {
+                $(".dt-nav-btn").removeClass("dt-nav-option-active");
+                $(e.target).addClass("dt-nav-option-active");
+                console.log('run!');
+                var url = 'mainLeft';
+                htmlobj = $.ajax({url: url, async: false});
+                $('#dt-left-nav-container').html(htmlobj.responseText);
+//                location.href = 'eleMonitor';
+            },
+            harmonicLoad: function () {
+                location.href = 'harmonic';
+            }
+        }
+    });
+</script>
+</body>
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</html>

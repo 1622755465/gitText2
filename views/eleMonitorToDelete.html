@@ -1,0 +1,496 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控web平台</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/dianli.css">
+    <link rel="stylesheet" href="../assets/css/ele-monitor.css">
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body>
+<div class="dt-title-container">
+    <div class="dt-nav-title">温州医科大学智能监控web平台</div>
+    <div onclick="javascript:window.location.href='#';" class="dt-nav-logo">
+        <img src="../assets/img/close.png" class="dt-nav-quit">
+    </div>
+</div>
+<div class="dt-nav-container">
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general"></span>
+        <span>概况</span>
+    </div>
+    <div class="dt-nav-btn dt-nav-option-active">
+        <span class="dt-nav-img dt-nav-monitor"></span>
+        <span>变压器监测</span>
+    </div>
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality"></span>
+        电力监测
+    </div>
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+    <!--环境监测-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-security"></span>-->
+    <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-record"></span>-->
+    <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment"></span>
+        环境监测
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+    <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+    <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning"></span>
+        报警监测
+    </div>
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='plan'">
+        <span class="dt-nav-img dt-nav-record"></span>
+        巡察计划
+    </div>
+</div>
+<div id="vue-list">
+    <div class="dt-left-nav-container">
+        <div class="dt-left-nav-box-disabled dt-left-nav-first-box">图书馆</div>
+        <div class="dt-left-nav-box dt-left-nav-box-active">同仁楼</div>
+        <div class="dt-left-nav-box">同德楼</div>
+        <div class="dt-left-nav-box">同济楼</div>
+        <div class="dt-left-nav-box">求是楼</div>
+        <div class="dt-left-nav-box">学生活动中心</div>
+        <div class="dt-left-nav-box-disabled">三期宿舍上</div>
+        <div class="dt-left-nav-box-disabled">三期宿舍下</div>
+        <div class="dt-left-nav-box-disabled">中室基地</div>
+        <div class="dt-left-nav-box-disabled">学院路1#</div>
+        <div class="dt-left-nav-box-disabled">学院路2#</div>
+        <div class="dt-left-nav-box-disabled">一期宿舍</div>
+        <div class="dt-left-nav-box-disabled">二期宿舍</div>
+    </div>
+    <div class="dt-main-container">
+        <div class="main-box" style="height: auto; padding-bottom: 15px;">
+            <div class="main-box-top">
+                <img src="../assets/img/biandian.png" class="main-box-top-icon"/>
+                <div class="main-box-top-text">变电所概况</div>
+            </div>
+            <!--<div class="main-box-middle">-->
+            <!--<div class="middle-name">变电所名称:</div>-->
+            <!--<input class="middle-input" placeholder="温州医科大学">-->
+            <!--<button class="middle-button"><img src="../assets/img/search.png" /></button>-->
+            <!--</div>-->
+            <div class="main-box-bottom" style="margin-top: 0;">
+                <table class=" bottom-table">
+                    <tr>
+                        <td>
+                            <div class="top-pic">
+                                <img src="../assets/img/byq.png" height="60" width="80"/>
+                                <div class="top-box-text">10kV变压器</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="main-box">
+            <div class="main-box-top">
+                <img src="../assets/img/record.png" class="main-box-top-icon"/>
+                <div class="main-box-top-text">变压器状态</div>
+                <div class="middle-box-time-text">
+                    更新时间:&nbsp 2018-05-21 &nbsp11:55:07
+                </div>
+            </div>
+            <div><p class="middle-box-text">变压器名称：<span class="middle-box-text-right">10kV变压器</span></p></div>
+            <table width="100%">
+                <!--<td>-->
+                <!--<div>-->
+                <!--<div class="orange">负荷</div>-->
+                <!--<div class="gray">-->
+                <!--<ul>-->
+                <!--<li><span class="point-right">额定电压: &nbsp380kVA</span></li>-->
+                <!--<li><span class="point-right">视在功率: &nbsp{{list.S_Power_Result}}kVA</span></li>-->
+                <!--<li><span class="point-right">负 &nbsp荷 &nbsp率:{{list.FH}}% &nbsp</span></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                <!--<div>-->
+                <!--<div class="orange">功率</div>-->
+                <!--<div class="gray">-->
+                <!--<ul>-->
+                <!--<li><span class="point-right">有功功率: &nbsp{{list.P_Power_Result}}KW</span></li>-->
+                <!--<li><span class="point-right">无功功率: &nbsp{{list.Q_Power_Result}}kVA</span></li>-->
+                <!--<li><span class="point-right">功率因素:{{list.PF}} &nbsp</span></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                <!--<div>-->
+                <!--<div class="orange">电流</div>-->
+                <!--<div class="gray">-->
+                <!--<ul>-->
+                <!--<li><span class="point-right">A相电流: &nbsp{{list.fIa}}A</span></li>-->
+                <!--<li><span class="point-right">B相电流: &nbsp{{list.fIa}}A</span></li>-->
+                <!--<li><span class="point-right">C相电流: &nbsp{{list.fIc}}A</span></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                <!--<div>-->
+                <!--<div class="orange">电压</div>-->
+                <!--<div class="gray">-->
+                <!--<ul>-->
+                <!--<li><span class="point-right">Uab线电压: &nbsp{{list.Ua}}V</span></li>-->
+                <!--<li><span class="point-right">Ubc线电压: &nbsp{{list.UB}}V</span></li>-->
+                <!--<li><span class="point-right">Uca线电压:  &nbsp{{list.Uc}}V</span></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</td>-->
+                <td>
+                    <div>
+                        <div class="orange">变压器状态</div>
+                        <div class="gray" style="padding-bottom: 7px;">
+                            <ul style="font-size:11px !important;padding-bottom: 0;">
+                                <li><span class="point-right">跳闸动作: &nbsp${list.TS3}</span></li>
+                                <li><span class="point-right">超温报警: &nbsp${list.TS4}</span></li>
+                                <li><span class="point-right">风机状态: &nbsp${list.TS5}</span></li>
+                                <!--<li><span class="point-right">A相传感器:&nbsp{{list.A}}</span></li>-->
+                                <!--<li><span class="point-right">B相传感器:&nbsp{{list.B}}</span></li>-->
+                                <!--<li><span class="point-right">C相传感器:&nbsp{{list.C}}</span></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="orange">温度</div>
+                        <div class="gray">
+                            <ul>
+                                <li><span class="point-right">A相温度: &nbsp${list.TS}度</span></li>
+                                <li><span class="point-right">B相温度: &nbsp${list.TS1}度</span></li>
+                                <li><span class="point-right">C相温度:&nbsp${list.TS2}度</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </table>
+        </div>
+        <!--<div class=" middle-col-margin">-->
+        <!--<div class="middle-box">-->
+        <!--<div class="main-box-top">-->
+        <!--<div class="main-box-top-text">&nbsp&nbsp&nbsp日期:</div>-->
+        <!--<div >-->
+        <!--<input type="date" value="2018-05-21" class="date-picker"/>-->
+        <!--</div>-->
+        <!--<div class="btn-left">-->
+        <!--<button class="btn-left-style">上一日</button>-->
+        <!--<button class="btn-left-style">下一日</button>-->
+        <!--</div>-->
+        <!--<div class="btn-bottom">-->
+        <!--&lt;!&ndash;<button class="btn-date" >现在</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<label class="label-line">|</label>&ndash;&gt;-->
+        <!--<button class="btn-date btn-date-active" id="sataus1">有功</button>-->
+        <!--<label class="label-line">|</label>-->
+        <!--<button class="btn-date" id="sataus2">无功</button>-->
+        <!--&lt;!&ndash;<label class="label-line">|</label>&ndash;&gt;-->
+        <!--&lt;!&ndash;<button class="btn-date" >绕阻温度</button>&ndash;&gt;-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div id="chart" style="min-width:400px;height:350px">-->
+        <!--<div id="container" style="min-width:400px;height:350px"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--</div>-->
+    </div>
+</div>
+<div class="dt-footer">登录用户：admin</div>
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/underscore.js/1.9.0/underscore-min.js"></script>
+<script type="text/javascript" src="../assets/js/eleMonitor.js"></script>
+</body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控web平台</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/dianli.css">
+    <link rel="stylesheet" href="../assets/css/ele-monitor.css">
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body>
+<div class="dt-title-container">
+    <div class="dt-nav-title">温州医科大学智能监控web平台</div>
+    <div onclick="javascript:window.location.href='#';" class="dt-nav-logo">
+        <img src="../assets/img/close.png" class="dt-nav-quit">
+    </div>
+</div>
+<div class="dt-nav-container">
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general"></span>
+        <span>概况</span>
+    </div>
+    <div class="dt-nav-btn dt-nav-option-active">
+        <span class="dt-nav-img dt-nav-monitor"></span>
+        <span>变压器监测</span>
+    </div>
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality"></span>
+        电力监测
+    </div>
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+    <!--环境监测-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-security"></span>-->
+    <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-record"></span>-->
+    <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment"></span>
+        环境监测
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+    <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+    <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning"></span>
+        报警监测
+    </div>
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='plan'">
+        <span class="dt-nav-img dt-nav-record"></span>
+        巡察计划
+    </div>
+</div>
+<div id="vue-list">
+    <div class="dt-left-nav-container">
+        <div class="dt-left-nav-box-disabled dt-left-nav-first-box">图书馆</div>
+        <div class="dt-left-nav-box dt-left-nav-box-active">同仁楼</div>
+        <div class="dt-left-nav-box">同德楼</div>
+        <div class="dt-left-nav-box">同济楼</div>
+        <div class="dt-left-nav-box">求是楼</div>
+        <div class="dt-left-nav-box">学生活动中心</div>
+        <div class="dt-left-nav-box-disabled">三期宿舍上</div>
+        <div class="dt-left-nav-box-disabled">三期宿舍下</div>
+        <div class="dt-left-nav-box-disabled">中室基地</div>
+        <div class="dt-left-nav-box-disabled">学院路1#</div>
+        <div class="dt-left-nav-box-disabled">学院路2#</div>
+        <div class="dt-left-nav-box-disabled">一期宿舍</div>
+        <div class="dt-left-nav-box-disabled">二期宿舍</div>
+    </div>
+    <div class="dt-main-container">
+        <div class="main-box" style="height: auto; padding-bottom: 15px;">
+            <div class="main-box-top">
+                <img src="../assets/img/biandian.png" class="main-box-top-icon"/>
+                <div class="main-box-top-text">变电所概况</div>
+            </div>
+            <!--<div class="main-box-middle">-->
+            <!--<div class="middle-name">变电所名称:</div>-->
+            <!--<input class="middle-input" placeholder="温州医科大学">-->
+            <!--<button class="middle-button"><img src="../assets/img/search.png" /></button>-->
+            <!--</div>-->
+            <div class="main-box-bottom" style="margin-top: 0;">
+                <table class=" bottom-table">
+                    <tr>
+                        <td>
+                            <div class="top-pic">
+                                <img src="../assets/img/byq.png" height="60" width="80"/>
+                                <div class="top-box-text">10kV变压器</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="main-box">
+            <div class="main-box-top">
+                <img src="../assets/img/record.png" class="main-box-top-icon"/>
+                <div class="main-box-top-text">变压器状态</div>
+                <div class="middle-box-time-text">
+                    更新时间:&nbsp 2018-05-21 &nbsp11:55:07
+                </div>
+            </div>
+            <div><p class="middle-box-text">变压器名称：<span class="middle-box-text-right">10kV变压器</span></p></div>
+            <table width="100%">
+                <!--<td>-->
+                <!--<div>-->
+                <!--<div class="orange">负荷</div>-->
+                <!--<div class="gray">-->
+                <!--<ul>-->
+                <!--<li><span class="point-right">额定电压: &nbsp380kVA</span></li>-->
+                <!--<li><span class="point-right">视在功率: &nbsp{{list.S_Power_Result}}kVA</span></li>-->
+                <!--<li><span class="point-right">负 &nbsp荷 &nbsp率:{{list.FH}}% &nbsp</span></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                <!--<div>-->
+                <!--<div class="orange">功率</div>-->
+                <!--<div class="gray">-->
+                <!--<ul>-->
+                <!--<li><span class="point-right">有功功率: &nbsp{{list.P_Power_Result}}KW</span></li>-->
+                <!--<li><span class="point-right">无功功率: &nbsp{{list.Q_Power_Result}}kVA</span></li>-->
+                <!--<li><span class="point-right">功率因素:{{list.PF}} &nbsp</span></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                <!--<div>-->
+                <!--<div class="orange">电流</div>-->
+                <!--<div class="gray">-->
+                <!--<ul>-->
+                <!--<li><span class="point-right">A相电流: &nbsp{{list.fIa}}A</span></li>-->
+                <!--<li><span class="point-right">B相电流: &nbsp{{list.fIa}}A</span></li>-->
+                <!--<li><span class="point-right">C相电流: &nbsp{{list.fIc}}A</span></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</td>-->
+                <!--<td>-->
+                <!--<div>-->
+                <!--<div class="orange">电压</div>-->
+                <!--<div class="gray">-->
+                <!--<ul>-->
+                <!--<li><span class="point-right">Uab线电压: &nbsp{{list.Ua}}V</span></li>-->
+                <!--<li><span class="point-right">Ubc线电压: &nbsp{{list.UB}}V</span></li>-->
+                <!--<li><span class="point-right">Uca线电压:  &nbsp{{list.Uc}}V</span></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</td>-->
+                <td>
+                    <div>
+                        <div class="orange">变压器状态</div>
+                        <div class="gray" style="padding-bottom: 7px;">
+                            <ul style="font-size:11px !important;padding-bottom: 0;">
+                                <li><span class="point-right">跳闸动作: &nbsp${list.TS3}</span></li>
+                                <li><span class="point-right">超温报警: &nbsp${list.TS4}</span></li>
+                                <li><span class="point-right">风机状态: &nbsp${list.TS5}</span></li>
+                                <!--<li><span class="point-right">A相传感器:&nbsp{{list.A}}</span></li>-->
+                                <!--<li><span class="point-right">B相传感器:&nbsp{{list.B}}</span></li>-->
+                                <!--<li><span class="point-right">C相传感器:&nbsp{{list.C}}</span></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="orange">温度</div>
+                        <div class="gray">
+                            <ul>
+                                <li><span class="point-right">A相温度: &nbsp${list.TS}度</span></li>
+                                <li><span class="point-right">B相温度: &nbsp${list.TS1}度</span></li>
+                                <li><span class="point-right">C相温度:&nbsp${list.TS2}度</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </table>
+        </div>
+        <!--<div class=" middle-col-margin">-->
+        <!--<div class="middle-box">-->
+        <!--<div class="main-box-top">-->
+        <!--<div class="main-box-top-text">&nbsp&nbsp&nbsp日期:</div>-->
+        <!--<div >-->
+        <!--<input type="date" value="2018-05-21" class="date-picker"/>-->
+        <!--</div>-->
+        <!--<div class="btn-left">-->
+        <!--<button class="btn-left-style">上一日</button>-->
+        <!--<button class="btn-left-style">下一日</button>-->
+        <!--</div>-->
+        <!--<div class="btn-bottom">-->
+        <!--&lt;!&ndash;<button class="btn-date" >现在</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<label class="label-line">|</label>&ndash;&gt;-->
+        <!--<button class="btn-date btn-date-active" id="sataus1">有功</button>-->
+        <!--<label class="label-line">|</label>-->
+        <!--<button class="btn-date" id="sataus2">无功</button>-->
+        <!--&lt;!&ndash;<label class="label-line">|</label>&ndash;&gt;-->
+        <!--&lt;!&ndash;<button class="btn-date" >绕阻温度</button>&ndash;&gt;-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div id="chart" style="min-width:400px;height:350px">-->
+        <!--<div id="container" style="min-width:400px;height:350px"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--</div>-->
+    </div>
+</div>
+<div class="dt-footer">登录用户：admin</div>
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/underscore.js/1.9.0/underscore-min.js"></script>
+<script type="text/javascript" src="../assets/js/eleMonitor.js"></script>
+</body>
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</html>

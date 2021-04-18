@@ -1,0 +1,136 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+.dt-main-container-custom{
+    background: #F0F5FB;
+}
+.table-responsive-custom{
+    background: #fff;
+    /*height: 400px;*/
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.table-custom{
+    margin-bottom: 0!important;
+    border-bottom: 1px solid #ddd;
+    border-collapse: collapse!important;
+    border-radius: 5px;
+}
+/*.table-custom th,.table-custom td{*/
+    /*border: 1px solid #ddd;*/
+/*}*/
+.main-box-top{
+    color:white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.main-box-top tr{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.dt-check-container{
+    display: flex;
+}
+.input-group-custom{
+    width: 220px;
+    padding-right: 20px;
+}
+.dt-btn-check-search{
+    width: 90px;
+    padding-left: 25px;
+    text-align: center;
+    background-image: url("../img/search.png");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    line-height: 33px;
+}
+.dt-btn-check-export{
+    background-image: url("../img/export.png");
+}
+.dt-footer{
+    display: flex;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+.dt-main-container-custom{
+    background: #F0F5FB;
+}
+.table-responsive-custom{
+    background: #fff;
+    /*height: 400px;*/
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.table-custom{
+    margin-bottom: 0!important;
+    border-bottom: 1px solid #ddd;
+    border-collapse: collapse!important;
+    border-radius: 5px;
+}
+/*.table-custom th,.table-custom td{*/
+    /*border: 1px solid #ddd;*/
+/*}*/
+.main-box-top{
+    color:white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.main-box-top tr{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.dt-check-container{
+    display: flex;
+}
+.input-group-custom{
+    width: 220px;
+    padding-right: 20px;
+}
+.dt-btn-check-search{
+    width: 90px;
+    padding-left: 25px;
+    text-align: center;
+    background-image: url("../img/search.png");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    line-height: 33px;
+}
+.dt-btn-check-export{
+    background-image: url("../img/export.png");
+}
+.dt-footer{
+    display: flex;
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+}

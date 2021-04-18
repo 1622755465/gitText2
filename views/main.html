@@ -1,0 +1,380 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/dianli.css">
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <style>
+        .el-collapse-item__header {
+            height: 48px;
+            line-height: 48px;
+            color: #303133;
+            cursor: pointer;
+            border-bottom: 1px solid #ebeef5;
+            font-size: 13px;
+            font-weight: 500;
+            -webkit-transition: border-bottom-color .3s;
+            transition: border-bottom-color .3s;
+            outline: 0;
+        }
+
+        .dtn-main-box {
+            width: 100%;
+        }
+
+        .dt-left-nav-container {
+            height: 940px;
+        }
+    </style>
+</head>
+<body style="background: rgb(240,243,248)">
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active dtn-nav-btn">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"></span>
+        <span style="cursor:default;opacity: 1;color: #414E69;" class="dtn-nav-list">概况</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"></span>
+        <span class="dtn-nav-list">电力监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"></span>
+        <span class="dtn-nav-list">环境监测</span>
+    </div>
+
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='plan'">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"></span>
+        <span class="dtn-nav-list">巡察计划</span>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container dtn-left-nav-container">
+                <div class="dtn-empty-div"></div>
+                <div class="dt-left-nav-box dt-left-nav-box-active dtn-left-nav-box">图书馆</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同仁楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同德楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同济楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学生活动中心</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">一期宿舍</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">二期宿舍</div>
+                <!--<div class="dt-left-nav-box">三期宿舍上</div>-->
+                <!--<div class="dt-left-nav-box">三期宿舍下</div>-->
+                <div class="dt-left-nav-box dtn-left-nav-box">中试基地</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学院路2#</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">求是楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">三期宿舍食堂</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学院路1#</div>
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container dtn-main-container">
+                <div class="main-box dtn-main-box">
+
+                    <div class="main-box-bottom dtn-main-box-bottom">
+
+                        <div class="bottom-block dtn-bottom-block " style="margin-left:0">
+                            <div class="dtn-img-div">
+                                <img src="../assets/img/ic-electric-voltage.png"/>
+                            </div>
+                            <div class="dtn-main-information">
+                                <div class="dtn-bottom-text">电压等级</div>
+                                <div class="dtn-bottom-gray">
+                                    <span class="bottom-num dtn-bottom-num">10</span><span
+                                        class="bottom-unit dtn-bottom-unit"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-block dtn-bottom-block ">
+                            <div class="dtn-img-div">
+                                <img src="../assets/img/ic-electric-maxcurrent.png"/>
+                            </div>
+                            <div class="dtn-main-information">
+                                <div class="dtn-bottom-text">变压器台数</div>
+                                <div class="dtn-bottom-gray">
+                                    <span class="bottom-num dtn-bottom-num">2</span>&nbsp; 台
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-block dtn-bottom-block ">
+                            <div class="dtn-img-div">
+                                <img src="../assets/img/ic-overview-capacity.png"/>
+                            </div>
+                            <div class="dtn-main-information">
+                                <div class="dtn-bottom-text">装机容量</div>
+                                <div class="dtn-bottom-gray">
+                                    <span class="bottom-num dtn-bottom-num">{{result.ZJcapcity}}</span><span
+                                        class="bottom-unit dtn-bottom-unit"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-block dtn-bottom-block ">
+                            <div class="dtn-img-div">
+                                <img src="../assets/img/ic-overview-control.png"/>
+                            </div>
+                            <div class="dtn-main-information">
+                                <div class="dtn-bottom-text">测控装置</div>
+                                <div class="dtn-bottom-gray">
+                                    <span class="bottom-num dtn-bottom-num">{{result.CKcount}}</span>&nbsp;个
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-box" style="height: auto;margin:15px 40px 15px 10px;width:100%;">
+                    <div class="main-box-top dtn-main-box-top">
+                        <div class="main-box-top-text dtn-main-box-top-text" style="padding-left: 20px;">配电布局图-图书馆</div>
+                    </div>
+                    <img src="../assets/img/pic-map-tushuguan.jpg" style="width: 100%;" id="map">
+                </div>
+                <div style="width:100%;height:87px"></div>
+                <div class="dtn-footer" style="bottom:0">
+                    版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../assets/js/index.js"></script>
+</body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/dianli.css">
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <style>
+        .el-collapse-item__header {
+            height: 48px;
+            line-height: 48px;
+            color: #303133;
+            cursor: pointer;
+            border-bottom: 1px solid #ebeef5;
+            font-size: 13px;
+            font-weight: 500;
+            -webkit-transition: border-bottom-color .3s;
+            transition: border-bottom-color .3s;
+            outline: 0;
+        }
+
+        .dtn-main-box {
+            width: 100%;
+        }
+
+        .dt-left-nav-container {
+            height: 940px;
+        }
+    </style>
+</head>
+<body style="background: rgb(240,243,248)">
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active dtn-nav-btn">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"></span>
+        <span style="cursor:default;opacity: 1;color: #414E69;" class="dtn-nav-list">概况</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"></span>
+        <span class="dtn-nav-list">电力监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"></span>
+        <span class="dtn-nav-list">环境监测</span>
+    </div>
+
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='plan'">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"></span>
+        <span class="dtn-nav-list">巡察计划</span>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container dtn-left-nav-container">
+                <div class="dtn-empty-div"></div>
+                <div class="dt-left-nav-box dt-left-nav-box-active dtn-left-nav-box">图书馆</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同仁楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同德楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同济楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学生活动中心</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">一期宿舍</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">二期宿舍</div>
+                <!--<div class="dt-left-nav-box">三期宿舍上</div>-->
+                <!--<div class="dt-left-nav-box">三期宿舍下</div>-->
+                <div class="dt-left-nav-box dtn-left-nav-box">中试基地</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学院路2#</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">求是楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">三期宿舍食堂</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学院路1#</div>
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container dtn-main-container">
+                <div class="main-box dtn-main-box">
+
+                    <div class="main-box-bottom dtn-main-box-bottom">
+
+                        <div class="bottom-block dtn-bottom-block " style="margin-left:0">
+                            <div class="dtn-img-div">
+                                <img src="../assets/img/ic-electric-voltage.png"/>
+                            </div>
+                            <div class="dtn-main-information">
+                                <div class="dtn-bottom-text">电压等级</div>
+                                <div class="dtn-bottom-gray">
+                                    <span class="bottom-num dtn-bottom-num">10</span><span
+                                        class="bottom-unit dtn-bottom-unit"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-block dtn-bottom-block ">
+                            <div class="dtn-img-div">
+                                <img src="../assets/img/ic-electric-maxcurrent.png"/>
+                            </div>
+                            <div class="dtn-main-information">
+                                <div class="dtn-bottom-text">变压器台数</div>
+                                <div class="dtn-bottom-gray">
+                                    <span class="bottom-num dtn-bottom-num">2</span>&nbsp; 台
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-block dtn-bottom-block ">
+                            <div class="dtn-img-div">
+                                <img src="../assets/img/ic-overview-capacity.png"/>
+                            </div>
+                            <div class="dtn-main-information">
+                                <div class="dtn-bottom-text">装机容量</div>
+                                <div class="dtn-bottom-gray">
+                                    <span class="bottom-num dtn-bottom-num">{{result.ZJcapcity}}</span><span
+                                        class="bottom-unit dtn-bottom-unit"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-block dtn-bottom-block ">
+                            <div class="dtn-img-div">
+                                <img src="../assets/img/ic-overview-control.png"/>
+                            </div>
+                            <div class="dtn-main-information">
+                                <div class="dtn-bottom-text">测控装置</div>
+                                <div class="dtn-bottom-gray">
+                                    <span class="bottom-num dtn-bottom-num">{{result.CKcount}}</span>&nbsp;个
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-box" style="height: auto;margin:15px 40px 15px 10px;width:100%;">
+                    <div class="main-box-top dtn-main-box-top">
+                        <div class="main-box-top-text dtn-main-box-top-text" style="padding-left: 20px;">配电布局图-图书馆</div>
+                    </div>
+                    <img src="../assets/img/pic-map-tushuguan.jpg" style="width: 100%;" id="map">
+                </div>
+                <div style="width:100%;height:87px"></div>
+                <div class="dtn-footer" style="bottom:0">
+                    版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../assets/js/index.js"></script>
+</body>
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</html>

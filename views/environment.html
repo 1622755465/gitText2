@@ -1,0 +1,1850 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <style>
+        .dt-tree-view {
+            margin-top: 0;
+        }
+
+        .dtc-harmonic-tree-custom {
+            overflow: scroll;
+        }
+
+        .dtc-main-right-custom {
+            margin: 0 0 61px 0;
+            max-width: 100%;
+        }
+
+        .dtc-main-back {
+            padding: 0;
+            height: 514px;
+        }
+
+        .dtc-search-container-custom {
+            padding: 10px 0;
+        }
+
+        .dtc-search-flex-custom {
+            align-items: center;
+        }
+
+        .dtc-temperature-container {
+            align-items: stretch;
+        }
+
+        .dt-tree-node-header:hover {
+            background: #eee;
+        }
+
+        .dt-tree-node-header-active {
+            background: #eee;
+        }
+
+        .dtc-temperature-font-box {
+            margin-bottom: 5px;
+            /*font-weight: bold;*/
+            /*font-size: 18px;*/
+            font-size: 18px;
+            color: #414E69;
+            letter-spacing: 0;
+            margin-top: 10px;
+        }
+
+        .dtc-temperature {
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            background: url("../assets/img/ic_transformer_temperature.png") no-repeat;
+            background-size: auto 75px;
+            background-position: 0 center;
+            margin-left: 10px;
+        }
+
+        .dtc-humidity {
+            background-position: -127px center;
+            background: url("../assets/img/ic-surroundings-humidity.png") no-repeat;
+        }
+
+        .dtc-water {
+            background-position: -244px center;
+        }
+
+        .dtc-smoke {
+            background-position: -360px center;
+        }
+
+        .dtc-detail {
+            padding-left: 30px;
+            width: calc(100% - 95px);
+        }
+
+        .line-thick {
+            width: 40px;
+            margin: 0;
+            border: 2px solid #888888;
+            z-index: 99;
+        }
+
+        .line-thin {
+            z-index: 96;
+            margin: -2px 0 0 44px;
+            width: calc(100% - 40px);
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+
+        .dtc-temperature-number {
+            float: right;
+            /*font-weight: bold;*/
+            /*font-size: 25px;*/
+            font-size: 16px;
+            color: #13B6CC;
+            letter-spacing: 0;
+        }
+
+        .dtc-chart-container {
+            display: none;
+        }
+
+        .dtc-chart-container-new {
+            margin-top: 15px;
+            padding: 10px;
+            /*border: 1px solid #ddd;*/
+            background: #fff;
+            display: block;
+        }
+
+        .table-hide {
+            position: absolute;
+            z-index: -99;
+            left: 15px;
+            height: 0;
+            width: 0;
+            overflow: scroll;
+        }
+
+        .el-progress-bar__outer {
+            margin-top: -4px;
+        }
+
+        .el-progress-bar__innerText {
+            display: none;
+        }
+
+        .dtn-border-div {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #F0F0F0;
+            margin-top: 10px;
+            float: left
+        }
+
+        .dtn-environment-empty-div {
+            width: 100%;
+            height: 5px;
+        }
+
+        .dtn-radius-div {
+            width: 270px;
+            height: 14px;
+            background: #F0F0F0;
+            margin-left: 4px;
+            border-radius: 10px;
+        }
+
+        .dtn-circular-div {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #13B6CC;
+        }
+
+        .dtn-box-div {
+            width: 270px;
+            height: 7px;
+        }
+        .dtn-control-label{
+            margin-right:5px;
+        }
+    </style>
+    <script src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body style="background-color:#F0F3F8 ">
+
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active dtn-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"
+              style="background: url(../assets/img/ic-overview-gray.png) no-repeat;"></span>
+        <span style="cursor:default;" class="dtn-nav-list">概况</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"></span>
+        <span class="dtn-nav-list">电力监测</span>
+    </div>
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+    <!--用电分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-security"></span>-->
+    <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-record"></span>-->
+    <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"
+              style="background: url(../assets/img/ic-surroundings-blue.png) no-repeat"></span>
+        <span class="dtn-nav-list" style="opacity: 1;color: #414E69;">环境监测</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+    <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+    <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='plan'">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"></span>
+        <span class="dtn-nav-list">巡察计划</span>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container dtn-left-nav-container">
+                <div class="dtn-empty-div"></div>
+                <div class="dt-left-nav-box dt-left-nav-box-active dtn-left-nav-box">图书馆</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同仁楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同德楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同济楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学生活动中心</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">一期宿舍</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">二期宿舍</div>
+                <!--<div class="dt-left-nav-box">三期宿舍上</div>-->
+                <!--<div class="dt-left-nav-box">三期宿舍下</div>-->
+                <div class="dt-left-nav-box dtn-left-nav-box">中试基地</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学院路2#</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">求是楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">三期宿舍食堂</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学院路1#</div>
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container dtc-main-container" id="vue-list" v-cloak>
+                <div class="dt-main-bac dt-harmonic-flex dtc-main-back">
+                    <div class="dt-main-right dtc-main-right-custom" id="dt-main-right" style="width: 100%;">
+                        <div class="dt-search-container dtc-search-container-custom">
+                            <div class="dt-search-flex dtc-search-flex-custom">
+                                <!--<div style="padding-right:10px; ">变电所名称</div>-->
+                                <!--<input class="middle-input dt-harmonic-search-input" placeholder="图书馆">-->
+                                <div class="dt-harmonic-date-select" style="width: 100%">
+                                    <label for="daycalendarBox" class="control-label dtn-control-label"
+                                           style="margin-left: 20px">监测日期：</label>
+                                    <div class="input-group date form_date dt-harmonic-input-group-custom dtn-big-div"
+                                         data-date=""
+                                         data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                                         data-link-format="yyyy-mm-dd"
+                                         id="datetimepicker">
+                                        <input class="form-control dtn-form-control" size="16" type="text" value=""
+                                               readonly id="daycalendarBox" style="width:200px">
+                                        <!--<span class="input-group-addon dtn-input-group-addon dtn-big-span"><span class="glyphicon glyphicon-remove"></span></span>-->
+                                        <span class="input-group-addon dtn-input-group-addon dtn-big-span"><span
+                                                class="glyphicon glyphicon-calendar dtn-span"></span><img
+                                                src="../assets/img/btn_time.png" height="14" width="15"/></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_input" value=""/><br/>
+                                    <div class="dtn-button-div">
+
+                                        <button class="middle-button dt-harmonic-search-button dtn-button-middle dtn-button-search"
+                                                style="margin-right: 10px">查询
+                                        </button>
+                                        <button class="middle-button dtn-button-middle dtn-button-outPut" id="outPut"
+                                                style="float: none; width: 90px;" @click="outPut()">导出
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container dtc-main-right-custom" style="padding:0">
+                            <div class="row" style="margin-left:1px">
+                                <div class="col-md-6 col-lg-6 col-sm-6" style="padding: 0 7px 0 0;">
+                                    <div class="dt-harmonic-date-select dtc-temperature-container">
+                                        <span class="dtc-temperature"></span>
+                                        <div class="dtc-detail">
+                                            <div class="dtc-temperature-font-box">
+                                                温度
+                                            </div>
+                                            <div class="dtn-border-div">
+                                                <div class="dtn-environment-empty-div"></div>
+                                                <div class="dtn-radius-div">
+                                                    <div class="dtn-circular-div">
+                                                        <div class="dtn-box-div">
+                                                            <el-progress :percentage="text"
+                                                                         text-inside=false></el-progress>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dtc-temperature-number" id="temperature"
+                                                 style="float:right;margin-top:16px;">
+                                                <span>℃</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-sm-6" style="padding: 0 0 0 7px;">
+                                    <div class="dt-harmonic-date-select dtc-temperature-container">
+                                        <span class="dtc-temperature dtc-humidity"></span>
+                                        <div class="dtc-detail">
+                                            <div class="dtc-temperature-font-box">
+                                                湿度
+                                            </div>
+                                            <div class="dtn-border-div" style="float:left">
+                                                <div class="dtn-environment-empty-div"></div>
+                                                <div class="dtn-radius-div">
+                                                    <div class="dtn-circular-div">
+                                                        <div class="dtn-box-div">
+                                                            <el-progress :percentage="value"
+                                                                         text-inside=false></el-progress>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dtc-temperature-number" id="humidity"
+                                                 style="float:right;margin-top:16px;">
+                                                <span>%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row dtc-chart-container" style="margin-left:1px">
+                                <div id="temperatureContainer" style="min-width:400px;height:350px"></div>
+                            </div>
+                            <div class="row dtc-chart-container" style="margin-left:1px">
+                                <div id="humidityContainer" style="min-width:400px;height:350px"></div>
+                            </div>
+                            <!--<div class="row" style="padding-top: 15px;">-->
+                            <!--<div class="col-md-6 col-lg-6 col-sm-6" style="padding: 0 7px 0 0;">-->
+                            <!--<div class="dt-harmonic-date-select dtc-temperature-container">-->
+                            <!--<span class="dtc-temperature dtc-water"></span>-->
+                            <!--<div class="dtc-detail">-->
+                            <!--<div class="dtc-temperature-font-box">-->
+                            <!--水浸-->
+                            <!--</div>-->
+                            <!--<hr class="line-thick">-->
+                            <!--<hr class="line-thin">-->
+                            <!--<div class="dtc-temperature-number">-->
+                            <!--&#45;&#45;-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="col-md-6 col-lg-6 col-sm-6" style="padding: 0 0 0 7px;">-->
+                            <!--<div class="dt-harmonic-date-select dtc-temperature-container">-->
+                            <!--<span class="dtc-temperature dtc-smoke"></span>-->
+                            <!--<div class="dtc-detail">-->
+                            <!--<div class="dtc-temperature-font-box">-->
+                            <!--烟雾-->
+                            <!--</div>-->
+                            <!--<hr class="line-thick">-->
+                            <!--<hr class="line-thin">-->
+                            <!--<div class="dtc-temperature-number">-->
+                            <!--&#45;&#45;-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="table-hide">
+                    <table id="outPutTable">
+                        <thead class="main-box-top">
+                        <tr>
+                            <th>时间</th>
+                            <th>温度</th>
+                            <th>湿度</th>
+                        </tr>
+                        </thead>
+                        <tbody style="height: 10px; overflow: hidden;">
+                        <tr v-for="data in dataList">
+                            <th>${data.DT}</th>
+                            <th>${data.TS}</th>
+                            <th>${data.TS1}</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dtn-footer">
+                版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../public/FileSaver/FileSaver.min.js"></script>
+<script src="../public/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="../public/tableExport.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+<script src="../public/file/filesaver.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script type="text/javascript">
+
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    };
+
+    $(document).ready(function () {
+        var isLogin = sessionStorage.getItem('isLogin') || false;
+        if (!isLogin) {
+            window.location.href = 'index';
+        }
+
+
+        $('#dtp_input').val(new Date().Format("yyyy-MM-dd"));
+        renderChart("01", vm);
+
+        $('.dtn-button-search').click(function () {
+            var home = $('.dt-left-nav-box-active').html().toString();
+            renderChart(homeKeySwitch(home), vm);
+        });
+
+        function logOut() {
+            sessionStorage.removeItem('user');
+            sessionStorage.removeItem('isLogin');
+            window.location.href = 'index';
+        }
+
+        $('.dt-nav-quit').click(function () {
+            logOut();
+        });
+    });
+    $('.dt-left-nav-box').click(function () {
+        $('.dt-left-nav-box-active').removeClass('dt-left-nav-box-active');
+        $(this).addClass('dt-left-nav-box-active');
+        var home = homeKeySwitch($(this).html().toString());
+        //$('.home').html(home);
+        renderChart(home, vm);
+    });
+
+    function renderChart(home, obj) {
+        const loading = obj.$loading({
+            lock: true,
+            text: '查找数据中',
+            spinner: 'el-icon-loading',
+            background: 'rgba(0, 0, 0, 0.7)'
+        });
+        var Time = $('#daycalendarBox').val();
+        //var home = homeKeySwitch(home);
+        var key = home + "990000," + home + "990001";
+        var req = {
+            "apicode": "environmentInfo",
+            "args": {
+                "home": home,
+                "key": key,
+                "time": Time
+            }
+        };
+        axios.post("/api", {
+                "apicode": "environmentInfo",
+                "args": {
+                    "home": home,
+                    "time": Time
+                }
+            }
+            , {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function (res) {
+            loading.close();
+            obj.dataList = res.data.obj.data;
+            var data = [];
+            if (res.data.obj.data.length > 0) {
+                $('.dtc-chart-container').removeClass('dtc-chart-container').addClass('dtc-chart-container-new');
+                $("#temperature").html(parseInt(res.data.obj.data[0].TS) + "℃");
+                vm.text = parseInt(res.data.obj.data[0].TS);
+
+                $("#humidity").html(parseInt(res.data.obj.data[0].TS1) + "%");
+                vm.value = parseInt(res.data.obj.data[0].TS1);
+                for (var i = 0; i < res.data.obj.data.length; i++) {
+                    data[i] = res.data.obj.data[i].TS;
+                    //console.log(res.data.obj.data[i].TS);
+                }
+                var time = [];
+                for (i = 0; i < res.data.obj.data.length; i++) {
+                    time[i] = res.data.obj.data[i].DT;
+                }
+
+                for (var i = 0; i < data.length; i++) {
+                    data[i] = parseFloat(data[i]);
+                }
+                var temperatureChart = new Highcharts.chart('temperatureContainer', {
+                    chart: {
+                        type: 'areaspline',
+                        zoomType: 'x',
+                        panning: true,
+                        panKey: 'shift',
+                        style: {
+                            fontFamily: "",
+                            fontSize: '14px',
+                            fontWeight: 'bold',
+                            color: '#414E69',
+                        },
+                        spacingTop: 50,
+                    },
+                    legend: {
+                        backgroundColor: '#FFFFFF',
+                        floating: true,
+                        align: 'center',
+                        verticalAlign: 'top',
+                        y: -7,
+                        backgroundColor: 'transparent',
+                        symbolHeight: 10,
+                        itemStyle: {
+                            fontSize: '16px',
+                            color: '#414E69',
+                        }
+                    },
+
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                        text: $('#daycalendarBox').val() + '温度',
+                        style: {
+                            color: '#ffffff',
+                            fontSize: '18px'
+                        },
+                        margin: 50,
+                    },
+                    subtitle: {
+                        text: '选择区域放大，按住shift拖动鼠标平移',
+                        floating: false,
+                    },
+                    lang: {
+                        resetZoom: '还原图表',
+                        resetZoomTitle: '还原图表为1:1大小'
+                    },
+                    xAxis: {
+                        categories: time
+                    },
+                    yAxis: {
+                        title: {
+                            text: '单位:℃'
+                        },
+                        labels: {
+                            formatter: function () {
+                                return this.value;
+                            }, style: {
+                                fontSize: '14px',
+                                color: ' #414E69'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        crosshairs: true,
+                        shared: true
+                    },
+                    plotOptions: {
+                        areaspline: {
+                            color: '#FF3E3E',
+                            lineColor: '#FF3E3E',
+                            fillOpacity: 0.2
+                        }
+                    },
+                    scrollbar: {
+                        enabled: true
+                    },
+                    series: [{
+                        name: '温度',
+                        data: data,
+                        marker: {//线上数据点
+                            radius: 3,
+                            lineWidth: 1,
+                            lineColor: '#FF3E3E',
+                            fillColor: '#FF3E3E',
+                            states: {
+                                hover: {
+                                    enabled: true
+                                }
+                            }
+                        },
+                        fillColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 0,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, '#FF893B'],
+                                [1, 'rgba(253,177,126,0.33)']
+                            ]
+                        }
+                    }]
+                });
+                data = [];
+                time = [];
+                for (i = 0; i < res.data.obj.data.length; i++) {
+                    data[i] = res.data.obj.data[i].TS1;
+                }
+                for (i = 0; i < res.data.obj.data.length; i++) {
+                    time[i] = res.data.obj.data[i].DT;
+                }
+                for (var i = 0; i < data.length; i++) {
+                    data[i] = parseFloat(data[i]);
+                }
+                var humidityChart = Highcharts.chart('humidityContainer', {
+                    chart: {
+                        type: 'areaspline',
+                        zoomType: 'x',
+                        panning: true,
+                        panKey: 'shift',
+                        style: {
+                            fontFamily: "",
+                            fontSize: '14px',
+                            fontWeight: 'bold',
+                            color: '#414E69',
+                        },
+                        spacingTop: 50,
+                    },
+                    legend: {
+                        backgroundColor: '#FFFFFF',
+                        floating: true,
+                        align: 'center',
+                        verticalAlign: 'top',
+                        y: -7,
+                        backgroundColor: 'transparent',
+                        symbolHeight: 10,
+                        itemStyle: {
+                            fontSize: '16px',
+                            color: '#414E69',
+                        }
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                        text: $('#daycalendarBox').val() + ' 湿度',
+                        style: {
+                            color: '#ffffff',
+                            fontSize: '18px'
+                        },
+                        margin: 50,
+                    },
+                    subtitle: {
+                        text: '选择区域放大，按住shift拖动鼠标平移'
+                    },
+                    lang: {
+                        resetZoom: '还原图表',
+                        resetZoomTitle: '还原图表为1:1大小'
+                    },
+                    xAxis: {
+                        categories: time
+                    },
+                    yAxis: {
+                        title: {
+                            text: '单位:%'
+                        },
+                        labels: {
+                            formatter: function () {
+                                return this.value;
+                            },
+                            style: {
+                                fontSize: '14px',
+                                color: '#414E69'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        crosshairs: true,
+                        shared: true
+                    },
+                    plotOptions: {
+                        areaspline: {
+                            color: '#2FA4E8',
+                            lineColor: '#2FA4E8',
+                            fillOpacity: 0.2
+                        }
+                    },
+                    scrollbar: {
+                        enabled: true
+                    },
+                    series: [{
+                        name: '湿度',
+                        data: data,
+                        marker: {//线上数据点
+                            radius: 3,
+                            lineWidth: 1,
+                            lineColor: '#2FA4E8',
+                            fillColor: '#2FA4E8',
+                            states: {
+                                hover: {
+                                    enabled: true
+                                }
+                            }
+                        },
+                        fillColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 0,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, '#2FA4E8'],
+                                [1, 'rgba(202,236,255,0.36)']
+                            ]
+                        }
+                    }]
+                });
+            } else {
+                $('.dtc-chart-container-new').removeClass('dtc-chart-container-new').addClass('dtc-chart-container');
+                loading.close();
+                obj.$message.error('暂无当前数据');
+            }
+        }).catch(function (error) {
+            loading.close();
+            console.log(error);
+        });
+    }
+
+    var vm = new Vue({
+        el: "#vue-list",
+        delimiters: ['${', '}'],
+        data: {
+            dataList: [],
+            text: '20',
+            value: '20'
+        },
+        methods: {
+            outPut: function () {
+                // $('#outPutTable').tableExport({type:'excel'});
+                var obj = this;
+                const loading = obj.$loading({
+                    lock: true,
+                    text: '查找数据中',
+                    spinner: 'el-icon-loading',
+                    background: 'rgba(0, 0, 0, 0.7)'
+                });
+                var home = $('.dt-left-nav-box-active').html().toString();
+                var home1 = homeKeySwitch(home);
+                var Time = $('#daycalendarBox').val();
+                //var home = homeKeySwitch(home);
+                // var key=home+"990000,"+home+"990001";
+                // if ()
+                var API_STATUS = {
+                    "apicode": "exportEnvirExcel",
+                    "args": {
+                        home: home1,
+                        time: Time
+                    }
+                };
+                axios.post("/api", API_STATUS, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function (res) {
+                    loading.close();
+                    if (res.data.obj.blob!=null){
+
+                        var data = res.data.obj.blob;      //要还原成二进制的文件数据
+                        var arrBuffer = new ArrayBuffer(data.length);
+                        var view = new Uint8Array(arrBuffer);
+
+                        for (var i = 0; i < data.length; i++) {
+                            view[i] = data.charCodeAt(i);
+                        }
+                        var fileName =home+'.xlsx';
+                        var blob = new Blob([arrBuffer], {type: 'application/octet-stream'});
+                        saveAs(blob, fileName);
+                    }else {
+                        obj.$message.error("暂无数据");
+                    }
+                })
+            }
+        }
+    });
+    //时间选择器
+
+    var startDate = new Date();
+    startDate.setFullYear(2018, 6, 1);
+    var endDate = new Date();
+    endDate.setFullYear(2018, 6, 31);
+    $('#daycalendarBox').val(new Date().Format("yyyy-MM-dd"));
+    $('.form_date').datetimepicker({
+        language: 'zh-CN',
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+//        startDate: startDate,
+//        endDate: endDate
+    });
+
+    function homeKeySwitch(str) {
+        var homeKey = '';
+        switch (str) {
+            case '图书馆':
+                homeKey = '00';
+                break;
+            case '同仁楼':
+                homeKey = '01';
+                break;
+            case '同德楼':
+                homeKey = '02';
+                break;
+            case '同济楼':
+                homeKey = '03';
+                break;
+            case '求是楼':
+                homeKey = '04';
+                break;
+            case '学生活动中心':
+                homeKey = '05';
+                break;
+            case '三期宿舍上':
+                homeKey = '06';
+                break;
+            case '三期宿舍下':
+                homeKey = '07';
+                break;
+            case '中试基地':
+                homeKey = '08';
+                break;
+            case '学院路1#':
+                homeKey = '09';
+                break;
+            case '学院路2#':
+                homeKey = '10';
+                break;
+            case '一期宿舍':
+                homeKey = '11';
+                break;
+            case '二期宿舍':
+                homeKey = '12';
+                break;
+        }
+        return homeKey;
+    }
+
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    };
+</script>
+</body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <style>
+        .dt-tree-view {
+            margin-top: 0;
+        }
+
+        .dtc-harmonic-tree-custom {
+            overflow: scroll;
+        }
+
+        .dtc-main-right-custom {
+            margin: 0 0 61px 0;
+            max-width: 100%;
+        }
+
+        .dtc-main-back {
+            padding: 0;
+            height: 514px;
+        }
+
+        .dtc-search-container-custom {
+            padding: 10px 0;
+        }
+
+        .dtc-search-flex-custom {
+            align-items: center;
+        }
+
+        .dtc-temperature-container {
+            align-items: stretch;
+        }
+
+        .dt-tree-node-header:hover {
+            background: #eee;
+        }
+
+        .dt-tree-node-header-active {
+            background: #eee;
+        }
+
+        .dtc-temperature-font-box {
+            margin-bottom: 5px;
+            /*font-weight: bold;*/
+            /*font-size: 18px;*/
+            font-size: 18px;
+            color: #414E69;
+            letter-spacing: 0;
+            margin-top: 10px;
+        }
+
+        .dtc-temperature {
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            background: url("../assets/img/ic_transformer_temperature.png") no-repeat;
+            background-size: auto 75px;
+            background-position: 0 center;
+            margin-left: 10px;
+        }
+
+        .dtc-humidity {
+            background-position: -127px center;
+            background: url("../assets/img/ic-surroundings-humidity.png") no-repeat;
+        }
+
+        .dtc-water {
+            background-position: -244px center;
+        }
+
+        .dtc-smoke {
+            background-position: -360px center;
+        }
+
+        .dtc-detail {
+            padding-left: 30px;
+            width: calc(100% - 95px);
+        }
+
+        .line-thick {
+            width: 40px;
+            margin: 0;
+            border: 2px solid #888888;
+            z-index: 99;
+        }
+
+        .line-thin {
+            z-index: 96;
+            margin: -2px 0 0 44px;
+            width: calc(100% - 40px);
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+
+        .dtc-temperature-number {
+            float: right;
+            /*font-weight: bold;*/
+            /*font-size: 25px;*/
+            font-size: 16px;
+            color: #13B6CC;
+            letter-spacing: 0;
+        }
+
+        .dtc-chart-container {
+            display: none;
+        }
+
+        .dtc-chart-container-new {
+            margin-top: 15px;
+            padding: 10px;
+            /*border: 1px solid #ddd;*/
+            background: #fff;
+            display: block;
+        }
+
+        .table-hide {
+            position: absolute;
+            z-index: -99;
+            left: 15px;
+            height: 0;
+            width: 0;
+            overflow: scroll;
+        }
+
+        .el-progress-bar__outer {
+            margin-top: -4px;
+        }
+
+        .el-progress-bar__innerText {
+            display: none;
+        }
+
+        .dtn-border-div {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #F0F0F0;
+            margin-top: 10px;
+            float: left
+        }
+
+        .dtn-environment-empty-div {
+            width: 100%;
+            height: 5px;
+        }
+
+        .dtn-radius-div {
+            width: 270px;
+            height: 14px;
+            background: #F0F0F0;
+            margin-left: 4px;
+            border-radius: 10px;
+        }
+
+        .dtn-circular-div {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #13B6CC;
+        }
+
+        .dtn-box-div {
+            width: 270px;
+            height: 7px;
+        }
+        .dtn-control-label{
+            margin-right:5px;
+        }
+    </style>
+    <script src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body style="background-color:#F0F3F8 ">
+
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active dtn-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"
+              style="background: url(../assets/img/ic-overview-gray.png) no-repeat;"></span>
+        <span style="cursor:default;" class="dtn-nav-list">概况</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"></span>
+        <span class="dtn-nav-list">电力监测</span>
+    </div>
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+    <!--用电分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-security"></span>-->
+    <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-record"></span>-->
+    <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"
+              style="background: url(../assets/img/ic-surroundings-blue.png) no-repeat"></span>
+        <span class="dtn-nav-list" style="opacity: 1;color: #414E69;">环境监测</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+    <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+    <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='plan'">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"></span>
+        <span class="dtn-nav-list">巡察计划</span>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container dtn-left-nav-container">
+                <div class="dtn-empty-div"></div>
+                <div class="dt-left-nav-box dt-left-nav-box-active dtn-left-nav-box">图书馆</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同仁楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同德楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">同济楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学生活动中心</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">一期宿舍</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">二期宿舍</div>
+                <!--<div class="dt-left-nav-box">三期宿舍上</div>-->
+                <!--<div class="dt-left-nav-box">三期宿舍下</div>-->
+                <div class="dt-left-nav-box dtn-left-nav-box">中试基地</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学院路2#</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">求是楼</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">三期宿舍食堂</div>
+                <div class="dt-left-nav-box dtn-left-nav-box">学院路1#</div>
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container dtc-main-container" id="vue-list" v-cloak>
+                <div class="dt-main-bac dt-harmonic-flex dtc-main-back">
+                    <div class="dt-main-right dtc-main-right-custom" id="dt-main-right" style="width: 100%;">
+                        <div class="dt-search-container dtc-search-container-custom">
+                            <div class="dt-search-flex dtc-search-flex-custom">
+                                <!--<div style="padding-right:10px; ">变电所名称</div>-->
+                                <!--<input class="middle-input dt-harmonic-search-input" placeholder="图书馆">-->
+                                <div class="dt-harmonic-date-select" style="width: 100%">
+                                    <label for="daycalendarBox" class="control-label dtn-control-label"
+                                           style="margin-left: 20px">监测日期：</label>
+                                    <div class="input-group date form_date dt-harmonic-input-group-custom dtn-big-div"
+                                         data-date=""
+                                         data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                                         data-link-format="yyyy-mm-dd"
+                                         id="datetimepicker">
+                                        <input class="form-control dtn-form-control" size="16" type="text" value=""
+                                               readonly id="daycalendarBox" style="width:200px">
+                                        <!--<span class="input-group-addon dtn-input-group-addon dtn-big-span"><span class="glyphicon glyphicon-remove"></span></span>-->
+                                        <span class="input-group-addon dtn-input-group-addon dtn-big-span"><span
+                                                class="glyphicon glyphicon-calendar dtn-span"></span><img
+                                                src="../assets/img/btn_time.png" height="14" width="15"/></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_input" value=""/><br/>
+                                    <div class="dtn-button-div">
+
+                                        <button class="middle-button dt-harmonic-search-button dtn-button-middle dtn-button-search"
+                                                style="margin-right: 10px">查询
+                                        </button>
+                                        <button class="middle-button dtn-button-middle dtn-button-outPut" id="outPut"
+                                                style="float: none; width: 90px;" @click="outPut()">导出
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container dtc-main-right-custom" style="padding:0">
+                            <div class="row" style="margin-left:1px">
+                                <div class="col-md-6 col-lg-6 col-sm-6" style="padding: 0 7px 0 0;">
+                                    <div class="dt-harmonic-date-select dtc-temperature-container">
+                                        <span class="dtc-temperature"></span>
+                                        <div class="dtc-detail">
+                                            <div class="dtc-temperature-font-box">
+                                                温度
+                                            </div>
+                                            <div class="dtn-border-div">
+                                                <div class="dtn-environment-empty-div"></div>
+                                                <div class="dtn-radius-div">
+                                                    <div class="dtn-circular-div">
+                                                        <div class="dtn-box-div">
+                                                            <el-progress :percentage="text"
+                                                                         text-inside=false></el-progress>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dtc-temperature-number" id="temperature"
+                                                 style="float:right;margin-top:16px;">
+                                                <span>℃</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-sm-6" style="padding: 0 0 0 7px;">
+                                    <div class="dt-harmonic-date-select dtc-temperature-container">
+                                        <span class="dtc-temperature dtc-humidity"></span>
+                                        <div class="dtc-detail">
+                                            <div class="dtc-temperature-font-box">
+                                                湿度
+                                            </div>
+                                            <div class="dtn-border-div" style="float:left">
+                                                <div class="dtn-environment-empty-div"></div>
+                                                <div class="dtn-radius-div">
+                                                    <div class="dtn-circular-div">
+                                                        <div class="dtn-box-div">
+                                                            <el-progress :percentage="value"
+                                                                         text-inside=false></el-progress>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dtc-temperature-number" id="humidity"
+                                                 style="float:right;margin-top:16px;">
+                                                <span>%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row dtc-chart-container" style="margin-left:1px">
+                                <div id="temperatureContainer" style="min-width:400px;height:350px"></div>
+                            </div>
+                            <div class="row dtc-chart-container" style="margin-left:1px">
+                                <div id="humidityContainer" style="min-width:400px;height:350px"></div>
+                            </div>
+                            <!--<div class="row" style="padding-top: 15px;">-->
+                            <!--<div class="col-md-6 col-lg-6 col-sm-6" style="padding: 0 7px 0 0;">-->
+                            <!--<div class="dt-harmonic-date-select dtc-temperature-container">-->
+                            <!--<span class="dtc-temperature dtc-water"></span>-->
+                            <!--<div class="dtc-detail">-->
+                            <!--<div class="dtc-temperature-font-box">-->
+                            <!--水浸-->
+                            <!--</div>-->
+                            <!--<hr class="line-thick">-->
+                            <!--<hr class="line-thin">-->
+                            <!--<div class="dtc-temperature-number">-->
+                            <!--&#45;&#45;-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="col-md-6 col-lg-6 col-sm-6" style="padding: 0 0 0 7px;">-->
+                            <!--<div class="dt-harmonic-date-select dtc-temperature-container">-->
+                            <!--<span class="dtc-temperature dtc-smoke"></span>-->
+                            <!--<div class="dtc-detail">-->
+                            <!--<div class="dtc-temperature-font-box">-->
+                            <!--烟雾-->
+                            <!--</div>-->
+                            <!--<hr class="line-thick">-->
+                            <!--<hr class="line-thin">-->
+                            <!--<div class="dtc-temperature-number">-->
+                            <!--&#45;&#45;-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="table-hide">
+                    <table id="outPutTable">
+                        <thead class="main-box-top">
+                        <tr>
+                            <th>时间</th>
+                            <th>温度</th>
+                            <th>湿度</th>
+                        </tr>
+                        </thead>
+                        <tbody style="height: 10px; overflow: hidden;">
+                        <tr v-for="data in dataList">
+                            <th>${data.DT}</th>
+                            <th>${data.TS}</th>
+                            <th>${data.TS1}</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dtn-footer">
+                版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../public/FileSaver/FileSaver.min.js"></script>
+<script src="../public/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="../public/tableExport.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+<script src="../public/file/filesaver.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script type="text/javascript">
+
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    };
+
+    $(document).ready(function () {
+        var isLogin = sessionStorage.getItem('isLogin') || false;
+        if (!isLogin) {
+            window.location.href = 'index';
+        }
+
+
+        $('#dtp_input').val(new Date().Format("yyyy-MM-dd"));
+        renderChart("01", vm);
+
+        $('.dtn-button-search').click(function () {
+            var home = $('.dt-left-nav-box-active').html().toString();
+            renderChart(homeKeySwitch(home), vm);
+        });
+
+        function logOut() {
+            sessionStorage.removeItem('user');
+            sessionStorage.removeItem('isLogin');
+            window.location.href = 'index';
+        }
+
+        $('.dt-nav-quit').click(function () {
+            logOut();
+        });
+    });
+    $('.dt-left-nav-box').click(function () {
+        $('.dt-left-nav-box-active').removeClass('dt-left-nav-box-active');
+        $(this).addClass('dt-left-nav-box-active');
+        var home = homeKeySwitch($(this).html().toString());
+        //$('.home').html(home);
+        renderChart(home, vm);
+    });
+
+    function renderChart(home, obj) {
+        const loading = obj.$loading({
+            lock: true,
+            text: '查找数据中',
+            spinner: 'el-icon-loading',
+            background: 'rgba(0, 0, 0, 0.7)'
+        });
+        var Time = $('#daycalendarBox').val();
+        //var home = homeKeySwitch(home);
+        var key = home + "990000," + home + "990001";
+        var req = {
+            "apicode": "environmentInfo",
+            "args": {
+                "home": home,
+                "key": key,
+                "time": Time
+            }
+        };
+        axios.post("/api", {
+                "apicode": "environmentInfo",
+                "args": {
+                    "home": home,
+                    "time": Time
+                }
+            }
+            , {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function (res) {
+            loading.close();
+            obj.dataList = res.data.obj.data;
+            var data = [];
+            if (res.data.obj.data.length > 0) {
+                $('.dtc-chart-container').removeClass('dtc-chart-container').addClass('dtc-chart-container-new');
+                $("#temperature").html(parseInt(res.data.obj.data[0].TS) + "℃");
+                vm.text = parseInt(res.data.obj.data[0].TS);
+
+                $("#humidity").html(parseInt(res.data.obj.data[0].TS1) + "%");
+                vm.value = parseInt(res.data.obj.data[0].TS1);
+                for (var i = 0; i < res.data.obj.data.length; i++) {
+                    data[i] = res.data.obj.data[i].TS;
+                    //console.log(res.data.obj.data[i].TS);
+                }
+                var time = [];
+                for (i = 0; i < res.data.obj.data.length; i++) {
+                    time[i] = res.data.obj.data[i].DT;
+                }
+
+                for (var i = 0; i < data.length; i++) {
+                    data[i] = parseFloat(data[i]);
+                }
+                var temperatureChart = new Highcharts.chart('temperatureContainer', {
+                    chart: {
+                        type: 'areaspline',
+                        zoomType: 'x',
+                        panning: true,
+                        panKey: 'shift',
+                        style: {
+                            fontFamily: "",
+                            fontSize: '14px',
+                            fontWeight: 'bold',
+                            color: '#414E69',
+                        },
+                        spacingTop: 50,
+                    },
+                    legend: {
+                        backgroundColor: '#FFFFFF',
+                        floating: true,
+                        align: 'center',
+                        verticalAlign: 'top',
+                        y: -7,
+                        backgroundColor: 'transparent',
+                        symbolHeight: 10,
+                        itemStyle: {
+                            fontSize: '16px',
+                            color: '#414E69',
+                        }
+                    },
+
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                        text: $('#daycalendarBox').val() + '温度',
+                        style: {
+                            color: '#ffffff',
+                            fontSize: '18px'
+                        },
+                        margin: 50,
+                    },
+                    subtitle: {
+                        text: '选择区域放大，按住shift拖动鼠标平移',
+                        floating: false,
+                    },
+                    lang: {
+                        resetZoom: '还原图表',
+                        resetZoomTitle: '还原图表为1:1大小'
+                    },
+                    xAxis: {
+                        categories: time
+                    },
+                    yAxis: {
+                        title: {
+                            text: '单位:℃'
+                        },
+                        labels: {
+                            formatter: function () {
+                                return this.value;
+                            }, style: {
+                                fontSize: '14px',
+                                color: ' #414E69'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        crosshairs: true,
+                        shared: true
+                    },
+                    plotOptions: {
+                        areaspline: {
+                            color: '#FF3E3E',
+                            lineColor: '#FF3E3E',
+                            fillOpacity: 0.2
+                        }
+                    },
+                    scrollbar: {
+                        enabled: true
+                    },
+                    series: [{
+                        name: '温度',
+                        data: data,
+                        marker: {//线上数据点
+                            radius: 3,
+                            lineWidth: 1,
+                            lineColor: '#FF3E3E',
+                            fillColor: '#FF3E3E',
+                            states: {
+                                hover: {
+                                    enabled: true
+                                }
+                            }
+                        },
+                        fillColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 0,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, '#FF893B'],
+                                [1, 'rgba(253,177,126,0.33)']
+                            ]
+                        }
+                    }]
+                });
+                data = [];
+                time = [];
+                for (i = 0; i < res.data.obj.data.length; i++) {
+                    data[i] = res.data.obj.data[i].TS1;
+                }
+                for (i = 0; i < res.data.obj.data.length; i++) {
+                    time[i] = res.data.obj.data[i].DT;
+                }
+                for (var i = 0; i < data.length; i++) {
+                    data[i] = parseFloat(data[i]);
+                }
+                var humidityChart = Highcharts.chart('humidityContainer', {
+                    chart: {
+                        type: 'areaspline',
+                        zoomType: 'x',
+                        panning: true,
+                        panKey: 'shift',
+                        style: {
+                            fontFamily: "",
+                            fontSize: '14px',
+                            fontWeight: 'bold',
+                            color: '#414E69',
+                        },
+                        spacingTop: 50,
+                    },
+                    legend: {
+                        backgroundColor: '#FFFFFF',
+                        floating: true,
+                        align: 'center',
+                        verticalAlign: 'top',
+                        y: -7,
+                        backgroundColor: 'transparent',
+                        symbolHeight: 10,
+                        itemStyle: {
+                            fontSize: '16px',
+                            color: '#414E69',
+                        }
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                        text: $('#daycalendarBox').val() + ' 湿度',
+                        style: {
+                            color: '#ffffff',
+                            fontSize: '18px'
+                        },
+                        margin: 50,
+                    },
+                    subtitle: {
+                        text: '选择区域放大，按住shift拖动鼠标平移'
+                    },
+                    lang: {
+                        resetZoom: '还原图表',
+                        resetZoomTitle: '还原图表为1:1大小'
+                    },
+                    xAxis: {
+                        categories: time
+                    },
+                    yAxis: {
+                        title: {
+                            text: '单位:%'
+                        },
+                        labels: {
+                            formatter: function () {
+                                return this.value;
+                            },
+                            style: {
+                                fontSize: '14px',
+                                color: '#414E69'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        crosshairs: true,
+                        shared: true
+                    },
+                    plotOptions: {
+                        areaspline: {
+                            color: '#2FA4E8',
+                            lineColor: '#2FA4E8',
+                            fillOpacity: 0.2
+                        }
+                    },
+                    scrollbar: {
+                        enabled: true
+                    },
+                    series: [{
+                        name: '湿度',
+                        data: data,
+                        marker: {//线上数据点
+                            radius: 3,
+                            lineWidth: 1,
+                            lineColor: '#2FA4E8',
+                            fillColor: '#2FA4E8',
+                            states: {
+                                hover: {
+                                    enabled: true
+                                }
+                            }
+                        },
+                        fillColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 0,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, '#2FA4E8'],
+                                [1, 'rgba(202,236,255,0.36)']
+                            ]
+                        }
+                    }]
+                });
+            } else {
+                $('.dtc-chart-container-new').removeClass('dtc-chart-container-new').addClass('dtc-chart-container');
+                loading.close();
+                obj.$message.error('暂无当前数据');
+            }
+        }).catch(function (error) {
+            loading.close();
+            console.log(error);
+        });
+    }
+
+    var vm = new Vue({
+        el: "#vue-list",
+        delimiters: ['${', '}'],
+        data: {
+            dataList: [],
+            text: '20',
+            value: '20'
+        },
+        methods: {
+            outPut: function () {
+                // $('#outPutTable').tableExport({type:'excel'});
+                var obj = this;
+                const loading = obj.$loading({
+                    lock: true,
+                    text: '查找数据中',
+                    spinner: 'el-icon-loading',
+                    background: 'rgba(0, 0, 0, 0.7)'
+                });
+                var home = $('.dt-left-nav-box-active').html().toString();
+                var home1 = homeKeySwitch(home);
+                var Time = $('#daycalendarBox').val();
+                //var home = homeKeySwitch(home);
+                // var key=home+"990000,"+home+"990001";
+                // if ()
+                var API_STATUS = {
+                    "apicode": "exportEnvirExcel",
+                    "args": {
+                        home: home1,
+                        time: Time
+                    }
+                };
+                axios.post("/api", API_STATUS, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(function (res) {
+                    loading.close();
+                    if (res.data.obj.blob!=null){
+
+                        var data = res.data.obj.blob;      //要还原成二进制的文件数据
+                        var arrBuffer = new ArrayBuffer(data.length);
+                        var view = new Uint8Array(arrBuffer);
+
+                        for (var i = 0; i < data.length; i++) {
+                            view[i] = data.charCodeAt(i);
+                        }
+                        var fileName =home+'.xlsx';
+                        var blob = new Blob([arrBuffer], {type: 'application/octet-stream'});
+                        saveAs(blob, fileName);
+                    }else {
+                        obj.$message.error("暂无数据");
+                    }
+                })
+            }
+        }
+    });
+    //时间选择器
+
+    var startDate = new Date();
+    startDate.setFullYear(2018, 6, 1);
+    var endDate = new Date();
+    endDate.setFullYear(2018, 6, 31);
+    $('#daycalendarBox').val(new Date().Format("yyyy-MM-dd"));
+    $('.form_date').datetimepicker({
+        language: 'zh-CN',
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+//        startDate: startDate,
+//        endDate: endDate
+    });
+
+    function homeKeySwitch(str) {
+        var homeKey = '';
+        switch (str) {
+            case '图书馆':
+                homeKey = '00';
+                break;
+            case '同仁楼':
+                homeKey = '01';
+                break;
+            case '同德楼':
+                homeKey = '02';
+                break;
+            case '同济楼':
+                homeKey = '03';
+                break;
+            case '求是楼':
+                homeKey = '04';
+                break;
+            case '学生活动中心':
+                homeKey = '05';
+                break;
+            case '三期宿舍上':
+                homeKey = '06';
+                break;
+            case '三期宿舍下':
+                homeKey = '07';
+                break;
+            case '中试基地':
+                homeKey = '08';
+                break;
+            case '学院路1#':
+                homeKey = '09';
+                break;
+            case '学院路2#':
+                homeKey = '10';
+                break;
+            case '一期宿舍':
+                homeKey = '11';
+                break;
+            case '二期宿舍':
+                homeKey = '12';
+                break;
+        }
+        return homeKey;
+    }
+
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    };
+</script>
+</body>
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</html>

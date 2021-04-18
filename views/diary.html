@@ -1,0 +1,1812 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <style>
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .dtc-container-custom {
+            margin: 10px;
+            max-width: 100%;
+        }
+
+        .dtc-search-header {
+            padding: 10px;
+            color: #fff;
+            font-weight: bold;
+            background-color: #3db3ff;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .dtc-search-body {
+            padding: 10px;
+            border: solid 1px #ddd;
+            background-color: #eee;
+        }
+
+        .dtc-button-adjust {
+            margin: 0;
+        }
+
+        .dtc-row-break {
+            margin: 5px -15px 15px -15px;
+        }
+
+        .dtc-harmonic-sheet {
+            margin-top: 15px;
+        }
+
+        .dtc-btn-position {
+            margin: 25px 0;
+        }
+
+        .small-button {
+            width: 40px;
+            height: 20px;
+            font-size: 12px;
+        }
+
+        .dtn-first-img {
+            background-image: url(../assets/img/ic-menu-plan.png);
+        }
+
+        .dtn-second-img {
+            background-image: url(../assets/img/ic-menu-search.png);
+        }
+
+        .dtn-third-img {
+            background-image: url(../assets/img/ic-menu-log.png);
+        }
+
+        .dtn-fourth-img {
+            background-image: url(../assets/img/ic-menu-edit.png);
+        }
+
+        .has-gutter tr, .el-table th {
+            opacity: 0.8;
+            background: #384E7C;
+            border-radius: 2px;
+        }
+
+        .has-gutter .cell {
+            font-size: 16px;
+            color: #FFFFFF;
+            text-align: left;
+        }
+
+        .el-table--striped .el-table__body tr.el-table__row--striped td {
+            background: #F0F0F0;
+        }
+
+        .ele-div .el-icon-arrow-left:before {
+            content: "上一页";
+        }
+
+        .ele-div .el-icon-arrow-right:before {
+            content: "下一页";
+            margin: 0;
+            width: auto;
+        }
+
+        .ele-div .el-pagination.is-background .el-pager li:not(.disabled).active {
+            background: #13B6CC;
+        }
+
+        .ele-div .el-pagination .btn-prev, .ele-div .el-pagination .btn-next {
+            font-size: 12px;
+            width: 5em;
+            padding: 0em 1em;
+            background: #13B6CC;
+            color: #FFFFFF;
+
+        }
+
+        .ele-div .el-pagination .btn-prev i, .ele-div .el-pagination .btn-next i {
+            font-weight: normal;
+        }
+
+        .ele-div .el-pagination {
+            text-align: right;
+        }
+
+        .ele-div .number {
+            font-size: 12px;
+            color: #666666 !important;
+            font-weight: normal;
+        }
+
+        .ele-div .active {
+            color: #FFFFFF !important;
+        }
+
+        .el-pagination button:disabled {
+            background-color: #EFF2F5 !important;
+        }
+
+        .dtc-ele-span {
+            font-size: 14px;
+            color: #414E69;
+            float: left;
+        }
+
+        .control-label {
+            font-weight: normal;
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+        }
+
+        .dtn-form-control {
+            width: 150px;
+            height: 30px;
+            background: #FFFFFF;
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            text-indent: 5px;
+
+        }
+
+        .dt-harmonic-power-type {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+            font-weight: normal;
+            margin-left: 15px;
+            margin-right: 10px;
+        }
+
+        .dtn-monitor-img-down {
+            margin-left: -27px;
+        }
+
+        .el-date-editor .el-range__icon {
+            width: 1px;
+        }
+
+        .el-icon-date:before {
+            margin-left: 190px;
+        }
+
+        .el-date-editor .el-range-input {
+            width: 40%;
+        }
+
+        .el-range-editor.el-input__inner {
+            height: 30px;
+        }
+
+        .el-range-editor.el-input__inner {
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #333333;
+            letter-spacing: 0;
+        }
+        .el-button--mini, .el-button--mini.is-round{
+            background: #13B6CC;
+            border-radius: 2px;
+            width:60px;
+            height:30px;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active dtn-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"
+              style="background: url(../assets/img/ic-overview-gray.png) no-repeat;"></span>
+        <span style="cursor:default;" class="dtn-nav-list">概况</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"></span>
+        <span class="dtn-nav-list">电力监测</span>
+    </div>
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+    <!--用电分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-security"></span>-->
+    <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-record"></span>-->
+    <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"></span>
+        <span class="dtn-nav-list">环境监测</span>
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+    <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+    <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"
+              style="background: url(../assets/img/ic-patrol-blue.png) no-repeat"></span>
+        <span class="dtn-nav-list" style="opacity: 1;color: #414E69;">巡察计划</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+</div>
+<div class="container-fluid" id="vue-list" v-cloak>
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container dtn-left-nav-container">
+                <div class="dtn-empty-div"></div>
+                <div class="dt-left-nav-box dt-left-nav-first-box dtn-left-nav-box dtn-first-img"
+                     onclick="javascript:window.location.href='plan'">定制计划
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-second-img"
+                     onclick="javascript:window.location.href='planSearch'">计划查询
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-third-img dt-left-nav-box-active">日志查询</div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-fourth-img"
+                     onclick="javascript:window.location.href='diaryWrite'">日志填写
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container">
+                <div class="dtc-container-custom">
+
+                    <div class="dt-diary-date-select">
+                        <div class="form-group form-group-custom dt-harmonic-from-group-custom"
+                             style="margin-left: 10px;width:300px;">
+                            <label class="dt-harmonic-power-type" style="margin-top:5px;margin-left:0">起止时间:</label>
+                            <div id="app">
+                                <template>
+                                    <div class="block">
+                                        <el-date-picker v-model="value7" size="small" type="daterange" align="right"
+                                                        unlink-panels range-separator="-" start-placeholder="开始日期"
+                                                        end-placeholder="结束日期" :picker-options="pickerOptions2"
+                                                        style="width:230px;">
+                                        </el-date-picker>
+                                    </div>
+                                </template>
+                            </div>
+                            <!--<div class="input-group date form_date dt-harmonic-input-group-custom dtn-big-div"-->
+                            <!--data-date=""-->
+                            <!--data-date-format="dd MM yyyy" data-link-field="dtp_input"-->
+                            <!--data-link-format="yyyy-mm-dd"-->
+                            <!--id="datetimepicker">-->
+                            <!--<input class="form-control dtn-form-control" size="16" type="text" value="" readonly-->
+                            <!--id="daycalendarBox" style="width:180px;border:none">-->
+                            <!--<span class="input-group-addon dtn-input-group-addon dtn-big-span"-->
+                            <!--id="calendar"><span-->
+                            <!--class="glyphicon glyphicon-calendar dtn-span"></span><img-->
+                            <!--src="../assets/img/btn_time.png" height="14" width="15"/></span>-->
+                            <!--</div>-->
+                            <!--<input type="hidden" id="dtp_input"/><br/>-->
+                        </div>
+
+
+                        <label class="dt-harmonic-power-type" style="margin-left:15px">日志类型:</label>
+                        <!--<div id="hideDiv">0</div>-->
+                        <select class="dtn-diary-select" v-model="tempDiaryList.diaryType" style="margin-right:10px">
+                            <option value='' disabled selected style='display:none; color: #999;'>选择日志类型
+                            </option>
+                            <option value="0">维护日志</option>
+                            <option value="1">事件日志</option>
+                        </select>
+                        <img src="../assets/img/btn_dropdown.png" alt=""
+                             class="dtn-monitor-img-down" height="6" width="10">
+
+                        <label class="dt-harmonic-power-type" style="margin-left:30px">执行人员:</label>
+                        <!--<div id="hideDiv">0</div>-->
+                        <input type="text" class="dtn-form-control" placeholder="张三"
+                               v-model="tempDiaryList.executorName">
+
+                        <div class="dtn-button-div">
+                            <button class="middle-button  dtn-button-middle dtn-button-search" @click="submit()">查询
+                            </button>
+                            <button class="middle-button dtn-button-middle dtn-button-outPut" id="outPut"
+                                    @click="outPut()">导出
+                            </button>
+                        </div>
+                    </div>
+                    <!--<div class="dtc-search-header">日志查询</div>-->
+                    <!--<div class="dtc-search-body">-->
+                    <!--<div class="container">-->
+                    <!--<div class="row">-->
+                    <!--&lt;!&ndash;<div class="col-md-2">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<label for="exampleInputEmail1">变电所</label>&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<input type="email" class="form-control" placeholder="指定变电所">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;<select class="form-control" v-model="tempDiaryList.home">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value='' disabled selected style='display:none; color: #999;'>选择变电所</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<optopn>图书馆</optopn>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>同仁楼</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>同德楼</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>同济楼</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>求是楼</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>学生活动中心</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>三期宿舍上</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>三期宿舍下</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>中室基地</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>学院路1#</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>学院路2#</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>一期宿舍</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>二期宿舍</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--<div class="col-md-2">-->
+                    <!--<div class="form-group">-->
+                    <!--<label>执行人员</label>-->
+                    <!--<input type="text" class="form-control" placeholder="指定执行人员"-->
+                    <!--v-model="tempDiaryList.executorName">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-2">-->
+                    <!--<div class="form-group">-->
+                    <!--<label>日志类型</label>-->
+                    <!--<select class="form-control" v-model="tempDiaryList.diaryType">-->
+                    <!--<option value='' disabled selected style='display:none; color: #999;'>选择日志类型-->
+                    <!--</option>-->
+                    <!--<option value="0">维护日志</option>-->
+                    <!--<option value="1">事件日志</option>-->
+                    <!--</select>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                    <!--<label>起始日期</label>-->
+                    <!--<div class="input-group date form_date dt-harmonic-input-group-custom" data-date=""-->
+                    <!--data-date-format="dd MM yyyy" data-link-field="dtp_input2"-->
+                    <!--data-link-format="yyyy-mm-dd"-->
+                    <!--id="datetimepickerBegin">-->
+                    <!--<input class="form-control" size="12" type="text" value="" readonly-->
+                    <!--id="daycalendarBoxBegin">-->
+                    <!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+                    <!--<span class="input-group-addon"><span-->
+                    <!--class="glyphicon glyphicon-calendar"></span></span>-->
+                    <!--</div>-->
+                    <!--<input type="hidden" id="dtp_inputBegin" value=""/><br/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                    <!--<label>结束日期</label>-->
+                    <!--<div class="input-group date form_date dt-harmonic-input-group-custom" data-date=""-->
+                    <!--data-date-format="dd MM yyyy" data-link-field="dtp_input2"-->
+                    <!--data-link-format="yyyy-mm-dd"-->
+                    <!--id="datetimepickerEnd">-->
+                    <!--<input class="form-control" size="12" type="text" value="" readonly-->
+                    <!--id="daycalendarBoxEnd">-->
+                    <!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+                    <!--<span class="input-group-addon"><span-->
+                    <!--class="glyphicon glyphicon-calendar"></span></span>-->
+                    <!--</div>-->
+                    <!--<input type="hidden" id="dtp_inputEnd" value=""/><br/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-2" style="height: inherit;">-->
+                    <!--<button class="middle-button dt-btn-check-search dtc-btn-position" style="width: 100px;"-->
+                    <!--@click="submit()">搜索-->
+                    <!--</button>-->
+                    <!--</div>-->
+                    <!--<button class="middle-button" id="outPut"-->
+                    <!--style="float: none; width: 90px;" @click="outPut">导出-->
+                    <!--</button>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <div class="dt-harmonic-sheet dtc-harmonic-sheet" id="sheetContainer">
+                        <div class="ele-div">
+
+                            <div class="block" style="padding: 20px 20px 10px 20px;background-color: white">
+                                <div class="container_table">
+                                    <el-table
+                                            :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
+                                            stripe
+                                            style="width: 100%"
+                                            :default-sort="{prop: 'date', order: 'descending'}"
+                                    >
+                                        <el-table-column
+                                                prop="executorName"
+                                                label="填写人"
+
+                                                width="180">
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="handleTime"
+                                                label="处理时间"
+                                                width="180">
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="diaryType"
+
+                                                label=日志类型>
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="productName"
+
+                                                label="维护产品">
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="handleMethod"
+                                                label="处理方法">
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="handleResult"
+
+                                                label="处理结果">
+                                        </el-table-column>
+                                        <el-table-column
+                                                label="操作">
+                                            <div slot-scope="scope">
+                                                <el-button
+                                                        size="mini"
+                                                        @click="sendDeleteMessage(scope.row)">删除
+                                                </el-button>
+                                            </div>
+                                        </el-table-column>
+
+                                    </el-table>
+                                    <div style="margin-top: 10px"><span
+                                            class="dtc-ele-span">共<span>${total}</span>条</span>
+                                        <el-pagination layout="prev, pager, next" @current-change="current_change"
+                                                       :total="total"
+                                                       background
+                                        >
+                                        </el-pagination>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dtn-footer">
+                版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../public/FileSaver/FileSaver.min.js"></script>
+<script src="../public/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="../public/tableExport.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="../public/file/filesaver.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="../public/helper/dt-epo-helpers.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        var startDate = new Date();
+        startDate.setFullYear(2018, 6, 1);
+        var endDate = new Date();
+        endDate.setFullYear(2018, 6, 2);
+        $('#daycalendarBoxBegin').val(new Date().format("yyyy-MM-dd"));
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+//            startDate: startDate,
+//            endDate: endDate
+        });
+
+        $('#daycalendarBoxEnd').val(new Date().format("yyyy-MM-dd"));
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+//            startDate: startDate,
+//            endDate: endDate
+        });
+
+        function logOut() {
+            sessionStorage.removeItem('user');
+            sessionStorage.removeItem('isLogin');
+            window.location.href = 'index';
+        }
+
+        $('.dt-nav-quit').click(function () {
+            logOut();
+        });
+    });
+
+    var data = [{
+        home: '求是楼',
+        executor: '王花花',
+        beginDate: '2017-7-7',
+        endDate: '2017-7-17',
+        remindTime: '下午 01:00',
+        content: '查看短路情况'
+    }, {
+        home: '求是楼',
+        executor: '王花花',
+        beginDate: '2017-7-7',
+        endDate: '2017-7-17',
+        remindTime: '下午 01:00',
+        content: '查看短路情况'
+    }, {
+        home: '求是楼',
+        executor: '王花花',
+        beginDate: '2017-7-7',
+        endDate: '2017-7-17',
+        remindTime: '下午 01:00',
+        content: '查看短路情况'
+    }, {
+        home: '求是楼',
+        executor: '王花花',
+        beginDate: '2017-7-7',
+        endDate: '2017-7-17',
+        remindTime: '下午 01:00',
+        content: '查看短路情况'
+    }];
+
+    var vm = new Vue({
+        el: "#vue-list",
+        delimiters: ['${', '}'],
+        data: {
+            tempDiaryList: {
+                startTime: new Date().format("yyyy-MM-dd"),
+                endTime: new Date().format("yyyy-MM-dd")
+            },
+            pickerOptions2: {
+                shortcuts: [{
+                    text: '最近一周',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近一个月',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近三个月',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }]
+            },
+            value6: '',
+            value7: '',
+            diaryList: [],
+            // 数据页面
+            isShowData: false,
+            total: 0,//默认数据总数
+            pagesize: 11,//每页的数据条数
+            currentPage: 1,//默认开始页面
+            istag: true,
+            tableData: []
+        },
+        methods: {
+            // 数据页面
+            tableRowClassName({row, rowIndex}) {
+                if (rowIndex === 0) {
+                    return 'th';
+                }
+                return '';
+            },
+            switchChange() {
+                this.istag = !this.istag;
+
+            },
+            created: function () {
+                this.total = this.tableData.length;
+            },
+            current_change: function (currentPage) {
+                this.currentPage = currentPage;
+            },
+
+            // end
+            outPut: function () {
+                // $('#outPutTable').tableExport({type: 'excel'});
+                var _this = this;
+                var obj = this;
+                const loading = obj.$loading({
+                    lock: true,
+                    text: '查找数据中',
+                    spinner: 'el-icon-loading',
+                    background: 'rgba(0, 0, 0, 0.7)'
+                });
+
+                this.tempDiaryList.startTime = vm.value7[0];
+                this.tempDiaryList.endTime = vm.value7[1];
+                this.tempDiaryList.executorName = _this.tempDiaryList.executorName;
+                if (this.tempDiaryList.diaryType === "") {
+                    alert('请填写完整信息');
+                    console.log(this.tempDiaryList);
+                } else if (!_this.compareDate(_this.tempDiaryList.startTime, _this.tempDiaryList.endTime)) {
+                    _this.$message({
+                        message: '结束时间不能小于开始时间',
+                        type: 'warning'
+                    });
+                } else {
+                    var date1 = new Date(vm.value7[0]);
+                    var date2 = new Date(vm.value7[1]);
+                    var month1 = date1.getMonth() + 1;
+                    var month2 = date2.getMonth() + 1;
+                    var day1 = date1.getDate();
+                    var day2 = date2.getDate();
+                    if (day1 < 10) {
+                        day1 = '0' + day1;  //补齐
+                    }
+                    if (day2 < 10) {
+                        day2 = '0' + day2;  //补齐
+                    }
+                    this.tempDiaryList.startTime = date1.getFullYear() + "-" + month1 + '-' + day1;
+                    this.tempDiaryList.endTime = date2.getFullYear() + "-" + month2 + '-' + day2;
+                    console.log(this.tempDiaryList);
+                    var args = JSON.parse(JSON.stringify(this.tempDiaryList));
+                    var
+                        API_STATUS = {
+                            "apicode": "exportDiaryExcel",
+                            "args": args
+                        };
+                }
+                axios.post("/api", API_STATUS
+                    , {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function (res) {
+                    loading.close();
+                    if (res.data.obj.blob != null) {
+                        var data = res.data.obj.blob;      //要还原成二进制的文件数据
+                        var arrBuffer = new ArrayBuffer(data.length);
+                        var view = new Uint8Array(arrBuffer);
+
+                        for (var i = 0; i < data.length; i++) {
+                            view[i] = data.charCodeAt(i);
+                        }
+                        var fileName = _this.tempDiaryList.executorName + '.xlsx';
+                        var blob = new Blob([arrBuffer], {type: 'application/octet-stream'});
+                        saveAs(blob, fileName);
+                    } else {
+                        obj.$message.error("暂无数据");
+                    }
+
+                })
+            },
+
+            sendDeleteMessage: function (index) {
+                var _this = this;
+                var diaryId = index.diaryId;
+                var config = {
+                    "apicode": "DeleteDairy",
+                    "args": {
+                        "id": diaryId
+                    }
+                };
+
+                sendReq(_this, config, function (res, obj) {
+                    if (res.data.retcode === 200) {
+                        _this.$message({
+                            message: '删除成功',
+                            type: 'success'
+                        });
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+
+                    } else {
+                        _this.$message.error('删除失败');
+                    }
+                    console.log(res);
+
+                }, function (err) {
+                    _this.$message.error('服务器无响应');
+                    console.log(err);
+                })
+            },
+
+            sendSearchRequest: function () {
+                var _this = this;
+                var tempDiaryList = {
+                    "diaryType": "0",
+                    "startTime": "2018-01-01",
+                    "endTime": "2018-10-01"
+                };
+                var args = JSON.parse(JSON.stringify(tempDiaryList));
+                var
+                    API_STATUS = {
+                        "apicode": "GetDiary",
+                        "args": args
+                    };
+                axios.post("/api", API_STATUS
+                    , {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function (res) {
+                    _this.diaryList = res.data.obj;
+                    console.log(res);
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            },
+
+            submit: function () {
+                var _this = this;
+
+                const loading = _this.$loading({
+                    lock: true,
+                    text: '查找数据中',
+                    spinner: 'el-icon-loading',
+                    background: 'rgba(0, 0, 0, 0.7)'
+                });
+                this.tempDiaryList.startTime = vm.value7[0];
+                this.tempDiaryList.endTime = vm.value7[1];
+                this.tempDiaryList.executorName = _this.tempDiaryList.executorName;
+                if (this.tempDiaryList.diaryType === "") {
+                    alert('请填写完整信息');
+                    console.log(this.tempDiaryList);
+                } else if (!_this.compareDate(_this.tempDiaryList.startTime, _this.tempDiaryList.endTime)) {
+                    _this.$message({
+                        message: '结束时间不能小于开始时间',
+                        type: 'warning'
+                    });
+                } else {
+                    var date1 = new Date(vm.value7[0]);
+                    var date2 = new Date(vm.value7[1]);
+                    var month1 = date1.getMonth() + 1;
+                    var month2 = date2.getMonth() + 1;
+                    var day1 = date1.getDate();
+                    var day2 = date2.getDate();
+                    if (day1 < 10) {
+                        day1 = '0' + day1;  //补齐
+                    }
+                    if (day2 < 10) {
+                        day2 = '0' + day2;  //补齐
+                    }
+                    this.tempDiaryList.startTime = date1.getFullYear() + "-" + month1 + '-' + day1;
+                    this.tempDiaryList.endTime = date2.getFullYear() + "-" + month2 + '-' + day2;
+                    console.log(this.tempDiaryList);
+                    var args = JSON.parse(JSON.stringify(this.tempDiaryList));
+                    var
+                        API_STATUS = {
+                            "apicode": "GetDiary",
+                            "args": args
+                        };
+                    axios.post("/api", API_STATUS
+                        , {
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(function (res) {
+                        loading.close();
+                        if (res.data.obj.length === 0) {
+                            _this.$message.error('暂无当前数据');
+                        }
+                        _this.diaryList = res.data.obj;
+                        _this.tableData = res.data.obj;
+
+                        // console.log(res.data.obj);
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
+            },
+            handleEdit: function (index) {
+                alert(index.diaryId);
+            },
+            deleteDiary: function (index) {
+                var _this = this;
+                _this.sendDeleteMessage(index);
+            },
+
+
+            //时间比较（yyyy-MM-dd）
+            compareDate: function (startDate, endDate) {
+                // var arrStart = startDate.split("-");
+                // var startTime = new Date(arrStart[0], arrStart[1], arrStart[2]);
+                // var startTimes = startTime.getTime();
+                // var arrEnd = endDate.split("-");
+                // var endTime = new Date(arrEnd[0], arrEnd[1], arrEnd[2]);
+                // var endTimes = endTime.getTime();
+                if (endDate < startDate) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        created: function () {
+            var isLogin = sessionStorage.getItem('isLogin') || false;
+            if (!isLogin) {
+                window.location.href = 'index';
+            }
+//            this.sendSearchRequest();
+        },
+        filters: {
+            typeFilter: function (value) {
+                return (value === '0' ? '维护日志' : '事件日志');
+            },
+            dateFilter: function (value) {
+                return new Date(value).format()
+            }
+        }
+
+    });
+</script>
+</body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <style>
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .dtc-container-custom {
+            margin: 10px;
+            max-width: 100%;
+        }
+
+        .dtc-search-header {
+            padding: 10px;
+            color: #fff;
+            font-weight: bold;
+            background-color: #3db3ff;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .dtc-search-body {
+            padding: 10px;
+            border: solid 1px #ddd;
+            background-color: #eee;
+        }
+
+        .dtc-button-adjust {
+            margin: 0;
+        }
+
+        .dtc-row-break {
+            margin: 5px -15px 15px -15px;
+        }
+
+        .dtc-harmonic-sheet {
+            margin-top: 15px;
+        }
+
+        .dtc-btn-position {
+            margin: 25px 0;
+        }
+
+        .small-button {
+            width: 40px;
+            height: 20px;
+            font-size: 12px;
+        }
+
+        .dtn-first-img {
+            background-image: url(../assets/img/ic-menu-plan.png);
+        }
+
+        .dtn-second-img {
+            background-image: url(../assets/img/ic-menu-search.png);
+        }
+
+        .dtn-third-img {
+            background-image: url(../assets/img/ic-menu-log.png);
+        }
+
+        .dtn-fourth-img {
+            background-image: url(../assets/img/ic-menu-edit.png);
+        }
+
+        .has-gutter tr, .el-table th {
+            opacity: 0.8;
+            background: #384E7C;
+            border-radius: 2px;
+        }
+
+        .has-gutter .cell {
+            font-size: 16px;
+            color: #FFFFFF;
+            text-align: left;
+        }
+
+        .el-table--striped .el-table__body tr.el-table__row--striped td {
+            background: #F0F0F0;
+        }
+
+        .ele-div .el-icon-arrow-left:before {
+            content: "上一页";
+        }
+
+        .ele-div .el-icon-arrow-right:before {
+            content: "下一页";
+            margin: 0;
+            width: auto;
+        }
+
+        .ele-div .el-pagination.is-background .el-pager li:not(.disabled).active {
+            background: #13B6CC;
+        }
+
+        .ele-div .el-pagination .btn-prev, .ele-div .el-pagination .btn-next {
+            font-size: 12px;
+            width: 5em;
+            padding: 0em 1em;
+            background: #13B6CC;
+            color: #FFFFFF;
+
+        }
+
+        .ele-div .el-pagination .btn-prev i, .ele-div .el-pagination .btn-next i {
+            font-weight: normal;
+        }
+
+        .ele-div .el-pagination {
+            text-align: right;
+        }
+
+        .ele-div .number {
+            font-size: 12px;
+            color: #666666 !important;
+            font-weight: normal;
+        }
+
+        .ele-div .active {
+            color: #FFFFFF !important;
+        }
+
+        .el-pagination button:disabled {
+            background-color: #EFF2F5 !important;
+        }
+
+        .dtc-ele-span {
+            font-size: 14px;
+            color: #414E69;
+            float: left;
+        }
+
+        .control-label {
+            font-weight: normal;
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+        }
+
+        .dtn-form-control {
+            width: 150px;
+            height: 30px;
+            background: #FFFFFF;
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            text-indent: 5px;
+
+        }
+
+        .dt-harmonic-power-type {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+            font-weight: normal;
+            margin-left: 15px;
+            margin-right: 10px;
+        }
+
+        .dtn-monitor-img-down {
+            margin-left: -27px;
+        }
+
+        .el-date-editor .el-range__icon {
+            width: 1px;
+        }
+
+        .el-icon-date:before {
+            margin-left: 190px;
+        }
+
+        .el-date-editor .el-range-input {
+            width: 40%;
+        }
+
+        .el-range-editor.el-input__inner {
+            height: 30px;
+        }
+
+        .el-range-editor.el-input__inner {
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #333333;
+            letter-spacing: 0;
+        }
+        .el-button--mini, .el-button--mini.is-round{
+            background: #13B6CC;
+            border-radius: 2px;
+            width:60px;
+            height:30px;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active dtn-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"
+              style="background: url(../assets/img/ic-overview-gray.png) no-repeat;"></span>
+        <span style="cursor:default;" class="dtn-nav-list">概况</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"></span>
+        <span class="dtn-nav-list">电力监测</span>
+    </div>
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+    <!--用电分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-security"></span>-->
+    <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-record"></span>-->
+    <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"></span>
+        <span class="dtn-nav-list">环境监测</span>
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+    <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+    <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"
+              style="background: url(../assets/img/ic-patrol-blue.png) no-repeat"></span>
+        <span class="dtn-nav-list" style="opacity: 1;color: #414E69;">巡察计划</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+</div>
+<div class="container-fluid" id="vue-list" v-cloak>
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container dtn-left-nav-container">
+                <div class="dtn-empty-div"></div>
+                <div class="dt-left-nav-box dt-left-nav-first-box dtn-left-nav-box dtn-first-img"
+                     onclick="javascript:window.location.href='plan'">定制计划
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-second-img"
+                     onclick="javascript:window.location.href='planSearch'">计划查询
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-third-img dt-left-nav-box-active">日志查询</div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-fourth-img"
+                     onclick="javascript:window.location.href='diaryWrite'">日志填写
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container">
+                <div class="dtc-container-custom">
+
+                    <div class="dt-diary-date-select">
+                        <div class="form-group form-group-custom dt-harmonic-from-group-custom"
+                             style="margin-left: 10px;width:300px;">
+                            <label class="dt-harmonic-power-type" style="margin-top:5px;margin-left:0">起止时间:</label>
+                            <div id="app">
+                                <template>
+                                    <div class="block">
+                                        <el-date-picker v-model="value7" size="small" type="daterange" align="right"
+                                                        unlink-panels range-separator="-" start-placeholder="开始日期"
+                                                        end-placeholder="结束日期" :picker-options="pickerOptions2"
+                                                        style="width:230px;">
+                                        </el-date-picker>
+                                    </div>
+                                </template>
+                            </div>
+                            <!--<div class="input-group date form_date dt-harmonic-input-group-custom dtn-big-div"-->
+                            <!--data-date=""-->
+                            <!--data-date-format="dd MM yyyy" data-link-field="dtp_input"-->
+                            <!--data-link-format="yyyy-mm-dd"-->
+                            <!--id="datetimepicker">-->
+                            <!--<input class="form-control dtn-form-control" size="16" type="text" value="" readonly-->
+                            <!--id="daycalendarBox" style="width:180px;border:none">-->
+                            <!--<span class="input-group-addon dtn-input-group-addon dtn-big-span"-->
+                            <!--id="calendar"><span-->
+                            <!--class="glyphicon glyphicon-calendar dtn-span"></span><img-->
+                            <!--src="../assets/img/btn_time.png" height="14" width="15"/></span>-->
+                            <!--</div>-->
+                            <!--<input type="hidden" id="dtp_input"/><br/>-->
+                        </div>
+
+
+                        <label class="dt-harmonic-power-type" style="margin-left:15px">日志类型:</label>
+                        <!--<div id="hideDiv">0</div>-->
+                        <select class="dtn-diary-select" v-model="tempDiaryList.diaryType" style="margin-right:10px">
+                            <option value='' disabled selected style='display:none; color: #999;'>选择日志类型
+                            </option>
+                            <option value="0">维护日志</option>
+                            <option value="1">事件日志</option>
+                        </select>
+                        <img src="../assets/img/btn_dropdown.png" alt=""
+                             class="dtn-monitor-img-down" height="6" width="10">
+
+                        <label class="dt-harmonic-power-type" style="margin-left:30px">执行人员:</label>
+                        <!--<div id="hideDiv">0</div>-->
+                        <input type="text" class="dtn-form-control" placeholder="张三"
+                               v-model="tempDiaryList.executorName">
+
+                        <div class="dtn-button-div">
+                            <button class="middle-button  dtn-button-middle dtn-button-search" @click="submit()">查询
+                            </button>
+                            <button class="middle-button dtn-button-middle dtn-button-outPut" id="outPut"
+                                    @click="outPut()">导出
+                            </button>
+                        </div>
+                    </div>
+                    <!--<div class="dtc-search-header">日志查询</div>-->
+                    <!--<div class="dtc-search-body">-->
+                    <!--<div class="container">-->
+                    <!--<div class="row">-->
+                    <!--&lt;!&ndash;<div class="col-md-2">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<label for="exampleInputEmail1">变电所</label>&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<input type="email" class="form-control" placeholder="指定变电所">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;<select class="form-control" v-model="tempDiaryList.home">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option value='' disabled selected style='display:none; color: #999;'>选择变电所</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<optopn>图书馆</optopn>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>同仁楼</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>同德楼</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>同济楼</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>求是楼</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>学生活动中心</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>三期宿舍上</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>三期宿舍下</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>中室基地</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>学院路1#</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>学院路2#</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>一期宿舍</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<option>二期宿舍</option>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--<div class="col-md-2">-->
+                    <!--<div class="form-group">-->
+                    <!--<label>执行人员</label>-->
+                    <!--<input type="text" class="form-control" placeholder="指定执行人员"-->
+                    <!--v-model="tempDiaryList.executorName">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-2">-->
+                    <!--<div class="form-group">-->
+                    <!--<label>日志类型</label>-->
+                    <!--<select class="form-control" v-model="tempDiaryList.diaryType">-->
+                    <!--<option value='' disabled selected style='display:none; color: #999;'>选择日志类型-->
+                    <!--</option>-->
+                    <!--<option value="0">维护日志</option>-->
+                    <!--<option value="1">事件日志</option>-->
+                    <!--</select>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                    <!--<label>起始日期</label>-->
+                    <!--<div class="input-group date form_date dt-harmonic-input-group-custom" data-date=""-->
+                    <!--data-date-format="dd MM yyyy" data-link-field="dtp_input2"-->
+                    <!--data-link-format="yyyy-mm-dd"-->
+                    <!--id="datetimepickerBegin">-->
+                    <!--<input class="form-control" size="12" type="text" value="" readonly-->
+                    <!--id="daycalendarBoxBegin">-->
+                    <!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+                    <!--<span class="input-group-addon"><span-->
+                    <!--class="glyphicon glyphicon-calendar"></span></span>-->
+                    <!--</div>-->
+                    <!--<input type="hidden" id="dtp_inputBegin" value=""/><br/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                    <!--<label>结束日期</label>-->
+                    <!--<div class="input-group date form_date dt-harmonic-input-group-custom" data-date=""-->
+                    <!--data-date-format="dd MM yyyy" data-link-field="dtp_input2"-->
+                    <!--data-link-format="yyyy-mm-dd"-->
+                    <!--id="datetimepickerEnd">-->
+                    <!--<input class="form-control" size="12" type="text" value="" readonly-->
+                    <!--id="daycalendarBoxEnd">-->
+                    <!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+                    <!--<span class="input-group-addon"><span-->
+                    <!--class="glyphicon glyphicon-calendar"></span></span>-->
+                    <!--</div>-->
+                    <!--<input type="hidden" id="dtp_inputEnd" value=""/><br/>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-2" style="height: inherit;">-->
+                    <!--<button class="middle-button dt-btn-check-search dtc-btn-position" style="width: 100px;"-->
+                    <!--@click="submit()">搜索-->
+                    <!--</button>-->
+                    <!--</div>-->
+                    <!--<button class="middle-button" id="outPut"-->
+                    <!--style="float: none; width: 90px;" @click="outPut">导出-->
+                    <!--</button>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <div class="dt-harmonic-sheet dtc-harmonic-sheet" id="sheetContainer">
+                        <div class="ele-div">
+
+                            <div class="block" style="padding: 20px 20px 10px 20px;background-color: white">
+                                <div class="container_table">
+                                    <el-table
+                                            :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
+                                            stripe
+                                            style="width: 100%"
+                                            :default-sort="{prop: 'date', order: 'descending'}"
+                                    >
+                                        <el-table-column
+                                                prop="executorName"
+                                                label="填写人"
+
+                                                width="180">
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="handleTime"
+                                                label="处理时间"
+                                                width="180">
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="diaryType"
+
+                                                label=日志类型>
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="productName"
+
+                                                label="维护产品">
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="handleMethod"
+                                                label="处理方法">
+                                        </el-table-column>
+                                        <el-table-column
+                                                prop="handleResult"
+
+                                                label="处理结果">
+                                        </el-table-column>
+                                        <el-table-column
+                                                label="操作">
+                                            <div slot-scope="scope">
+                                                <el-button
+                                                        size="mini"
+                                                        @click="sendDeleteMessage(scope.row)">删除
+                                                </el-button>
+                                            </div>
+                                        </el-table-column>
+
+                                    </el-table>
+                                    <div style="margin-top: 10px"><span
+                                            class="dtc-ele-span">共<span>${total}</span>条</span>
+                                        <el-pagination layout="prev, pager, next" @current-change="current_change"
+                                                       :total="total"
+                                                       background
+                                        >
+                                        </el-pagination>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dtn-footer">
+                版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../public/FileSaver/FileSaver.min.js"></script>
+<script src="../public/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="../public/tableExport.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="../public/file/filesaver.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="../public/helper/dt-epo-helpers.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        var startDate = new Date();
+        startDate.setFullYear(2018, 6, 1);
+        var endDate = new Date();
+        endDate.setFullYear(2018, 6, 2);
+        $('#daycalendarBoxBegin').val(new Date().format("yyyy-MM-dd"));
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+//            startDate: startDate,
+//            endDate: endDate
+        });
+
+        $('#daycalendarBoxEnd').val(new Date().format("yyyy-MM-dd"));
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+//            startDate: startDate,
+//            endDate: endDate
+        });
+
+        function logOut() {
+            sessionStorage.removeItem('user');
+            sessionStorage.removeItem('isLogin');
+            window.location.href = 'index';
+        }
+
+        $('.dt-nav-quit').click(function () {
+            logOut();
+        });
+    });
+
+    var data = [{
+        home: '求是楼',
+        executor: '王花花',
+        beginDate: '2017-7-7',
+        endDate: '2017-7-17',
+        remindTime: '下午 01:00',
+        content: '查看短路情况'
+    }, {
+        home: '求是楼',
+        executor: '王花花',
+        beginDate: '2017-7-7',
+        endDate: '2017-7-17',
+        remindTime: '下午 01:00',
+        content: '查看短路情况'
+    }, {
+        home: '求是楼',
+        executor: '王花花',
+        beginDate: '2017-7-7',
+        endDate: '2017-7-17',
+        remindTime: '下午 01:00',
+        content: '查看短路情况'
+    }, {
+        home: '求是楼',
+        executor: '王花花',
+        beginDate: '2017-7-7',
+        endDate: '2017-7-17',
+        remindTime: '下午 01:00',
+        content: '查看短路情况'
+    }];
+
+    var vm = new Vue({
+        el: "#vue-list",
+        delimiters: ['${', '}'],
+        data: {
+            tempDiaryList: {
+                startTime: new Date().format("yyyy-MM-dd"),
+                endTime: new Date().format("yyyy-MM-dd")
+            },
+            pickerOptions2: {
+                shortcuts: [{
+                    text: '最近一周',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近一个月',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近三个月',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }]
+            },
+            value6: '',
+            value7: '',
+            diaryList: [],
+            // 数据页面
+            isShowData: false,
+            total: 0,//默认数据总数
+            pagesize: 11,//每页的数据条数
+            currentPage: 1,//默认开始页面
+            istag: true,
+            tableData: []
+        },
+        methods: {
+            // 数据页面
+            tableRowClassName({row, rowIndex}) {
+                if (rowIndex === 0) {
+                    return 'th';
+                }
+                return '';
+            },
+            switchChange() {
+                this.istag = !this.istag;
+
+            },
+            created: function () {
+                this.total = this.tableData.length;
+            },
+            current_change: function (currentPage) {
+                this.currentPage = currentPage;
+            },
+
+            // end
+            outPut: function () {
+                // $('#outPutTable').tableExport({type: 'excel'});
+                var _this = this;
+                var obj = this;
+                const loading = obj.$loading({
+                    lock: true,
+                    text: '查找数据中',
+                    spinner: 'el-icon-loading',
+                    background: 'rgba(0, 0, 0, 0.7)'
+                });
+
+                this.tempDiaryList.startTime = vm.value7[0];
+                this.tempDiaryList.endTime = vm.value7[1];
+                this.tempDiaryList.executorName = _this.tempDiaryList.executorName;
+                if (this.tempDiaryList.diaryType === "") {
+                    alert('请填写完整信息');
+                    console.log(this.tempDiaryList);
+                } else if (!_this.compareDate(_this.tempDiaryList.startTime, _this.tempDiaryList.endTime)) {
+                    _this.$message({
+                        message: '结束时间不能小于开始时间',
+                        type: 'warning'
+                    });
+                } else {
+                    var date1 = new Date(vm.value7[0]);
+                    var date2 = new Date(vm.value7[1]);
+                    var month1 = date1.getMonth() + 1;
+                    var month2 = date2.getMonth() + 1;
+                    var day1 = date1.getDate();
+                    var day2 = date2.getDate();
+                    if (day1 < 10) {
+                        day1 = '0' + day1;  //补齐
+                    }
+                    if (day2 < 10) {
+                        day2 = '0' + day2;  //补齐
+                    }
+                    this.tempDiaryList.startTime = date1.getFullYear() + "-" + month1 + '-' + day1;
+                    this.tempDiaryList.endTime = date2.getFullYear() + "-" + month2 + '-' + day2;
+                    console.log(this.tempDiaryList);
+                    var args = JSON.parse(JSON.stringify(this.tempDiaryList));
+                    var
+                        API_STATUS = {
+                            "apicode": "exportDiaryExcel",
+                            "args": args
+                        };
+                }
+                axios.post("/api", API_STATUS
+                    , {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function (res) {
+                    loading.close();
+                    if (res.data.obj.blob != null) {
+                        var data = res.data.obj.blob;      //要还原成二进制的文件数据
+                        var arrBuffer = new ArrayBuffer(data.length);
+                        var view = new Uint8Array(arrBuffer);
+
+                        for (var i = 0; i < data.length; i++) {
+                            view[i] = data.charCodeAt(i);
+                        }
+                        var fileName = _this.tempDiaryList.executorName + '.xlsx';
+                        var blob = new Blob([arrBuffer], {type: 'application/octet-stream'});
+                        saveAs(blob, fileName);
+                    } else {
+                        obj.$message.error("暂无数据");
+                    }
+
+                })
+            },
+
+            sendDeleteMessage: function (index) {
+                var _this = this;
+                var diaryId = index.diaryId;
+                var config = {
+                    "apicode": "DeleteDairy",
+                    "args": {
+                        "id": diaryId
+                    }
+                };
+
+                sendReq(_this, config, function (res, obj) {
+                    if (res.data.retcode === 200) {
+                        _this.$message({
+                            message: '删除成功',
+                            type: 'success'
+                        });
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+
+                    } else {
+                        _this.$message.error('删除失败');
+                    }
+                    console.log(res);
+
+                }, function (err) {
+                    _this.$message.error('服务器无响应');
+                    console.log(err);
+                })
+            },
+
+            sendSearchRequest: function () {
+                var _this = this;
+                var tempDiaryList = {
+                    "diaryType": "0",
+                    "startTime": "2018-01-01",
+                    "endTime": "2018-10-01"
+                };
+                var args = JSON.parse(JSON.stringify(tempDiaryList));
+                var
+                    API_STATUS = {
+                        "apicode": "GetDiary",
+                        "args": args
+                    };
+                axios.post("/api", API_STATUS
+                    , {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function (res) {
+                    _this.diaryList = res.data.obj;
+                    console.log(res);
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            },
+
+            submit: function () {
+                var _this = this;
+
+                const loading = _this.$loading({
+                    lock: true,
+                    text: '查找数据中',
+                    spinner: 'el-icon-loading',
+                    background: 'rgba(0, 0, 0, 0.7)'
+                });
+                this.tempDiaryList.startTime = vm.value7[0];
+                this.tempDiaryList.endTime = vm.value7[1];
+                this.tempDiaryList.executorName = _this.tempDiaryList.executorName;
+                if (this.tempDiaryList.diaryType === "") {
+                    alert('请填写完整信息');
+                    console.log(this.tempDiaryList);
+                } else if (!_this.compareDate(_this.tempDiaryList.startTime, _this.tempDiaryList.endTime)) {
+                    _this.$message({
+                        message: '结束时间不能小于开始时间',
+                        type: 'warning'
+                    });
+                } else {
+                    var date1 = new Date(vm.value7[0]);
+                    var date2 = new Date(vm.value7[1]);
+                    var month1 = date1.getMonth() + 1;
+                    var month2 = date2.getMonth() + 1;
+                    var day1 = date1.getDate();
+                    var day2 = date2.getDate();
+                    if (day1 < 10) {
+                        day1 = '0' + day1;  //补齐
+                    }
+                    if (day2 < 10) {
+                        day2 = '0' + day2;  //补齐
+                    }
+                    this.tempDiaryList.startTime = date1.getFullYear() + "-" + month1 + '-' + day1;
+                    this.tempDiaryList.endTime = date2.getFullYear() + "-" + month2 + '-' + day2;
+                    console.log(this.tempDiaryList);
+                    var args = JSON.parse(JSON.stringify(this.tempDiaryList));
+                    var
+                        API_STATUS = {
+                            "apicode": "GetDiary",
+                            "args": args
+                        };
+                    axios.post("/api", API_STATUS
+                        , {
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(function (res) {
+                        loading.close();
+                        if (res.data.obj.length === 0) {
+                            _this.$message.error('暂无当前数据');
+                        }
+                        _this.diaryList = res.data.obj;
+                        _this.tableData = res.data.obj;
+
+                        // console.log(res.data.obj);
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
+            },
+            handleEdit: function (index) {
+                alert(index.diaryId);
+            },
+            deleteDiary: function (index) {
+                var _this = this;
+                _this.sendDeleteMessage(index);
+            },
+
+
+            //时间比较（yyyy-MM-dd）
+            compareDate: function (startDate, endDate) {
+                // var arrStart = startDate.split("-");
+                // var startTime = new Date(arrStart[0], arrStart[1], arrStart[2]);
+                // var startTimes = startTime.getTime();
+                // var arrEnd = endDate.split("-");
+                // var endTime = new Date(arrEnd[0], arrEnd[1], arrEnd[2]);
+                // var endTimes = endTime.getTime();
+                if (endDate < startDate) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        created: function () {
+            var isLogin = sessionStorage.getItem('isLogin') || false;
+            if (!isLogin) {
+                window.location.href = 'index';
+            }
+//            this.sendSearchRequest();
+        },
+        filters: {
+            typeFilter: function (value) {
+                return (value === '0' ? '维护日志' : '事件日志');
+            },
+            dateFilter: function (value) {
+                return new Date(value).format()
+            }
+        }
+
+    });
+</script>
+</body>
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</html>

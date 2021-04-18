@@ -1,0 +1,290 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body>
+<div class="dt-title-container">
+    <div class="dt-nav-title">温州医科大学电力监控展示系统</div>
+    <div onclick="javascript:window.location.href='#';" class="dt-nav-logo">
+        <img src="../assets/img/close.png" class="dt-nav-quit">
+    </div>
+</div>
+<div class="dt-nav-container">
+    <div class="dt-nav-btn dt-nav-option-active">
+        <span class="dt-nav-img dt-nav-general"></span>
+        <span>概况</span>
+    </div>
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor"></span>
+        <span>变压器监测</span>
+    </div>
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality"></span>
+        电力监测
+    </div>
+    <!--<div class="dt-nav-btn">-->
+        <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+        <!--用电分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+        <!--<span class="dt-nav-img dt-nav-security"></span>-->
+        <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+        <!--<span class="dt-nav-img dt-nav-record"></span>-->
+        <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment"></span>
+        环境监测
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+        <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+        <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning"></span>
+        报警监测
+    </div>
+</div>
+<div class="dt-left-nav-container">
+    <div class="dt-left-nav-box dt-left-nav-first-box" onclick="javascript:window.location.href='main'">变电所状态</div>
+    <div class="dt-left-nav-box">运维中心</div>
+    <div class="dt-left-nav-box dt-left-nav-box-active">用能月报</div>
+</div>
+<div class="dt-main-container dt-main-container-custom">
+    <div class="dt-main-bac">
+        <div class="container-fluid">
+            <div class="dt-check-container">
+                <div class="form-group form-group-custom">
+                    <label for="dtp_input2" class="control-label">起始日期：</label>
+                    <div class="input-group date form_date input-group-custom" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" id="datetimepicker">
+                        <input class="form-control" size="16" type="text" value="" readonly id="daycalendarBox">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                    <input type="hidden" id="dtp_input2" value="" /><br/>
+                </div>
+                <div class="form-group form-group-custom">
+                    <label for="dtp_input2" class="control-label">截止日期：</label>
+                    <div class="input-group date form_date input-group-custom" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" id="datetimepicker_2">
+                        <input class="form-control" size="16" type="text" value="" readonly id="daycalendarBox_2">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                    <input type="hidden" id="dtp_input3" value="" /><br/>
+                </div>
+                <button class="middle-button dt-btn-check-search">查询</button>
+                <button class="middle-button dt-btn-check-search dt-btn-check-export">导出</button>
+            </div>
+            <div class="table-responsive table-responsive-custom">
+                <table class="table table-striped table-custom">
+                    <thead class="main-box-top">
+                    <tr>
+                        <th>变电站名称</th>
+                        <th>04-29</th>
+                        <th>04-30</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>温州医科大学变电站</th>
+                        <td class="SZ_Power1">400</td>
+                        <td class="SZ_Power2">400</td>
+                    </tr>
+                    <tr>
+                        <th>合计</th>
+                        <td class="SZ_Power1">400</td>
+                        <td class="SZ_Power2">400</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dt-footer">登录用户：admin</div>
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../assets/js/powerCheck.js"></script>
+</body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body>
+<div class="dt-title-container">
+    <div class="dt-nav-title">温州医科大学电力监控展示系统</div>
+    <div onclick="javascript:window.location.href='#';" class="dt-nav-logo">
+        <img src="../assets/img/close.png" class="dt-nav-quit">
+    </div>
+</div>
+<div class="dt-nav-container">
+    <div class="dt-nav-btn dt-nav-option-active">
+        <span class="dt-nav-img dt-nav-general"></span>
+        <span>概况</span>
+    </div>
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor"></span>
+        <span>变压器监测</span>
+    </div>
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality"></span>
+        电力监测
+    </div>
+    <!--<div class="dt-nav-btn">-->
+        <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+        <!--用电分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+        <!--<span class="dt-nav-img dt-nav-security"></span>-->
+        <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+        <!--<span class="dt-nav-img dt-nav-record"></span>-->
+        <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment"></span>
+        环境监测
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+        <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+        <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning"></span>
+        报警监测
+    </div>
+</div>
+<div class="dt-left-nav-container">
+    <div class="dt-left-nav-box dt-left-nav-first-box" onclick="javascript:window.location.href='main'">变电所状态</div>
+    <div class="dt-left-nav-box">运维中心</div>
+    <div class="dt-left-nav-box dt-left-nav-box-active">用能月报</div>
+</div>
+<div class="dt-main-container dt-main-container-custom">
+    <div class="dt-main-bac">
+        <div class="container-fluid">
+            <div class="dt-check-container">
+                <div class="form-group form-group-custom">
+                    <label for="dtp_input2" class="control-label">起始日期：</label>
+                    <div class="input-group date form_date input-group-custom" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" id="datetimepicker">
+                        <input class="form-control" size="16" type="text" value="" readonly id="daycalendarBox">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                    <input type="hidden" id="dtp_input2" value="" /><br/>
+                </div>
+                <div class="form-group form-group-custom">
+                    <label for="dtp_input2" class="control-label">截止日期：</label>
+                    <div class="input-group date form_date input-group-custom" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" id="datetimepicker_2">
+                        <input class="form-control" size="16" type="text" value="" readonly id="daycalendarBox_2">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                    <input type="hidden" id="dtp_input3" value="" /><br/>
+                </div>
+                <button class="middle-button dt-btn-check-search">查询</button>
+                <button class="middle-button dt-btn-check-search dt-btn-check-export">导出</button>
+            </div>
+            <div class="table-responsive table-responsive-custom">
+                <table class="table table-striped table-custom">
+                    <thead class="main-box-top">
+                    <tr>
+                        <th>变电站名称</th>
+                        <th>04-29</th>
+                        <th>04-30</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>温州医科大学变电站</th>
+                        <td class="SZ_Power1">400</td>
+                        <td class="SZ_Power2">400</td>
+                    </tr>
+                    <tr>
+                        <th>合计</th>
+                        <td class="SZ_Power1">400</td>
+                        <td class="SZ_Power2">400</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dt-footer">登录用户：admin</div>
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../assets/js/powerCheck.js"></script>
+</body>
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</html>

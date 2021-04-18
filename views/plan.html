@@ -1,0 +1,1506 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <style>
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .dtc-container-custom {
+            margin: 10px;
+            max-width: 100%;
+        }
+
+        .dtc-search-header {
+            padding: 10px;
+            padding-left: 20px;
+            /*color: #fff;*/
+            /*font-weight: bold;*/
+            /*background-color: #3db3ff;*/
+            /*border-radius: 5px 5px 0 0;*/
+            font-size: 18px;
+            color: #414E69;
+            letter-spacing: 0;
+            background: #FFFFFF;
+        }
+
+        .dtc-search-body {
+            padding: 10px;
+            /*border: solid 1px #ddd;*/
+            /*background-color: #eee;*/
+            background: #FFFFFF;
+            height: 365px;
+            width: 100%;
+        }
+
+        .dtc-button-adjust {
+            margin: 0;
+        }
+
+        .dtc-row-break {
+            margin: 5px -15px 15px -15px;
+        }
+
+        .dtc-harmonic-sheet {
+            margin-top: 15px;
+        }
+
+        .small-button {
+            width: 40px;
+            height: 20px;
+            font-size: 12px;
+        }
+
+        .dtn-first-img {
+            background-image: url(../assets/img/ic-menu-plan.png);
+        }
+
+        .dtn-second-img {
+            background-image: url(../assets/img/ic-menu-search.png);
+        }
+
+        .dtn-third-img {
+            background-image: url(../assets/img/ic-menu-log.png);
+        }
+
+        .dtn-fourth-img {
+            background-image: url(../assets/img/ic-menu-edit.png);
+        }
+
+        .dtn-main-box {
+            background: none;
+            border: none;
+            text-align: left;
+        }
+
+        .dtn-plan-box {
+            width: 100%;
+            height: 410px;
+            background: #FFFFFF;
+            margin-top: 15px;
+        }
+
+        .dtn-box-title {
+            width: 100%;
+            padding-left: 1.8%;
+            font-size: 18px;
+            color: #414E69;
+            letter-spacing: 0;
+            padding-top: 1.9%;
+            padding-bottom: 2.8%;
+        }
+
+        .dtn-select-box {
+            width: 100%;
+            padding-left: 1.8%;
+            height: auto;
+        }
+
+        .dtn-select-item {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+        }
+
+        .dtn-Substation-font {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+            font-weight: normal;
+            padding-left: 0;
+            margin-left: 10px;
+            float: left;
+            padding-top: 2px;
+        }
+
+        .dtn-plan-div {
+            width: 100%;
+            background: #FFFFFF;
+        }
+
+        .dtn-box-item {
+            width: 100%;
+            height: 50px;
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+        }
+
+        .dtn-from-control {
+            background: #FFFFFF;
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            width: 230px;
+            height: 30px;
+            font-size: 14px;
+            color: #98A1AA;
+            letter-spacing: 0;
+        }
+
+        .dtn-item-div {
+            width: 40%;
+            height: auto;
+            float: left;
+        }
+
+        .dtn-div-font {
+            width: 75px;
+            height: 40px;
+            float: left;
+        }
+
+        .dtn-tempDiaryList-content {
+            background: #FFFFFF;
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            width: 750px;
+            height: 130px;
+        }
+
+        .middle-button {
+            width: 80px;
+            height: 30px;
+            background: #13B6CC;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            clear: both;
+            margin-top: 90px;
+            margin-left: 75px;
+        }
+
+        .dtn-from-control-start {
+            flex-basis: 150px;
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            width: 230px;
+            height: 30px;
+        }
+
+        .dtn-form-control {
+            width: 200px;
+        }
+
+        .main-box-top {
+            background-color: #384E7C;
+        }
+
+        th {
+            font-weight: normal;
+            text-align: left;
+            height: 20px;
+
+        }
+
+        .has-gutter tr, .el-table th {
+            opacity: 0.8;
+            background: #384E7C;
+            border-radius: 2px;
+        }
+
+        .has-gutter .cell {
+            font-size: 16px;
+            color: #FFFFFF;
+            text-align: left;
+        }
+
+        .el-table--striped .el-table__body tr.el-table__row--striped td {
+            background: #F0F0F0;
+        }
+
+        .ele-div .el-icon-arrow-left:before {
+            content: "上一页";
+        }
+
+        .ele-div .el-icon-arrow-right:before {
+            content: "下一页";
+            margin: 0;
+            width: auto;
+        }
+
+        .ele-div .el-pagination.is-background .el-pager li:not(.disabled).active {
+            background: #13B6CC;
+        }
+
+        .ele-div .el-pagination .btn-prev, .ele-div .el-pagination .btn-next {
+            font-size: 12px;
+            width: 5em;
+            padding: 0em 1em;
+            background: #13B6CC;
+            color: #FFFFFF;
+
+        }
+
+        .ele-div .el-pagination .btn-prev i, .ele-div .el-pagination .btn-next i {
+            font-weight: normal;
+        }
+
+        .ele-div .el-pagination {
+            text-align: right;
+        }
+
+        .ele-div .number {
+            font-size: 12px;
+            color: #666666 !important;
+            font-weight: normal;
+        }
+
+        .ele-div .active {
+            color: #FFFFFF !important;
+        }
+
+        .el-pagination button:disabled {
+            background-color: #EFF2F5 !important;
+        }
+
+        .dtc-ele-span {
+            font-size: 14px;
+            color: #414E69;
+            float: left;
+        }
+
+        .el-collapse {
+            border: 0;
+        }
+
+        .el-collapse-item__content .el-collapse-item__header {
+            margin-left: -5px;
+        }
+
+        .dtc-table-button {
+            margin: 0;
+            width: 100%;
+
+        }
+
+        .table-striped > tbody > tr:nth-child(odd) > th {
+            background: #F0F0F0;
+        }
+    </style>
+</head>
+<body style="background-color:#F0F3F8 ">
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active dtn-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"
+              style="background: url(../assets/img/ic-overview-gray.png) no-repeat;"></span>
+        <span style="cursor:default;" class="dtn-nav-list">概况</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"></span>
+        <span class="dtn-nav-list">电力监测</span>
+    </div>
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+    <!--用电分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-security"></span>-->
+    <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-record"></span>-->
+    <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"></span>
+        <span class="dtn-nav-list">环境监测</span>
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+    <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+    <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"
+              style="background: url(../assets/img/ic-patrol-blue.png) no-repeat"></span>
+        <span class="dtn-nav-list" style="opacity: 1;color: #414E69;">巡察计划</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+</div>
+<div class="container-fluid" id="vue-list" v-cloak>
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container dtn-left-nav-container">
+                <div class="dtn-empty-div"></div>
+                <div class="dt-left-nav-box dt-left-nav-first-box dt-left-nav-box-active dtn-left-nav-box dtn-first-img">
+                    定制计划
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-second-img"
+                     onclick="javascript:window.location.href='planSearch'">计划查询
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-third-img"
+                     onclick="javascript:window.location.href='diary'">日志查询
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-fourth-img"
+                     onclick="javascript:window.location.href='diaryWrite'">日志填写
+                </div>
+
+                <!--<div class="dt-left-nav-box dt-left-nav-box-active dtn-left-nav-box">图书馆</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">同仁楼</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">同德楼</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">同济楼</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">学生活动中心</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">一期宿舍</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">二期宿舍</div>-->
+                <!--&lt;!&ndash;<div class="dt-left-nav-box">三期宿舍上</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="dt-left-nav-box">三期宿舍下</div>&ndash;&gt;-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">中试基地</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">学院路2#</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">求是楼</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">三期宿舍食堂</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">学院路1#</div>-->
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container">
+                <div class="dtc-container-custom">
+                    <div class="dtc-search-header">定制计划</div>
+                    <div class="dtc-search-body">
+
+                        <div class="dtn-plan-div">
+                            <div class="dtn-box-item">
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">变电所:</label>
+                                    </div>
+                                    <select class="dtn-from-control" v-model="tempDiaryList.home"
+                                            style="text-indent: 8px;">
+                                        <option value='' disabled selected style='display:none; color: #999;'>选择变电所
+                                        </option>
+                                        <option>图书馆</option>
+                                        <option>同仁楼</option>
+                                        <option>同德楼</option>
+                                        <option>同济楼</option>
+                                        <option>求是楼</option>
+                                        <option>学生活动中心</option>
+                                        <option>三期宿舍上</option>
+                                        <option>三期宿舍下</option>
+                                        <option>中室基地</option>
+                                        <option>学院路1#</option>
+                                        <option>学院路2#</option>
+                                        <option>一期宿舍</option>
+                                        <option>二期宿舍</option>
+                                    </select>
+                                </div>
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">执行人员:</label>
+                                    </div>
+                                    <input type="text" class="dtn-from-control" placeholder="指定执行人员"
+                                           v-model="tempDiaryList.executorName" style="text-indent: 8px;">
+                                </div>
+                            </div>
+
+                            <div class="dtn-box-item">
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">开始时间:</label>
+                                    </div>
+                                    <div class="input-group date form_date dt-harmonic-input-group-custom dtn-from-control-start"
+                                         data-date=""
+                                         data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                                         data-link-format="yyyy-mm-dd"
+                                         id="datetimepickerBegin">
+                                        <input type="text" class="form-control dtn-form-control" placeholder="请选择开始时间"
+                                               readonly
+                                               id="daycalendarBoxBegin">
+                                        <span class="input-group-addon dtn-input-group-addon dtn-big-span"><span
+                                                class="glyphicon glyphicon-calendar dtn-span"></span><img
+                                                src="../assets/img/btn_time.png" height="14" width="15"/></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_inputBegin" value=""/><br/>
+                                </div>
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">结束时间</label>
+                                    </div>
+                                    <div class="input-group date form_date dt-harmonic-input-group-custom dtn-from-control-start"
+                                         data-date=""
+                                         data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                                         data-link-format="yyyy-mm-dd"
+                                         id="datetimepickerEnd">
+                                        <input class="form-control dtn-form-control" type="text" value="" readonly
+                                               id="daycalendarBoxEnd" placeholder="请选择结束时间">
+                                        <span class="input-group-addon dtn-input-group-addon dtn-big-span"><span
+                                                class="glyphicon glyphicon-calendar dtn-span"></span><img
+                                                src="../assets/img/btn_time.png" height="14" width="15"/></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_inputEnd" value=""/><br/>
+                                </div>
+                            </div>
+
+
+                            <div class="dtn-box-item">
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">提醒时间</label>
+                                    </div>
+
+                                    <input type="text" class="dtn-from-control" placeholder="请输入提醒时间"
+                                           id="exampleInputEmail1"
+                                           v-model="tempDiaryList.remindTime" style="text-indent: 8px;">
+                                </div>
+                            </div>
+
+                            <div class="dtn-box-item">
+                                <div class="dtn-div-font">
+                                    <label class="dtn-Substation-font  control-label"
+                                           for="formGroupInputSmall">巡查内容</label>
+                                </div>
+                                <textarea class="form-control dtn-tempDiaryList-content" type="text"
+                                          id="formGroupInputSmall"
+                                          v-model="tempDiaryList.content"
+                                          placeholder="请输入巡查内容" style="height:130px"></textarea>
+                            </div>
+                            <button class="middle-button" style="width: 100px;" @click="submit()">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ele-div">
+                <div class="block" style="padding: 20px 20px 10px 20px;background-color: white">
+                    <div class="container_table">
+                        <table class="table table-striped table-custom">
+                            <thead class="main-box-top">
+                            <tr style="height: 45px;  vertical-align:center;font-size: 16px;">
+                                <th style="min-width: 50px;padding-left: 30px;">变电所</th>
+                                <th>执行人员</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>提醒时间</th>
+                                <th>巡查内容</th>
+                                <th style="padding-right: 30px">操作</th>
+                            </tr>
+                            </thead>
+                            <tr v-for="(list,index) in planList" style="font-size: 14px;
+color: #252525;">
+                                <th style=" padding-left: 30px;">${list.home}</th>
+                                <th>${list.executor}</th>
+                                <th>${list.startTime | dateFilter}</th>
+                                <th>${list.endTime | dateFilter}</th>
+                                <th>${list.remindTime}</th>
+                                <th>${list.content}</th>
+                                <th style="padding-right: 30px">
+                                    <button class="middle-button small-button dtc-table-button"
+                                            @click="deletePlan(index)">删除
+                                    </button>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dtn-footer">
+                版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="../public/helper/dt-epo-helpers.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+//        $('.dt-left-nav-box').click(function () {
+//            $('.dt-left-nav-box-active').removeClass('dt-left-nav-box-active');
+//            $(this).addClass('dt-left-nav-box-active');
+//            $('#vue-list').html();
+//        });
+
+
+        var startDate = new Date();
+        startDate.setFullYear(2018, 6, 1);
+        var endDate = new Date();
+        endDate.setFullYear(2018, 6, 2);
+        // $('#daycalendarBoxBegin').val(new Date().format("yyyy-MM-dd"));   更改
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+        });
+
+        // $('#daycalendarBoxEnd').val(new Date().format("yyyy-MM-dd"));   更改
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+        });
+
+        function logOut() {
+            sessionStorage.removeItem('user');
+            sessionStorage.removeItem('isLogin');
+            window.location.href = 'index';
+        }
+
+        $('.dt-nav-quit').click(function () {
+            logOut();
+        });
+    });
+
+
+    var vm = new Vue({
+        el: "#vue-list",
+        delimiters: ['${', '}'],
+        data: {
+            tempDiaryList: {
+                home: '',
+                executorName: '',
+                startTime: new Date().format("yyyy-MM-dd"),
+                endTime: new Date().format("yyyy-MM-dd"),
+                remindTime: '',
+                content: ''
+            },
+            planList: []
+        },
+        methods: {
+            sendDeleteMessage: function (index) {
+                var _this = this;
+                var planId = _this.planList[index].id;
+                var config = {
+                    "apicode": "DeletePlan",
+                    "args": {
+                        "id": planId
+                    }
+                };
+
+                sendReq(_this, config, function (res, obj) {
+                    if (res.data.retcode === 200) {
+                        _this.$message({
+                            message: '删除成功',
+                            type: 'success'
+                        });
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+
+                    } else {
+                        _this.$message.error('删除失败');
+                    }
+                    console.log(res);
+
+                }, function (err) {
+                    _this.$message.error('服务器无响应');
+                    console.log(err);
+                })
+            },
+
+            submit: function () {
+                var _this = this;
+                this.tempDiaryList.startTime = $('#daycalendarBoxBegin').val();
+                this.tempDiaryList.endTime = $('#daycalendarBoxEnd').val();
+                if (this.tempDiaryList.content === "" || this.tempDiaryList.executorName === "" || this.tempDiaryList.home === "" || this.tempDiaryList.remindTime === "") {
+                    _this.$message({
+                        message: '请填写完整信息',
+                        type: 'warning'
+                    });
+                } else if (!_this.compareDate(_this.tempDiaryList.startTime, _this.tempDiaryList.endTime)) {
+                    _this.$message({
+                        message: '结束时间不能小于开始时间',
+                        type: 'warning'
+                    });
+                } else {
+                    console.log(this.tempDiaryList);
+                    var args = JSON.parse(JSON.stringify(this.tempDiaryList));
+                    var
+                        API_STATUS = {
+                            "apicode": "InsertPlan",
+                            "args": args
+                        };
+                    console.log(API_STATUS);
+                    axios.post("/api", API_STATUS
+                        , {
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(function (res) {
+                        _this.$message({
+                            message: '提交成功',
+                            type: 'success'
+                        });
+//                        setTimeout(function () {
+//                            window.location.reload();
+//                        }, 1000);
+                    }).catch(function (error) {
+//                        loading.close();
+                        console.log(error);
+                    });
+                }
+
+//                this.planList.push(this.tempDiaryList);
+            },
+
+            //时间比较（yyyy-MM-dd）
+            compareDate: function (startDate, endDate) {
+                var arrStart = startDate.split("-");
+                var startTime = new Date(arrStart[0], arrStart[1], arrStart[2]);
+                var startTimes = startTime.getTime();
+                var arrEnd = endDate.split("-");
+                var endTime = new Date(arrEnd[0], arrEnd[1], arrEnd[2]);
+                var endTimes = endTime.getTime();
+                if (endTimes < startTimes) {
+                    return false;
+                } else {
+                    return true;
+                }
+            },
+
+            deletePlan: function (index) {
+                var _this = this;
+                _this.sendDeleteMessage(index);
+            }
+        },
+        created: function () {
+            var isLogin = sessionStorage.getItem('isLogin') || false;
+            if (!isLogin) {
+                window.location.href = 'index';
+            }
+
+
+            var _this = this;
+            axios.post("/api", {
+                "apicode": "CheckPlan",
+                "args": {
+                    "startTime": "2018-01-01",
+                    "endTime": "2018-12-31"
+                }
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function (res) {
+                _this.planList = res.data.obj;
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+        },
+
+        filters: {
+            dateFilter: function (value) {
+                return new Date(value).format("yyyy-MM-dd hh:mm:ss");
+            }
+        }
+    });
+</script>
+</body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <style>
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .dtc-container-custom {
+            margin: 10px;
+            max-width: 100%;
+        }
+
+        .dtc-search-header {
+            padding: 10px;
+            padding-left: 20px;
+            /*color: #fff;*/
+            /*font-weight: bold;*/
+            /*background-color: #3db3ff;*/
+            /*border-radius: 5px 5px 0 0;*/
+            font-size: 18px;
+            color: #414E69;
+            letter-spacing: 0;
+            background: #FFFFFF;
+        }
+
+        .dtc-search-body {
+            padding: 10px;
+            /*border: solid 1px #ddd;*/
+            /*background-color: #eee;*/
+            background: #FFFFFF;
+            height: 365px;
+            width: 100%;
+        }
+
+        .dtc-button-adjust {
+            margin: 0;
+        }
+
+        .dtc-row-break {
+            margin: 5px -15px 15px -15px;
+        }
+
+        .dtc-harmonic-sheet {
+            margin-top: 15px;
+        }
+
+        .small-button {
+            width: 40px;
+            height: 20px;
+            font-size: 12px;
+        }
+
+        .dtn-first-img {
+            background-image: url(../assets/img/ic-menu-plan.png);
+        }
+
+        .dtn-second-img {
+            background-image: url(../assets/img/ic-menu-search.png);
+        }
+
+        .dtn-third-img {
+            background-image: url(../assets/img/ic-menu-log.png);
+        }
+
+        .dtn-fourth-img {
+            background-image: url(../assets/img/ic-menu-edit.png);
+        }
+
+        .dtn-main-box {
+            background: none;
+            border: none;
+            text-align: left;
+        }
+
+        .dtn-plan-box {
+            width: 100%;
+            height: 410px;
+            background: #FFFFFF;
+            margin-top: 15px;
+        }
+
+        .dtn-box-title {
+            width: 100%;
+            padding-left: 1.8%;
+            font-size: 18px;
+            color: #414E69;
+            letter-spacing: 0;
+            padding-top: 1.9%;
+            padding-bottom: 2.8%;
+        }
+
+        .dtn-select-box {
+            width: 100%;
+            padding-left: 1.8%;
+            height: auto;
+        }
+
+        .dtn-select-item {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+        }
+
+        .dtn-Substation-font {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+            font-weight: normal;
+            padding-left: 0;
+            margin-left: 10px;
+            float: left;
+            padding-top: 2px;
+        }
+
+        .dtn-plan-div {
+            width: 100%;
+            background: #FFFFFF;
+        }
+
+        .dtn-box-item {
+            width: 100%;
+            height: 50px;
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+        }
+
+        .dtn-from-control {
+            background: #FFFFFF;
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            width: 230px;
+            height: 30px;
+            font-size: 14px;
+            color: #98A1AA;
+            letter-spacing: 0;
+        }
+
+        .dtn-item-div {
+            width: 40%;
+            height: auto;
+            float: left;
+        }
+
+        .dtn-div-font {
+            width: 75px;
+            height: 40px;
+            float: left;
+        }
+
+        .dtn-tempDiaryList-content {
+            background: #FFFFFF;
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            width: 750px;
+            height: 130px;
+        }
+
+        .middle-button {
+            width: 80px;
+            height: 30px;
+            background: #13B6CC;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            clear: both;
+            margin-top: 90px;
+            margin-left: 75px;
+        }
+
+        .dtn-from-control-start {
+            flex-basis: 150px;
+            border: 1px solid #DCDCDC;
+            border-radius: 2px;
+            width: 230px;
+            height: 30px;
+        }
+
+        .dtn-form-control {
+            width: 200px;
+        }
+
+        .main-box-top {
+            background-color: #384E7C;
+        }
+
+        th {
+            font-weight: normal;
+            text-align: left;
+            height: 20px;
+
+        }
+
+        .has-gutter tr, .el-table th {
+            opacity: 0.8;
+            background: #384E7C;
+            border-radius: 2px;
+        }
+
+        .has-gutter .cell {
+            font-size: 16px;
+            color: #FFFFFF;
+            text-align: left;
+        }
+
+        .el-table--striped .el-table__body tr.el-table__row--striped td {
+            background: #F0F0F0;
+        }
+
+        .ele-div .el-icon-arrow-left:before {
+            content: "上一页";
+        }
+
+        .ele-div .el-icon-arrow-right:before {
+            content: "下一页";
+            margin: 0;
+            width: auto;
+        }
+
+        .ele-div .el-pagination.is-background .el-pager li:not(.disabled).active {
+            background: #13B6CC;
+        }
+
+        .ele-div .el-pagination .btn-prev, .ele-div .el-pagination .btn-next {
+            font-size: 12px;
+            width: 5em;
+            padding: 0em 1em;
+            background: #13B6CC;
+            color: #FFFFFF;
+
+        }
+
+        .ele-div .el-pagination .btn-prev i, .ele-div .el-pagination .btn-next i {
+            font-weight: normal;
+        }
+
+        .ele-div .el-pagination {
+            text-align: right;
+        }
+
+        .ele-div .number {
+            font-size: 12px;
+            color: #666666 !important;
+            font-weight: normal;
+        }
+
+        .ele-div .active {
+            color: #FFFFFF !important;
+        }
+
+        .el-pagination button:disabled {
+            background-color: #EFF2F5 !important;
+        }
+
+        .dtc-ele-span {
+            font-size: 14px;
+            color: #414E69;
+            float: left;
+        }
+
+        .el-collapse {
+            border: 0;
+        }
+
+        .el-collapse-item__content .el-collapse-item__header {
+            margin-left: -5px;
+        }
+
+        .dtc-table-button {
+            margin: 0;
+            width: 100%;
+
+        }
+
+        .table-striped > tbody > tr:nth-child(odd) > th {
+            background: #F0F0F0;
+        }
+    </style>
+</head>
+<body style="background-color:#F0F3F8 ">
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dt-nav-option-active dtn-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"
+              style="background: url(../assets/img/ic-overview-gray.png) no-repeat;"></span>
+        <span style="cursor:default;" class="dtn-nav-list">概况</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='harmonic'">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"></span>
+        <span class="dtn-nav-list">电力监测</span>
+    </div>
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-analysis"></span>-->
+    <!--用电分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-security"></span>-->
+    <!--安全分析-->
+    <!--</div>-->
+    <!--<div class="dt-nav-btn">-->
+    <!--<span class="dt-nav-img dt-nav-record"></span>-->
+    <!--事件记录-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"></span>
+        <span class="dtn-nav-list">环境监测</span>
+    </div>
+    <!--<div class="dt-nav-btn ">-->
+    <!--<span class="dt-nav-img dt-nav-administration"></span>-->
+    <!--维护管理-->
+    <!--</div>-->
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"
+              style="background: url(../assets/img/ic-patrol-blue.png) no-repeat"></span>
+        <span class="dtn-nav-list" style="opacity: 1;color: #414E69;">巡察计划</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+</div>
+<div class="container-fluid" id="vue-list" v-cloak>
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container dtn-left-nav-container">
+                <div class="dtn-empty-div"></div>
+                <div class="dt-left-nav-box dt-left-nav-first-box dt-left-nav-box-active dtn-left-nav-box dtn-first-img">
+                    定制计划
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-second-img"
+                     onclick="javascript:window.location.href='planSearch'">计划查询
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-third-img"
+                     onclick="javascript:window.location.href='diary'">日志查询
+                </div>
+                <div class="dt-left-nav-box dtn-left-nav-box dtn-fourth-img"
+                     onclick="javascript:window.location.href='diaryWrite'">日志填写
+                </div>
+
+                <!--<div class="dt-left-nav-box dt-left-nav-box-active dtn-left-nav-box">图书馆</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">同仁楼</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">同德楼</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">同济楼</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">学生活动中心</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">一期宿舍</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">二期宿舍</div>-->
+                <!--&lt;!&ndash;<div class="dt-left-nav-box">三期宿舍上</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="dt-left-nav-box">三期宿舍下</div>&ndash;&gt;-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">中试基地</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">学院路2#</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">求是楼</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">三期宿舍食堂</div>-->
+                <!--<div class="dt-left-nav-box dtn-left-nav-box">学院路1#</div>-->
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container">
+                <div class="dtc-container-custom">
+                    <div class="dtc-search-header">定制计划</div>
+                    <div class="dtc-search-body">
+
+                        <div class="dtn-plan-div">
+                            <div class="dtn-box-item">
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">变电所:</label>
+                                    </div>
+                                    <select class="dtn-from-control" v-model="tempDiaryList.home"
+                                            style="text-indent: 8px;">
+                                        <option value='' disabled selected style='display:none; color: #999;'>选择变电所
+                                        </option>
+                                        <option>图书馆</option>
+                                        <option>同仁楼</option>
+                                        <option>同德楼</option>
+                                        <option>同济楼</option>
+                                        <option>求是楼</option>
+                                        <option>学生活动中心</option>
+                                        <option>三期宿舍上</option>
+                                        <option>三期宿舍下</option>
+                                        <option>中室基地</option>
+                                        <option>学院路1#</option>
+                                        <option>学院路2#</option>
+                                        <option>一期宿舍</option>
+                                        <option>二期宿舍</option>
+                                    </select>
+                                </div>
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">执行人员:</label>
+                                    </div>
+                                    <input type="text" class="dtn-from-control" placeholder="指定执行人员"
+                                           v-model="tempDiaryList.executorName" style="text-indent: 8px;">
+                                </div>
+                            </div>
+
+                            <div class="dtn-box-item">
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">开始时间:</label>
+                                    </div>
+                                    <div class="input-group date form_date dt-harmonic-input-group-custom dtn-from-control-start"
+                                         data-date=""
+                                         data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                                         data-link-format="yyyy-mm-dd"
+                                         id="datetimepickerBegin">
+                                        <input type="text" class="form-control dtn-form-control" placeholder="请选择开始时间"
+                                               readonly
+                                               id="daycalendarBoxBegin">
+                                        <span class="input-group-addon dtn-input-group-addon dtn-big-span"><span
+                                                class="glyphicon glyphicon-calendar dtn-span"></span><img
+                                                src="../assets/img/btn_time.png" height="14" width="15"/></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_inputBegin" value=""/><br/>
+                                </div>
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">结束时间</label>
+                                    </div>
+                                    <div class="input-group date form_date dt-harmonic-input-group-custom dtn-from-control-start"
+                                         data-date=""
+                                         data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+                                         data-link-format="yyyy-mm-dd"
+                                         id="datetimepickerEnd">
+                                        <input class="form-control dtn-form-control" type="text" value="" readonly
+                                               id="daycalendarBoxEnd" placeholder="请选择结束时间">
+                                        <span class="input-group-addon dtn-input-group-addon dtn-big-span"><span
+                                                class="glyphicon glyphicon-calendar dtn-span"></span><img
+                                                src="../assets/img/btn_time.png" height="14" width="15"/></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_inputEnd" value=""/><br/>
+                                </div>
+                            </div>
+
+
+                            <div class="dtn-box-item">
+                                <div class="dtn-item-div">
+                                    <div class="dtn-div-font">
+                                        <label for="exampleInputEmail1" class="dtn-Substation-font">提醒时间</label>
+                                    </div>
+
+                                    <input type="text" class="dtn-from-control" placeholder="请输入提醒时间"
+                                           id="exampleInputEmail1"
+                                           v-model="tempDiaryList.remindTime" style="text-indent: 8px;">
+                                </div>
+                            </div>
+
+                            <div class="dtn-box-item">
+                                <div class="dtn-div-font">
+                                    <label class="dtn-Substation-font  control-label"
+                                           for="formGroupInputSmall">巡查内容</label>
+                                </div>
+                                <textarea class="form-control dtn-tempDiaryList-content" type="text"
+                                          id="formGroupInputSmall"
+                                          v-model="tempDiaryList.content"
+                                          placeholder="请输入巡查内容" style="height:130px"></textarea>
+                            </div>
+                            <button class="middle-button" style="width: 100px;" @click="submit()">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ele-div">
+                <div class="block" style="padding: 20px 20px 10px 20px;background-color: white">
+                    <div class="container_table">
+                        <table class="table table-striped table-custom">
+                            <thead class="main-box-top">
+                            <tr style="height: 45px;  vertical-align:center;font-size: 16px;">
+                                <th style="min-width: 50px;padding-left: 30px;">变电所</th>
+                                <th>执行人员</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>提醒时间</th>
+                                <th>巡查内容</th>
+                                <th style="padding-right: 30px">操作</th>
+                            </tr>
+                            </thead>
+                            <tr v-for="(list,index) in planList" style="font-size: 14px;
+color: #252525;">
+                                <th style=" padding-left: 30px;">${list.home}</th>
+                                <th>${list.executor}</th>
+                                <th>${list.startTime | dateFilter}</th>
+                                <th>${list.endTime | dateFilter}</th>
+                                <th>${list.remindTime}</th>
+                                <th>${list.content}</th>
+                                <th style="padding-right: 30px">
+                                    <button class="middle-button small-button dtc-table-button"
+                                            @click="deletePlan(index)">删除
+                                    </button>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dtn-footer">
+                版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="../public/helper/dt-epo-helpers.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+//        $('.dt-left-nav-box').click(function () {
+//            $('.dt-left-nav-box-active').removeClass('dt-left-nav-box-active');
+//            $(this).addClass('dt-left-nav-box-active');
+//            $('#vue-list').html();
+//        });
+
+
+        var startDate = new Date();
+        startDate.setFullYear(2018, 6, 1);
+        var endDate = new Date();
+        endDate.setFullYear(2018, 6, 2);
+        // $('#daycalendarBoxBegin').val(new Date().format("yyyy-MM-dd"));   更改
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+        });
+
+        // $('#daycalendarBoxEnd').val(new Date().format("yyyy-MM-dd"));   更改
+        $('.form_date').datetimepicker({
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+        });
+
+        function logOut() {
+            sessionStorage.removeItem('user');
+            sessionStorage.removeItem('isLogin');
+            window.location.href = 'index';
+        }
+
+        $('.dt-nav-quit').click(function () {
+            logOut();
+        });
+    });
+
+
+    var vm = new Vue({
+        el: "#vue-list",
+        delimiters: ['${', '}'],
+        data: {
+            tempDiaryList: {
+                home: '',
+                executorName: '',
+                startTime: new Date().format("yyyy-MM-dd"),
+                endTime: new Date().format("yyyy-MM-dd"),
+                remindTime: '',
+                content: ''
+            },
+            planList: []
+        },
+        methods: {
+            sendDeleteMessage: function (index) {
+                var _this = this;
+                var planId = _this.planList[index].id;
+                var config = {
+                    "apicode": "DeletePlan",
+                    "args": {
+                        "id": planId
+                    }
+                };
+
+                sendReq(_this, config, function (res, obj) {
+                    if (res.data.retcode === 200) {
+                        _this.$message({
+                            message: '删除成功',
+                            type: 'success'
+                        });
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+
+                    } else {
+                        _this.$message.error('删除失败');
+                    }
+                    console.log(res);
+
+                }, function (err) {
+                    _this.$message.error('服务器无响应');
+                    console.log(err);
+                })
+            },
+
+            submit: function () {
+                var _this = this;
+                this.tempDiaryList.startTime = $('#daycalendarBoxBegin').val();
+                this.tempDiaryList.endTime = $('#daycalendarBoxEnd').val();
+                if (this.tempDiaryList.content === "" || this.tempDiaryList.executorName === "" || this.tempDiaryList.home === "" || this.tempDiaryList.remindTime === "") {
+                    _this.$message({
+                        message: '请填写完整信息',
+                        type: 'warning'
+                    });
+                } else if (!_this.compareDate(_this.tempDiaryList.startTime, _this.tempDiaryList.endTime)) {
+                    _this.$message({
+                        message: '结束时间不能小于开始时间',
+                        type: 'warning'
+                    });
+                } else {
+                    console.log(this.tempDiaryList);
+                    var args = JSON.parse(JSON.stringify(this.tempDiaryList));
+                    var
+                        API_STATUS = {
+                            "apicode": "InsertPlan",
+                            "args": args
+                        };
+                    console.log(API_STATUS);
+                    axios.post("/api", API_STATUS
+                        , {
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(function (res) {
+                        _this.$message({
+                            message: '提交成功',
+                            type: 'success'
+                        });
+//                        setTimeout(function () {
+//                            window.location.reload();
+//                        }, 1000);
+                    }).catch(function (error) {
+//                        loading.close();
+                        console.log(error);
+                    });
+                }
+
+//                this.planList.push(this.tempDiaryList);
+            },
+
+            //时间比较（yyyy-MM-dd）
+            compareDate: function (startDate, endDate) {
+                var arrStart = startDate.split("-");
+                var startTime = new Date(arrStart[0], arrStart[1], arrStart[2]);
+                var startTimes = startTime.getTime();
+                var arrEnd = endDate.split("-");
+                var endTime = new Date(arrEnd[0], arrEnd[1], arrEnd[2]);
+                var endTimes = endTime.getTime();
+                if (endTimes < startTimes) {
+                    return false;
+                } else {
+                    return true;
+                }
+            },
+
+            deletePlan: function (index) {
+                var _this = this;
+                _this.sendDeleteMessage(index);
+            }
+        },
+        created: function () {
+            var isLogin = sessionStorage.getItem('isLogin') || false;
+            if (!isLogin) {
+                window.location.href = 'index';
+            }
+
+
+            var _this = this;
+            axios.post("/api", {
+                "apicode": "CheckPlan",
+                "args": {
+                    "startTime": "2018-01-01",
+                    "endTime": "2018-12-31"
+                }
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function (res) {
+                _this.planList = res.data.obj;
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+        },
+
+        filters: {
+            dateFilter: function (value) {
+                return new Date(value).format("yyyy-MM-dd hh:mm:ss");
+            }
+        }
+    });
+</script>
+</body>
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</html>

@@ -1,0 +1,76 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<div class="dt-left-nav-box dt-left-nav-first-box dt-left-nav-box-active" id="main">变电所状态</div>
+<div class="dt-left-nav-box">运维中心</div>
+<div class="dt-left-nav-box" id="powerCheck">用能月报</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var url = "main";
+        htmlobj = $.ajax({url: url, async: false});
+        $("#dt-main-container").html(htmlobj.responseText);
+    });
+    $(".dt-left-nav-box").click(function () {
+        var url = $(this).attr("id");
+        if(url){
+            $(".dt-left-nav-box").removeClass("dt-left-nav-box-active");
+            $(this).addClass("dt-left-nav-box-active");
+            htmlobj = $.ajax({url: url, async: false});
+            $("#dt-main-container").html(htmlobj.responseText);
+        }
+    });
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<div class="dt-left-nav-box dt-left-nav-first-box dt-left-nav-box-active" id="main">变电所状态</div>
+<div class="dt-left-nav-box">运维中心</div>
+<div class="dt-left-nav-box" id="powerCheck">用能月报</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var url = "main";
+        htmlobj = $.ajax({url: url, async: false});
+        $("#dt-main-container").html(htmlobj.responseText);
+    });
+    $(".dt-left-nav-box").click(function () {
+        var url = $(this).attr("id");
+        if(url){
+            $(".dt-left-nav-box").removeClass("dt-left-nav-box-active");
+            $(this).addClass("dt-left-nav-box-active");
+            htmlobj = $.ajax({url: url, async: false});
+            $("#dt-main-container").html(htmlobj.responseText);
+        }
+    });
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</script>

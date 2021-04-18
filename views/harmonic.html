@@ -1,0 +1,1312 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <script src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <style>
+        .el-collapse-item__content {
+            padding-bottom: 0;
+            margin-bottom: -1px;
+        }
+
+        .loop__content {
+            padding: 10px 0 10px 0;
+            /*border-top: 1px solid #ebeef5;*/
+            cursor: pointer;
+            background: #ECECEC;
+            font-size: 14px;
+            color: #4A4A4A;
+            letter-spacing: 0;
+            width: 100%;
+            height: 40.6px;
+            text-indent: 40px;
+
+        }
+
+        .loop__content:hover, .loop__content-active {
+            background: #13B6CC;
+            color: #FFFFFF;
+        }
+
+        #el-collapse-head-8078.el-collapse-item__header.is-active {
+            color: #13B6CC;
+        }
+
+        .el-collapse-item__header {
+            padding-left: 10px;
+        }
+
+        .el-collapse-item__content .el-collapse-item__header {
+            background: #FFFFFF;
+            font-size: 16px;
+            color: #4A4A4A;
+            letter-spacing: 0;
+            height: 47.2px;
+        }
+
+        .el-collapse-item__content.is-active .el-collapse-item__header.is-active {
+            color: #13B6CC;
+        }
+
+        .el-collapse-item__content.is-active.el-collapse-item__header.is-active {
+            /*color: #13B6CC;*/
+        }
+
+        .el-collapse-item__header {
+            text-indent: 20px;
+        }
+
+        .control-label {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+            font-weight: normal;
+            margin-right:5px;
+        }
+
+        .dt-harmonic-power-type {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+            font-weight: normal;
+            margin-right:5px;
+        }
+
+        /*.el-collapse-item__header .is-active{*/
+        /*margin-top: -20px;*/
+        /*margin-right:-15px;*/
+        /*}*/
+        /*.el-collapse-item .el-collapse-item__header{*/
+        /*background-color: red;*/
+        /*}*/
+        .has-gutter tr, .el-table th {
+            opacity: 0.8;
+            background: #384E7C;
+            border-radius: 2px;
+        }
+
+        .has-gutter .cell {
+            font-size: 16px;
+            color: #FFFFFF;
+            text-align: left;
+        }
+
+        .el-table--striped .el-table__body tr.el-table__row--striped td {
+            background: #F0F0F0;
+        }
+
+        .ele-div .el-icon-arrow-left:before {
+            content: "上一页";
+        }
+
+        .ele-div .el-icon-arrow-right:before {
+            content: "下一页";
+            margin: 0;
+            width: auto;
+        }
+
+        .ele-div .el-pagination.is-background .el-pager li:not(.disabled).active {
+            background: #13B6CC;
+        }
+
+        .ele-div .el-pagination .btn-prev, .ele-div .el-pagination .btn-next {
+            font-size: 12px;
+            width: 5em;
+            padding: 0em 1em;
+            background: #13B6CC;
+            color: #FFFFFF;
+
+        }
+
+        .ele-div .el-pagination .btn-prev i, .ele-div .el-pagination .btn-next i {
+            font-weight: normal;
+        }
+
+        .ele-div .el-pagination {
+            text-align: right;
+        }
+
+        .ele-div .number {
+            font-size: 12px;
+            color: #666666 !important;
+            font-weight: normal;
+        }
+
+        .ele-div .active {
+            color: #FFFFFF !important;
+        }
+
+        .el-pagination button:disabled {
+            background-color: #EFF2F5 !important;
+        }
+
+        .dtc-ele-span {
+            font-size: 14px;
+            color: #414E69;
+            float: left;
+        }
+        .el-icon-arrow-right:before{
+            margin-left:-23px;
+        }
+        .el-collapse-item__header{
+            background-position: 5px 15px;
+        }
+
+        .el-collapse-item__content  .el-collapse-item__header.is-active{
+            color: #13B6CC;
+        }
+    </style>
+</head>
+<body style="background-color:#F0F3F8 ">
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dtn-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"
+              style="background: url(../assets/img/ic-overview-gray.png) no-repeat; "></span>
+        <span style="cursor:default;" class="dtn-nav-list">概况</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn  dt-nav-option-active">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"
+              style="background: url(../assets/img/ic-electric-blue.png) no-repeat; "></span>
+        <span class="dtn-nav-list" style="opacity: 1;color: #414E69;">电力监测</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"></span>
+        <span class="dtn-nav-list">环境监测</span>
+    </div>
+
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='plan'">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"></span>
+        <span class="dtn-nav-list">巡察计划</span>
+    </div>
+</div>
+
+<div class="container-fluid" id="vue-list" v-cloak>
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container">
+                <el-collapse>
+                    <div style="min-height: 750px;background-color: #414E69">
+                        <div class="dtn-empty-div"></div>
+                        <el-collapse-item :title="home.home" :name="index" v-for="(home,index) in navList">
+                            <div>
+                                <el-collapse>
+                                    <el-collapse-item :title="desk.name" v-for="(desk,deskIndex) in home.deskList">
+                                        <div v-for="(loop,loopIndex) in desk.loop" class="loop__content"
+                                             @click="selectLoop($event,index)">
+                                            <span>${loop}</span>
+                                        </div>
+                                    </el-collapse-item>
+                                </el-collapse>
+                            </div>
+                        </el-collapse-item>
+                    </div>
+                </el-collapse>
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container" style="overflow:hidden;">
+                <div class="dt-main-bac dt-harmonic-flex">
+
+                    <div class="dt-main-right" id="dt-main-right" style="width: 100%;">
+                        <!--选择-->
+                        <div class="dt-harmonic-date-select">
+                            <div class="form-group form-group-custom dt-harmonic-from-group-custom"
+                                 style="margin-left: 20px;width:340px">
+                                <label for="dtp_input" class="control-label dtn-control-labe">监测时间：</label>
+                                <div class="input-group date form_date dt-harmonic-input-group-custom dtn-big-div"
+                                     data-date=""
+                                     data-date-format="dd MM yyyy" data-link-field="dtp_input"
+                                     data-link-format="yyyy-mm-dd"
+                                     id="datetimepicker">
+                                    <input class="form-control dtn-form-control" size="16" type="text" value="" readonly
+                                           id="daycalendarBox" style="width:200px">
+                                    <span class="input-group-addon dtn-input-group-addon dtn-big-span"
+                                          id="calendar"><span
+                                            class="glyphicon glyphicon-calendar dtn-span"></span><img
+                                            src="../assets/img/btn_time.png" height="14" width="15"/></span>
+                                </div>
+                                <input type="hidden" id="dtp_input"/><br/>
+                            </div>
+                            <label class="dt-harmonic-power-type">类别：</label>
+                            <div id="hideDiv">0</div>
+                            <select class="dt-harmonic-select dtn-harmonic-select" id="select">
+                                <option v-for="(item,index) in eleType" :value="item.value">${item.text}</option>
+                            </select>
+                            <img src="../assets/img/btn_dropdown.png" alt=""
+                                 class="dtn-monitor-img-down" height="6" width="10"/>
+
+                            <div class="dtn-button-div">
+                                <button class="middle-button  dtn-button-middle dtn-button-search" @click="search">查询
+                                </button>
+                                <button class="middle-button dtn-button-middle dtn-button-outPut" id="outPut"
+                                        @click="outPut">导出
+                                </button>
+                            </div>
+                        </div>
+                        <!--按钮组-->
+                        <div class="dt-harmonic-btn-container">
+                            <button class="middle-button dtn-middle-bottons" id="allConfig"
+                                    style="left: 0;" @click="showAllConfig">总参数
+                            </button>
+                            <button class="middle-button  dt-middle-button-position  dtn-middle-bottons" id="chart"
+                                    style="left: 91px;" @click="switchChart">图表
+                            </button>
+                            <button class="middle-button  dt-middle-button-position  dtn-middle-bottons  dt-btn-active"
+                                    id="data" @click="switchSheet" style="left: 182px">数据
+                            </button>
+
+                        </div>
+                        <div class="dtn-harmonic-big" v-show="isShowAllConfig&&(type==1)">
+                            <div class="dtn-harmonic-allConfig">
+
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-current.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <div class="dtn-allConfig-p">电流Ia<span class="dtn-allConfig-span ">${AllConfig.TS3 | floatFix} A</span>
+                                        </div>
+                                        <p class="dtn-allConfig-p">电流Ib<span class="dtn-allConfig-span ">${AllConfig.TS4 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">电流Ic<span class="dtn-allConfig-span ">${AllConfig.TS5 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dtn-harmonic-allConfig" style="margin-left: 2%">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-voltage.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">线电压Uab<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS | floatFix} V</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">线电压Ubc<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS1 | floatFix} V</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">线电压Uca<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS2 | floatFix} V</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dtn-harmonic-allConfig" style="margin-top:15px">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-maxcurrent.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">A相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS6 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">B相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS7 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">C相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS8 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dtn-harmonic-allConfig" style="margin-left: 2%;margin-top:15px">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-currentmargin.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">A相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS17 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">B相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS18 | floatFix }A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">C相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS19 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dtn-harmonic-empty-div"></div>
+
+                            <div class="dtn-data-div">
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            有功P
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS10 | floatFix} kw
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            无功Q
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS11 | floatFix} Kvar
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            视在S
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS12 | floatFix} KVA
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            相不平衡率
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS9 | floatFix}
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            频率F
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS14 | floatFix} Hz
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            额定电流
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS20 | floatFix} A
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            余量设定值
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS21 | floatFix} A
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            功率因数PF
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS13 | floatFix}
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            正向电流EP+
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS15 | floatFix} Kwh
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--总参数-->
+                        <div class="dtn-harmonic-big" v-show="isShowAllConfig&&(type==0)">
+                            <div class="dtn-harmonic-allConfig">
+
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-current.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <div class="dtn-allConfig-p">电流Ia<span class="dtn-allConfig-span ">${AllConfig.TS | floatFix} A</span>
+                                        </div>
+                                        <p class="dtn-allConfig-p">电流Ib<span class="dtn-allConfig-span ">${AllConfig.TS1 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">电流Ic<span class="dtn-allConfig-span ">${AllConfig.TS2 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dtn-harmonic-allConfig" style="margin-left: 2%">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-maxcurrent.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">A相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS3 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">B相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS4 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">C相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS5 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dtn-harmonic-allConfig" style="margin-top:15px">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-currentmargin.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">A相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS7 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">B相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS8 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">C相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS9 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dtn-harmonic-empty-div"></div>
+
+                            <div class="dtn-data-div" style="height:50px">
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            额定电流
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS10 | floatFix} A
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            相不平衡率
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS6 | floatFix}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            余量设定值
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS11 | floatFix} A
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--总参数end-->
+
+                    </div>
+                </div>
+                <div class="ele-div">
+                    <div style="border: solid 1px #ddd" id="chartContainer">
+                        <div id="container" style="min-width:400px;height:415px;"></div>
+                    </div>
+
+                    <div id="sheetContainer">
+                        <div class="block" style="padding: 20px 20px 10px 20px;background-color: white">
+                            <div class="container_table">
+                                <el-table
+                                        :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
+                                        stripe
+                                        style="width: 100%"
+                                        :default-sort="{prop: 'date', order: 'descending'}"
+                                >
+                                    <el-table-column
+                                            prop="loop"
+                                            label="回路名称"
+
+                                            width="180">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="DT1"
+                                            label="采集时间"
+                                            width="180">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="ST1"
+
+                                            label="数据">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="loop"
+
+                                            label="回路名称">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="DT2"
+                                            label="采集时间">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="ST2"
+
+                                            label="数据">
+                                    </el-table-column>
+
+                                </el-table>
+                                <div style="margin-top: 10px"><span
+                                        class="dtc-ele-span">共<span>${total}</span>条</span>
+                                    <el-pagination layout="prev, pager, next" @current-change="current_change"
+                                                   :total="total"
+                                                   background
+                                    >
+                                    </el-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dtn-footer">
+                版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<script src="../public/FileSaver/FileSaver.min.js"></script>
+<script src="../public/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="../public/tableExport.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.bootcss.com/underscore.js/1.9.0/underscore-min.js"></script>
+
+<script src="../public/file/filesaver.js"></script>
+<script src="../public/helper/dt-epo-helpers.js"></script>
+<script src="../assets/js/harmonic.js"></script>
+<script></script>
+</body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温州医科大学智能监控平台</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <script src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <style>
+        .el-collapse-item__content {
+            padding-bottom: 0;
+            margin-bottom: -1px;
+        }
+
+        .loop__content {
+            padding: 10px 0 10px 0;
+            /*border-top: 1px solid #ebeef5;*/
+            cursor: pointer;
+            background: #ECECEC;
+            font-size: 14px;
+            color: #4A4A4A;
+            letter-spacing: 0;
+            width: 100%;
+            height: 40.6px;
+            text-indent: 40px;
+
+        }
+
+        .loop__content:hover, .loop__content-active {
+            background: #13B6CC;
+            color: #FFFFFF;
+        }
+
+        #el-collapse-head-8078.el-collapse-item__header.is-active {
+            color: #13B6CC;
+        }
+
+        .el-collapse-item__header {
+            padding-left: 10px;
+        }
+
+        .el-collapse-item__content .el-collapse-item__header {
+            background: #FFFFFF;
+            font-size: 16px;
+            color: #4A4A4A;
+            letter-spacing: 0;
+            height: 47.2px;
+        }
+
+        .el-collapse-item__content.is-active .el-collapse-item__header.is-active {
+            color: #13B6CC;
+        }
+
+        .el-collapse-item__content.is-active.el-collapse-item__header.is-active {
+            /*color: #13B6CC;*/
+        }
+
+        .el-collapse-item__header {
+            text-indent: 20px;
+        }
+
+        .control-label {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+            font-weight: normal;
+            margin-right:5px;
+        }
+
+        .dt-harmonic-power-type {
+            font-size: 14px;
+            color: #666666;
+            letter-spacing: 0;
+            font-weight: normal;
+            margin-right:5px;
+        }
+
+        /*.el-collapse-item__header .is-active{*/
+        /*margin-top: -20px;*/
+        /*margin-right:-15px;*/
+        /*}*/
+        /*.el-collapse-item .el-collapse-item__header{*/
+        /*background-color: red;*/
+        /*}*/
+        .has-gutter tr, .el-table th {
+            opacity: 0.8;
+            background: #384E7C;
+            border-radius: 2px;
+        }
+
+        .has-gutter .cell {
+            font-size: 16px;
+            color: #FFFFFF;
+            text-align: left;
+        }
+
+        .el-table--striped .el-table__body tr.el-table__row--striped td {
+            background: #F0F0F0;
+        }
+
+        .ele-div .el-icon-arrow-left:before {
+            content: "上一页";
+        }
+
+        .ele-div .el-icon-arrow-right:before {
+            content: "下一页";
+            margin: 0;
+            width: auto;
+        }
+
+        .ele-div .el-pagination.is-background .el-pager li:not(.disabled).active {
+            background: #13B6CC;
+        }
+
+        .ele-div .el-pagination .btn-prev, .ele-div .el-pagination .btn-next {
+            font-size: 12px;
+            width: 5em;
+            padding: 0em 1em;
+            background: #13B6CC;
+            color: #FFFFFF;
+
+        }
+
+        .ele-div .el-pagination .btn-prev i, .ele-div .el-pagination .btn-next i {
+            font-weight: normal;
+        }
+
+        .ele-div .el-pagination {
+            text-align: right;
+        }
+
+        .ele-div .number {
+            font-size: 12px;
+            color: #666666 !important;
+            font-weight: normal;
+        }
+
+        .ele-div .active {
+            color: #FFFFFF !important;
+        }
+
+        .el-pagination button:disabled {
+            background-color: #EFF2F5 !important;
+        }
+
+        .dtc-ele-span {
+            font-size: 14px;
+            color: #414E69;
+            float: left;
+        }
+        .el-icon-arrow-right:before{
+            margin-left:-23px;
+        }
+        .el-collapse-item__header{
+            background-position: 5px 15px;
+        }
+
+        .el-collapse-item__content  .el-collapse-item__header.is-active{
+            color: #13B6CC;
+        }
+    </style>
+</head>
+<body style="background-color:#F0F3F8 ">
+<div class="dt-title-container dtn-title-container">
+    <div class="dt-nav-title dtn-nav-title">温州医科大学智能监控平台</div>
+    <div class="dt-nav-logo dtn-nav-logo">
+        管理员,&nbsp;&nbsp;你好&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../assets/img/ic-dropout.png"
+                                                             class="dt-nav-quit dtn-nav-quit dtc-com-cur"><span
+            class="dt-nav-quit dtc-com-cur dtc-com-mar">退出登录</span>
+    </div>
+</div>
+<div class="dt-nav-container dtn-nav-container">
+    <div class="dt-nav-btn active dtn-nav-btn" onclick="javascript:window.location.href='main'">
+        <span class="dt-nav-img dt-nav-general dtn-generalization-img"
+              style="background: url(../assets/img/ic-overview-gray.png) no-repeat; "></span>
+        <span style="cursor:default;" class="dtn-nav-list">概况</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='eleMonitor'">
+        <span class="dt-nav-img dt-nav-monitor dtn-monitor-img"></span>
+        <span style="cursor:default;" class="dtn-nav-list">变压器监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn  dt-nav-option-active">
+        <span class="dt-nav-img dt-nav-quality dtn-quality-img"
+              style="background: url(../assets/img/ic-electric-blue.png) no-repeat; "></span>
+        <span class="dtn-nav-list" style="opacity: 1;color: #414E69;">电力监测</span>
+        <div class="dtn-item-hr"></div>
+    </div>
+
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='environment'">
+        <span class="dt-nav-img dt-nav-environment dtn-environment-img"></span>
+        <span class="dtn-nav-list">环境监测</span>
+    </div>
+
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='warning'">
+        <span class="dt-nav-img dt-nav-warning dtn-warning-img"></span>
+        <span class="dtn-nav-list">报警监测</span>
+    </div>
+    <div class="dt-nav-btn dtn-nav-btn" onclick="javascript:window.location.href='plan'">
+        <span class="dt-nav-img dt-nav-record dtn-record-img"></span>
+        <span class="dtn-nav-list">巡察计划</span>
+    </div>
+</div>
+
+<div class="container-fluid" id="vue-list" v-cloak>
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div class="dt-left-nav-container">
+                <el-collapse>
+                    <div style="min-height: 750px;background-color: #414E69">
+                        <div class="dtn-empty-div"></div>
+                        <el-collapse-item :title="home.home" :name="index" v-for="(home,index) in navList">
+                            <div>
+                                <el-collapse>
+                                    <el-collapse-item :title="desk.name" v-for="(desk,deskIndex) in home.deskList">
+                                        <div v-for="(loop,loopIndex) in desk.loop" class="loop__content"
+                                             @click="selectLoop($event,index)">
+                                            <span>${loop}</span>
+                                        </div>
+                                    </el-collapse-item>
+                                </el-collapse>
+                            </div>
+                        </el-collapse-item>
+                    </div>
+                </el-collapse>
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10">
+            <div class="dt-main-container" style="overflow:hidden;">
+                <div class="dt-main-bac dt-harmonic-flex">
+
+                    <div class="dt-main-right" id="dt-main-right" style="width: 100%;">
+                        <!--选择-->
+                        <div class="dt-harmonic-date-select">
+                            <div class="form-group form-group-custom dt-harmonic-from-group-custom"
+                                 style="margin-left: 20px;width:340px">
+                                <label for="dtp_input" class="control-label dtn-control-labe">监测时间：</label>
+                                <div class="input-group date form_date dt-harmonic-input-group-custom dtn-big-div"
+                                     data-date=""
+                                     data-date-format="dd MM yyyy" data-link-field="dtp_input"
+                                     data-link-format="yyyy-mm-dd"
+                                     id="datetimepicker">
+                                    <input class="form-control dtn-form-control" size="16" type="text" value="" readonly
+                                           id="daycalendarBox" style="width:200px">
+                                    <span class="input-group-addon dtn-input-group-addon dtn-big-span"
+                                          id="calendar"><span
+                                            class="glyphicon glyphicon-calendar dtn-span"></span><img
+                                            src="../assets/img/btn_time.png" height="14" width="15"/></span>
+                                </div>
+                                <input type="hidden" id="dtp_input"/><br/>
+                            </div>
+                            <label class="dt-harmonic-power-type">类别：</label>
+                            <div id="hideDiv">0</div>
+                            <select class="dt-harmonic-select dtn-harmonic-select" id="select">
+                                <option v-for="(item,index) in eleType" :value="item.value">${item.text}</option>
+                            </select>
+                            <img src="../assets/img/btn_dropdown.png" alt=""
+                                 class="dtn-monitor-img-down" height="6" width="10"/>
+
+                            <div class="dtn-button-div">
+                                <button class="middle-button  dtn-button-middle dtn-button-search" @click="search">查询
+                                </button>
+                                <button class="middle-button dtn-button-middle dtn-button-outPut" id="outPut"
+                                        @click="outPut">导出
+                                </button>
+                            </div>
+                        </div>
+                        <!--按钮组-->
+                        <div class="dt-harmonic-btn-container">
+                            <button class="middle-button dtn-middle-bottons" id="allConfig"
+                                    style="left: 0;" @click="showAllConfig">总参数
+                            </button>
+                            <button class="middle-button  dt-middle-button-position  dtn-middle-bottons" id="chart"
+                                    style="left: 91px;" @click="switchChart">图表
+                            </button>
+                            <button class="middle-button  dt-middle-button-position  dtn-middle-bottons  dt-btn-active"
+                                    id="data" @click="switchSheet" style="left: 182px">数据
+                            </button>
+
+                        </div>
+                        <div class="dtn-harmonic-big" v-show="isShowAllConfig&&(type==1)">
+                            <div class="dtn-harmonic-allConfig">
+
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-current.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <div class="dtn-allConfig-p">电流Ia<span class="dtn-allConfig-span ">${AllConfig.TS3 | floatFix} A</span>
+                                        </div>
+                                        <p class="dtn-allConfig-p">电流Ib<span class="dtn-allConfig-span ">${AllConfig.TS4 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">电流Ic<span class="dtn-allConfig-span ">${AllConfig.TS5 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dtn-harmonic-allConfig" style="margin-left: 2%">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-voltage.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">线电压Uab<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS | floatFix} V</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">线电压Ubc<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS1 | floatFix} V</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">线电压Uca<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS2 | floatFix} V</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dtn-harmonic-allConfig" style="margin-top:15px">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-maxcurrent.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">A相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS6 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">B相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS7 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">C相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS8 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dtn-harmonic-allConfig" style="margin-left: 2%;margin-top:15px">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-currentmargin.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">A相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS17 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">B相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS18 | floatFix }A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">C相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS19 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dtn-harmonic-empty-div"></div>
+
+                            <div class="dtn-data-div">
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            有功P
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS10 | floatFix} kw
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            无功Q
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS11 | floatFix} Kvar
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            视在S
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS12 | floatFix} KVA
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            相不平衡率
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS9 | floatFix}
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            频率F
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS14 | floatFix} Hz
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            额定电流
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS20 | floatFix} A
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            余量设定值
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS21 | floatFix} A
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            功率因数PF
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS13 | floatFix}
+                                        </div>
+                                    </div>
+
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            正向电流EP+
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS15 | floatFix} Kwh
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--总参数-->
+                        <div class="dtn-harmonic-big" v-show="isShowAllConfig&&(type==0)">
+                            <div class="dtn-harmonic-allConfig">
+
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-current.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <div class="dtn-allConfig-p">电流Ia<span class="dtn-allConfig-span ">${AllConfig.TS | floatFix} A</span>
+                                        </div>
+                                        <p class="dtn-allConfig-p">电流Ib<span class="dtn-allConfig-span ">${AllConfig.TS1 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">电流Ic<span class="dtn-allConfig-span ">${AllConfig.TS2 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dtn-harmonic-allConfig" style="margin-left: 2%">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-maxcurrent.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">A相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS3 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">B相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS4 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">C相历史最大电流<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS5 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dtn-harmonic-allConfig" style="margin-top:15px">
+                                <div class="dtn-harmonic-small-div">
+                                    <div style="float: left;vertical-align: middle">
+                                        <img src="../assets/img/ic-electric-currentmargin.png" height="77" width="70"
+                                             class="dtn-allConfig-img"/></div>
+                                    <div style="float: left">
+                                        <p class="dtn-allConfig-p">A相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS7 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">B相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS8 | floatFix} A</span>
+                                        </p>
+                                        <p class="dtn-allConfig-p">C相电流余量<span
+                                                class="dtn-allConfig-span dtn-allConfig-span-right">${AllConfig.TS9 | floatFix} A</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dtn-harmonic-empty-div"></div>
+
+                            <div class="dtn-data-div" style="height:50px">
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            额定电流
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS10 | floatFix} A
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            相不平衡率
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS6 | floatFix}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dtn-data-item">
+                                    <div class="dtn-item-content">
+                                        <div class="dtn-harmonic-p">
+                                            余量设定值
+                                        </div>
+                                        <div class="dtn-harmonic-span">
+                                            ${AllConfig.TS11 | floatFix} A
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--总参数end-->
+
+                    </div>
+                </div>
+                <div class="ele-div">
+                    <div style="border: solid 1px #ddd" id="chartContainer">
+                        <div id="container" style="min-width:400px;height:415px;"></div>
+                    </div>
+
+                    <div id="sheetContainer">
+                        <div class="block" style="padding: 20px 20px 10px 20px;background-color: white">
+                            <div class="container_table">
+                                <el-table
+                                        :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
+                                        stripe
+                                        style="width: 100%"
+                                        :default-sort="{prop: 'date', order: 'descending'}"
+                                >
+                                    <el-table-column
+                                            prop="loop"
+                                            label="回路名称"
+
+                                            width="180">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="DT1"
+                                            label="采集时间"
+                                            width="180">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="ST1"
+
+                                            label="数据">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="loop"
+
+                                            label="回路名称">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="DT2"
+                                            label="采集时间">
+                                    </el-table-column>
+                                    <el-table-column
+                                            prop="ST2"
+
+                                            label="数据">
+                                    </el-table-column>
+
+                                </el-table>
+                                <div style="margin-top: 10px"><span
+                                        class="dtc-ele-span">共<span>${total}</span>条</span>
+                                    <el-pagination layout="prev, pager, next" @current-change="current_change"
+                                                   :total="total"
+                                                   background
+                                    >
+                                    </el-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dtn-footer">
+                版本所有：温州医科大学&nbsp;地址：浙江省温州茶山高教园区
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<script src="../public/FileSaver/FileSaver.min.js"></script>
+<script src="../public/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="../public/tableExport.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.bootcss.com/underscore.js/1.9.0/underscore-min.js"></script>
+
+<script src="../public/file/filesaver.js"></script>
+<script src="../public/helper/dt-epo-helpers.js"></script>
+<script src="../assets/js/harmonic.js"></script>
+<script></script>
+</body>
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</html>

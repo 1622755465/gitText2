@@ -1,0 +1,574 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPO脚本测试页</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <script src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body>
+<div id="vue-list" style="padding: 15px">
+    <el-row>
+        <el-button @click="startTest()">开始测试</el-button>
+    </el-row>
+    <div>
+        ${ now+'/'+total}
+    </div>
+    <div style="margin: 5px 0"></div>
+    <el-table
+            :data="testArray"
+            style="width: 100%">
+        <el-table-column
+                prop="home"
+                label="变电所"
+                width="180">
+        </el-table-column>
+        <el-table-column
+                prop="disk"
+                label="变压器"
+                width="180">
+        </el-table-column>
+        <el-table-column
+                prop="loop"
+                label="回路">
+        </el-table-column>
+        <el-table-column
+                prop="reaction"
+                label="反应">
+        </el-table-column>
+    </el-table>
+    <div>${handleAfter}</div>
+</div>
+
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.bootcss.com/underscore.js/1.9.0/underscore-min.js"></script>
+<script src="../public/helper/dt-epo-helpers.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: "#vue-list",
+        delimiters: ['${', '}'],
+//        navMessage: navMessage,
+        data: {
+            handle: data,
+            handleAfter:[],
+            testArray: [{
+                home: '01',
+                disk: '01',
+                loop: '01',
+                reaction: '正常'
+            }],
+            element: "<div>myTest</div>>",
+            total: 0,
+            now: 0,
+        },
+        methods: {
+            startTest: function () {
+                var _this = this;
+                var resArray = [];
+                var i = 0;
+                var testDataArray = _this.goThroughNav();
+                var timer = setInterval(function () {
+                    if (i < testDataArray.length) {
+                        _this.testReq(testDataArray[i], resArray);
+                        i++
+                    } else {
+                        clearInterval(timer);
+                    }
+
+                }, 50);
+                console.log(resArray);
+            },
+
+            testReq: function (testDataObj, resArray) {
+                var _this = this;
+                var API_STATUS = {
+                    "apicode": "environmentInfo",
+                    "args": {
+                        "time": '2018-07-12',
+                        //  "key": testDataObj.homeKey+'990000'+','+testDataObj.homeKey+'990001',
+                        "home": testDataObj.homeKey
+                    }
+                };
+                axios.post("/api", API_STATUS
+                    , {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function (res) {
+                    resArray.push({
+                        "home": testDataObj.homeKey,
+                        // "key":testDataObj.homeKey+'990000'+','+testDataObj.homeKey+'990001',
+                        "retcode": res.data.retcode,
+                        "obj": res
+                    });
+
+                    _this.now++;
+
+                }).catch(function (error) {
+                    resArray.push({
+                        "home": testDataObj.homeKey,
+                        //   "key": testDataObj.homeKey+'990000'+','+testDataObj.homeKey+'990001',
+                        "res": error
+                    });
+
+                    _this.now++;
+
+                });
+            },
+
+            goThroughNav: function () {
+
+                var navObj = {
+                    navMessage: [{
+                        "home": "图书馆",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器", "ⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "同仁楼",
+                        "deskList": [{
+                            "name": "I段进线变压器",
+                            "loop": ["I段进线变压器"]
+                        }]
+                    }, {
+                        "home": "同德楼",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器", "ⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "同济楼",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器", "ⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "学生活动中心",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["变压器温控仪"]
+                        }]
+                    }, {
+                        "home": "一期宿舍",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["I段段进线变压器", "ⅠI段段进线变压器", "IⅠI段段进线变压器"]
+                        }]
+                    }, {
+                        "home": "二期宿舍",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["I段进线变压器", "ⅠI段进线变压器", "IⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "中试基地",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器"]
+                        }]
+                    }, {
+                        "home": "学院路2#",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器"]
+                        }]
+                    }, {
+                        "home": "求是楼",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器", "ⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "三期宿舍食堂",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["I段进线变压器", "ⅠI段进线变压器", "IⅠI段进线变压器", "IV段进线变压器", "V段进线变压器"]
+                        }]
+                    }, {
+                        "home": "学院路1#",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["1号变压器8176", "2号变压器8176", "3号变压器288线", "4号变压器288线"]
+                        }]
+                    }]
+                };
+                var navMessage = navObj.navMessage;
+
+                var _this = this;
+//                var navMessage = _this.navMessage;
+                var homeObjArray = [];
+//                var navList = [];
+
+                for (var i = 0; i < navMessage.length; i++) {
+                    for (var j = 0; j < navMessage[i].deskList.length; j++) {
+                        for (var k = 0; k < navMessage[i].deskList[j].loop.length; k++) {
+                            for (var b = 0; b < 7; b++) {
+                                //塞入测试入参
+                                homeObjArray.push({
+                                    'key': _this.switchNumer(i) + _this.switchNumer(j) + _this.switchNumer(k) + _this.switchNumer(b),
+                                    'homeKey': _this.switchNumer(i)
+                                });
+                            }
+                        }
+                    }
+//                    if (home === navMessage[i].home) {
+//                        navList = navMessage[i].deskList;
+//                    }
+                }
+
+                _this.total = homeObjArray.length;
+
+//                console.log(homeObjArray);
+                return homeObjArray;
+            },
+
+            switchNumer: function (value) {
+                if (value < 10) {
+                    return ('0' + value.toString());
+                } else {
+                    return (value.toString());
+                }
+            },
+
+            handleData: function (data) {
+                var that=this;
+                that.handleAfter=_.map(that.handle,function (value) {
+                    return {value.a,value.b}
+                })
+            }
+        },
+        created: function () {
+            var _this = this;
+
+            console.log(_this.goThroughNav());
+        }
+    });
+
+
+</script>
+</body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPO脚本测试页</title>
+    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../public/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/tree.css">
+    <link rel="stylesheet" href="../assets/css/power_check.css">
+    <link rel="stylesheet" href="../assets/css/harmonic.css">
+    <script src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+</head>
+<body>
+<div id="vue-list" style="padding: 15px">
+    <el-row>
+        <el-button @click="startTest()">开始测试</el-button>
+    </el-row>
+    <div>
+        ${ now+'/'+total}
+    </div>
+    <div style="margin: 5px 0"></div>
+    <el-table
+            :data="testArray"
+            style="width: 100%">
+        <el-table-column
+                prop="home"
+                label="变电所"
+                width="180">
+        </el-table-column>
+        <el-table-column
+                prop="disk"
+                label="变压器"
+                width="180">
+        </el-table-column>
+        <el-table-column
+                prop="loop"
+                label="回路">
+        </el-table-column>
+        <el-table-column
+                prop="reaction"
+                label="反应">
+        </el-table-column>
+    </el-table>
+    <div>${handleAfter}</div>
+</div>
+
+<script type="text/javascript" src="../public/jquery/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../public/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.bootcss.com/underscore.js/1.9.0/underscore-min.js"></script>
+<script src="../public/helper/dt-epo-helpers.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: "#vue-list",
+        delimiters: ['${', '}'],
+//        navMessage: navMessage,
+        data: {
+            handle: data,
+            handleAfter:[],
+            testArray: [{
+                home: '01',
+                disk: '01',
+                loop: '01',
+                reaction: '正常'
+            }],
+            element: "<div>myTest</div>>",
+            total: 0,
+            now: 0,
+        },
+        methods: {
+            startTest: function () {
+                var _this = this;
+                var resArray = [];
+                var i = 0;
+                var testDataArray = _this.goThroughNav();
+                var timer = setInterval(function () {
+                    if (i < testDataArray.length) {
+                        _this.testReq(testDataArray[i], resArray);
+                        i++
+                    } else {
+                        clearInterval(timer);
+                    }
+
+                }, 50);
+                console.log(resArray);
+            },
+
+            testReq: function (testDataObj, resArray) {
+                var _this = this;
+                var API_STATUS = {
+                    "apicode": "environmentInfo",
+                    "args": {
+                        "time": '2018-07-12',
+                        //  "key": testDataObj.homeKey+'990000'+','+testDataObj.homeKey+'990001',
+                        "home": testDataObj.homeKey
+                    }
+                };
+                axios.post("/api", API_STATUS
+                    , {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function (res) {
+                    resArray.push({
+                        "home": testDataObj.homeKey,
+                        // "key":testDataObj.homeKey+'990000'+','+testDataObj.homeKey+'990001',
+                        "retcode": res.data.retcode,
+                        "obj": res
+                    });
+
+                    _this.now++;
+
+                }).catch(function (error) {
+                    resArray.push({
+                        "home": testDataObj.homeKey,
+                        //   "key": testDataObj.homeKey+'990000'+','+testDataObj.homeKey+'990001',
+                        "res": error
+                    });
+
+                    _this.now++;
+
+                });
+            },
+
+            goThroughNav: function () {
+
+                var navObj = {
+                    navMessage: [{
+                        "home": "图书馆",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器", "ⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "同仁楼",
+                        "deskList": [{
+                            "name": "I段进线变压器",
+                            "loop": ["I段进线变压器"]
+                        }]
+                    }, {
+                        "home": "同德楼",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器", "ⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "同济楼",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器", "ⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "学生活动中心",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["变压器温控仪"]
+                        }]
+                    }, {
+                        "home": "一期宿舍",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["I段段进线变压器", "ⅠI段段进线变压器", "IⅠI段段进线变压器"]
+                        }]
+                    }, {
+                        "home": "二期宿舍",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["I段进线变压器", "ⅠI段进线变压器", "IⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "中试基地",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器"]
+                        }]
+                    }, {
+                        "home": "学院路2#",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器"]
+                        }]
+                    }, {
+                        "home": "求是楼",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["Ⅰ段进线变压器", "ⅠI段进线变压器"]
+                        }]
+                    }, {
+                        "home": "三期宿舍食堂",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["I段进线变压器", "ⅠI段进线变压器", "IⅠI段进线变压器", "IV段进线变压器", "V段进线变压器"]
+                        }]
+                    }, {
+                        "home": "学院路1#",
+                        "deskList": [{
+                            "name": "变压器",
+                            "loop": ["1号变压器8176", "2号变压器8176", "3号变压器288线", "4号变压器288线"]
+                        }]
+                    }]
+                };
+                var navMessage = navObj.navMessage;
+
+                var _this = this;
+//                var navMessage = _this.navMessage;
+                var homeObjArray = [];
+//                var navList = [];
+
+                for (var i = 0; i < navMessage.length; i++) {
+                    for (var j = 0; j < navMessage[i].deskList.length; j++) {
+                        for (var k = 0; k < navMessage[i].deskList[j].loop.length; k++) {
+                            for (var b = 0; b < 7; b++) {
+                                //塞入测试入参
+                                homeObjArray.push({
+                                    'key': _this.switchNumer(i) + _this.switchNumer(j) + _this.switchNumer(k) + _this.switchNumer(b),
+                                    'homeKey': _this.switchNumer(i)
+                                });
+                            }
+                        }
+                    }
+//                    if (home === navMessage[i].home) {
+//                        navList = navMessage[i].deskList;
+//                    }
+                }
+
+                _this.total = homeObjArray.length;
+
+//                console.log(homeObjArray);
+                return homeObjArray;
+            },
+
+            switchNumer: function (value) {
+                if (value < 10) {
+                    return ('0' + value.toString());
+                } else {
+                    return (value.toString());
+                }
+            },
+
+            handleData: function (data) {
+                var that=this;
+                that.handleAfter=_.map(that.handle,function (value) {
+                    return {value.a,value.b}
+                })
+            }
+        },
+        created: function () {
+            var _this = this;
+
+            console.log(_this.goThroughNav());
+        }
+    });
+
+
+</script>
+</body>
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+</html>

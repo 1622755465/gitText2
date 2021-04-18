@@ -1,0 +1,445 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
+*{
+    margin: 0;
+    padding: 0;
+}
+.main-box{
+    width: auto;
+    height: 250px;
+    border: 1px solid #b4b4b5;;
+    margin: 10px 20px 0 10px;
+    min-width: 500px;
+    text-align: center;
+    background-color: white;
+}
+.main-box-top{
+    background-color: #3db3ff;
+    height: 40px;
+}
+.main-box-top-icon{
+    float: left;
+}
+.main-box-top-text{
+    color: white;
+    float: left;
+    font-size: 16px;
+    margin-top: 9px;
+}
+.main-box-middle{
+    width: 100%;
+    padding: 10px;
+}
+.middle-name{
+    float: left;
+    margin-top: 7px;
+}
+.middle-input{
+    width: 270px;
+    height: 34px;
+    padding-left: 12px;
+    border-radius:5px ;
+    border:1px solid rgba(187,187,187,1);
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+}
+.middle-button{
+    width: 50px;
+    height: 33px;
+    background-color: #3db3ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    float: left;
+    margin:1px 0 0 8px;
+    outline: none;
+    cursor:pointer;
+}
+.middle-box-time-text{
+    color: white;
+    float: right;
+    margin: 10px 10px 0 0;
+}
+.top-box-text{
+    color: #ffa73c;
+    font-size: 14px;
+    font-weight: bold;
+}
+.middle-box-text{
+    color: #ffa73c;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0 0 20px;
+    text-align: left;
+}
+.middle-box-text-right{
+    color: #ffa73c;
+    font-size: 20px;
+    font-weight: bold;
+}
+.middle-box{
+    width: auto;
+    height: 405px;
+    border: 1px solid #b4b4b5;;
+    margin: 10px 20px 10px 10px;
+    min-width: 500px;
+    text-align: center;
+    padding: 0 ;
+    background-color: white;
+}
+.orange{
+    background-color: #ffa73c;
+    margin: 5px 5px 0 5px;
+    text-align: left;
+    color: white;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 30px;
+}
+.gray{
+    background-color: #dcdddd;
+    margin: 0 5px 5px 5px;
+    text-align: left;
+    padding: 10px 10px 40px 30px;
+    color: #333333;
+    height: 130px;
+}
+li{
+    color: #ffa73c;
+    list-style:none;
+    list-style-type: square;
+}
+.point-right{
+    color: #333333;
+}
+.middle-col-margin{
+    /*padding:0 0 0 0;*/
+    /*margin-right: 10px;*/
+}
+.btn-bottom{
+    float: right;
+    margin: 2px 10px 0 0;
+}
+.label-line{
+    color: white;
+}
+.btn-date{
+    width: 60px;
+    height: 34px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #3db3ff;
+    outline: none;
+    font-weight: bold;
+}
+.btn-date:hover,.btn-date-active{
+    background-color: white;
+    color: #3db3ff;
+    cursor: pointer;
+}
+.date-picker{
+    float: left;
+    margin: 5px 0 0 10px;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: white;
+    border-style: solid;
+    padding-left: 10px;
+}
+.btn-left{
+    float: left;
+}
+.btn-left-style{
+    width: 90px;
+    height: 34px;
+    background-color: white;
+    border: none;
+    margin: 3px 0 0 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #3db3ff;
+    cursor: pointer;
+}
+.top-pic{
+    float: left;
+    margin: 30px 0 0 20px;
+}
+.main-box-bottom{
+    padding: 0 10px 0 0;
+    /*margin-top: -8px;*/
+    margin-top: 30px;
+}
+.bottom-table{
+    width: 100%;
+}
+.bottom-block{
+    width: auto;
+    height:144px;
+    border: 1px solid rgba(187,187,187,1);
+    text-align: center;
+    margin-left: 10px;
+    background-color: white;
+}
+.bottom-text{
+    margin-top: -4px;
+    color: #333;
+}
+.bottom-gray{
+    height: 52px;
+    background-color:#5D676F;
+    margin-top:14px;
+    padding-top: 12px;
+}
+.bottom-num{
+    color: white;
+    font-size: 20px;
+}
+.bottom-unit{
+    color: white;
+    font-size: 14px;
+}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+*{
+    margin: 0;
+    padding: 0;
+}
+.main-box{
+    width: auto;
+    height: 250px;
+    border: 1px solid #b4b4b5;;
+    margin: 10px 20px 0 10px;
+    min-width: 500px;
+    text-align: center;
+    background-color: white;
+}
+.main-box-top{
+    background-color: #3db3ff;
+    height: 40px;
+}
+.main-box-top-icon{
+    float: left;
+}
+.main-box-top-text{
+    color: white;
+    float: left;
+    font-size: 16px;
+    margin-top: 9px;
+}
+.main-box-middle{
+    width: 100%;
+    padding: 10px;
+}
+.middle-name{
+    float: left;
+    margin-top: 7px;
+}
+.middle-input{
+    width: 270px;
+    height: 34px;
+    padding-left: 12px;
+    border-radius:5px ;
+    border:1px solid rgba(187,187,187,1);
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+}
+.middle-button{
+    width: 50px;
+    height: 33px;
+    background-color: #3db3ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    float: left;
+    margin:1px 0 0 8px;
+    outline: none;
+    cursor:pointer;
+}
+.middle-box-time-text{
+    color: white;
+    float: right;
+    margin: 10px 10px 0 0;
+}
+.top-box-text{
+    color: #ffa73c;
+    font-size: 14px;
+    font-weight: bold;
+}
+.middle-box-text{
+    color: #ffa73c;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0 0 20px;
+    text-align: left;
+}
+.middle-box-text-right{
+    color: #ffa73c;
+    font-size: 20px;
+    font-weight: bold;
+}
+.middle-box{
+    width: auto;
+    height: 405px;
+    border: 1px solid #b4b4b5;;
+    margin: 10px 20px 10px 10px;
+    min-width: 500px;
+    text-align: center;
+    padding: 0 ;
+    background-color: white;
+}
+.orange{
+    background-color: #ffa73c;
+    margin: 5px 5px 0 5px;
+    text-align: left;
+    color: white;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 30px;
+}
+.gray{
+    background-color: #dcdddd;
+    margin: 0 5px 5px 5px;
+    text-align: left;
+    padding: 10px 10px 40px 30px;
+    color: #333333;
+    height: 130px;
+}
+li{
+    color: #ffa73c;
+    list-style:none;
+    list-style-type: square;
+}
+.point-right{
+    color: #333333;
+}
+.middle-col-margin{
+    /*padding:0 0 0 0;*/
+    /*margin-right: 10px;*/
+}
+.btn-bottom{
+    float: right;
+    margin: 2px 10px 0 0;
+}
+.label-line{
+    color: white;
+}
+.btn-date{
+    width: 60px;
+    height: 34px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #3db3ff;
+    outline: none;
+    font-weight: bold;
+}
+.btn-date:hover,.btn-date-active{
+    background-color: white;
+    color: #3db3ff;
+    cursor: pointer;
+}
+.date-picker{
+    float: left;
+    margin: 5px 0 0 10px;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: white;
+    border-style: solid;
+    padding-left: 10px;
+}
+.btn-left{
+    float: left;
+}
+.btn-left-style{
+    width: 90px;
+    height: 34px;
+    background-color: white;
+    border: none;
+    margin: 3px 0 0 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #3db3ff;
+    cursor: pointer;
+}
+.top-pic{
+    float: left;
+    margin: 30px 0 0 20px;
+}
+.main-box-bottom{
+    padding: 0 10px 0 0;
+    /*margin-top: -8px;*/
+    margin-top: 30px;
+}
+.bottom-table{
+    width: 100%;
+}
+.bottom-block{
+    width: auto;
+    height:144px;
+    border: 1px solid rgba(187,187,187,1);
+    text-align: center;
+    margin-left: 10px;
+    background-color: white;
+}
+.bottom-text{
+    margin-top: -4px;
+    color: #333;
+}
+.bottom-gray{
+    height: 52px;
+    background-color:#5D676F;
+    margin-top:14px;
+    padding-top: 12px;
+}
+.bottom-num{
+    color: white;
+    font-size: 20px;
+}
+.bottom-unit{
+    color: white;
+    font-size: 14px;
+}
+>>>>>>> dedd623 (first)
+>>>>>>> 19b8a9c (first)
+>>>>>>> 8f5179a (first)
+>>>>>>> 87a8fdf (first)
+>>>>>>> 1e8021d (first)
+>>>>>>> 5938de4 (first)
+>>>>>>> c55f785 (first)
